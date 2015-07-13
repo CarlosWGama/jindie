@@ -66,8 +66,12 @@ final class Input {
 	* @access private
 	*/
 	private function extractUrl() {
-		$path = $_GET['path'];
-		unset($_GET['path']);
+		$path = '';
+		if (isset($_GET['path'])) {
+			$path = $_GET['path'];
+			unset($_GET['path']);	
+		}
+		
 		$this->cleanInput();
 
 		//URL
