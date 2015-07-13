@@ -4,7 +4,7 @@ $config = array(
 	'host'				=> 'localhost',
 	'username'			=> 'root',
 	'password'			=> '',
-	'database'			=> 'colecaoanimes',
+	'database'			=> 'jindie',
 	'port'				=> 3306,
 	'charset'			=> 'utf8',
 

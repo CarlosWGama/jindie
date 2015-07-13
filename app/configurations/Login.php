@@ -16,11 +16,11 @@ $config = array(
 	//Google Plus
 	'clientID'				=> '148798204518-k2afl98od24nqoia0p6l534o40sh3ott.apps.googleusercontent.com',
 	'clientSecret'			=> 'bvKhqwC8sozuWxKadw7QsPg5',
-	'redirectURLGoogle'		=> 'https://local.jindie.com.br/teste/google',
+	'redirectURLGoogle'		=> 'http://local.jindie.com.br/teste/google',
 
 	//Steam
 	'apiKey'				=> '76E9DC99F49A08A5BABA7CB23223098C',
 	'domain'				=> 'http://local.jindie.com.br/',
-	'redirectURLSteam'	=> 'local.jindie.com.br/teste/steam',
+	'redirectURLSteam'		=> 'local.jindie.com.br/teste/steam',
 
 );

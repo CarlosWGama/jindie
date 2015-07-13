@@ -135,7 +135,7 @@ class Teste extends Controller{
 
 	public function database() {
 		$this->loadDatabase('banco');
-		print_r($this->banco->getOne("facebook"));
+		print_r($this->banco->getOne("usuarios"));
 		echo "OK!";
 	}
 
@@ -165,27 +165,28 @@ class Teste extends Controller{
 
 	public function google() {
 		$this->loadLibrary('loginGoogle');
-		//print_r($this->loginGoogle->getUserData());	
+		print_r($this->loginGoogle->getUserData());	
 
-		$acessToken = '{"access_token":"ya29.qgGKBL0qyy4EH3SdWcMnnwLt--fVcwFMlTBWsy9yMJ2nhaw7rTSUiFbyS1bsrKef2-ULNgF97DvFYw","token_type":"Bearer","expires_in":3596,"id_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjOGEzMTkyN2FmMjA4NjA0MThmNmIyMjMxYmJmZDdlYmNjMDQ2NjUifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwic3ViIjoiMTE0NjAzNDU2MzkzMjc2MDcyNDAxIiwiYXpwIjoiMTQ4Nzk4MjA0NTE4LWsyYWZsOThvZDI0bnFvaWEwcDZsNTM0bzQwc2gzb3R0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJjYXJsb3N3Z2FtYUBnbWFpbC5jb20iLCJhdF9oYXNoIjoiMy1PX1ZOOURPM3hDZkhnRGI0d2lQZyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdWQiOiIxNDg3OTgyMDQ1MTgtazJhZmw5OG9kMjRucW9pYTBwNmw1MzRvNDBzaDNvdHQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJpYXQiOjE0MzYzODAyNTYsImV4cCI6MTQzNjM4Mzg1Nn0.KNsRtdaRC6Yh0fpvaxqf2lth10_IzuZupx2UrdWgpRfaR5_KelT9BlXRsUfqtRdGl4z0z9BqqaSCpL1OdFdmFNWayeMTBcA3yVlWYbPKvZ_P6X0bSzPsHb308LKQUCiP_kCq4ed3Bc8pTthcf5uW_HrC-73HJeXVtwxHotTUejaAX2D-x8JO03ZYznQA6umCwEsqRaD3Pro0iigZuSYAA5ZmXD_DLKE4WPL9MGmsZad0e9yXPHoF6VyYOLdBC33iG0MaGAbAj2BMcT162XXHcS2klGeQE-UC7gFoscP3HLBf6RHrtwOfCiKlGldb9JR7-gzpsG9AEyimJORRo5CzDg","created":1436380256}';
+		//$acessToken = '{"access_token":"ya29.qgGKBL0qyy4EH3SdWcMnnwLt--fVcwFMlTBWsy9yMJ2nhaw7rTSUiFbyS1bsrKef2-ULNgF97DvFYw","token_type":"Bearer","expires_in":3596,"id_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjOGEzMTkyN2FmMjA4NjA0MThmNmIyMjMxYmJmZDdlYmNjMDQ2NjUifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwic3ViIjoiMTE0NjAzNDU2MzkzMjc2MDcyNDAxIiwiYXpwIjoiMTQ4Nzk4MjA0NTE4LWsyYWZsOThvZDI0bnFvaWEwcDZsNTM0bzQwc2gzb3R0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJjYXJsb3N3Z2FtYUBnbWFpbC5jb20iLCJhdF9oYXNoIjoiMy1PX1ZOOURPM3hDZkhnRGI0d2lQZyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdWQiOiIxNDg3OTgyMDQ1MTgtazJhZmw5OG9kMjRucW9pYTBwNmw1MzRvNDBzaDNvdHQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJpYXQiOjE0MzYzODAyNTYsImV4cCI6MTQzNjM4Mzg1Nn0.KNsRtdaRC6Yh0fpvaxqf2lth10_IzuZupx2UrdWgpRfaR5_KelT9BlXRsUfqtRdGl4z0z9BqqaSCpL1OdFdmFNWayeMTBcA3yVlWYbPKvZ_P6X0bSzPsHb308LKQUCiP_kCq4ed3Bc8pTthcf5uW_HrC-73HJeXVtwxHotTUejaAX2D-x8JO03ZYznQA6umCwEsqRaD3Pro0iigZuSYAA5ZmXD_DLKE4WPL9MGmsZad0e9yXPHoF6VyYOLdBC33iG0MaGAbAj2BMcT162XXHcS2klGeQE-UC7gFoscP3HLBf6RHrtwOfCiKlGldb9JR7-gzpsG9AEyimJORRo5CzDg","created":1436380256}';
 
-		print_r($this->loginGoogle->getUserDataByAccessToken($acessToken));
+		//print_r($this->loginGoogle->getUserDataByAccessToken($acessToken));
 	}
 
 	public function twitter() {
 		$this->loadLibrary('loginTwitter');
 
 
-		//print_r($this->loginTwitter->getUserData());
+		print_r($this->loginTwitter->getUserData());
 
-		$accessToken = Array (
+		/*$accessToken = Array (
 			'oauth_token' 			=> '2612061025-7gSiTPYYiHexS1lcgsiZA7puq71pH01WMBr3fog',
 			'oauth_token_secret' 	=> 'BvJKu6Caj4Y9zUttGoXUQWv6xY7P5Uf2IvyHvqr4AeDiN',
 			'user_id' 				=> '2612061025',
 			'screen_name' 			=> 'blogjogosindie',
 			'x_auth_expires' 		=> 0);
-
+		
 		print_r($this->loginTwitter->getUserDataByAccessToken($accessToken));
+		*/
 	}
 
 	public function steam() {
