@@ -1,0 +1,565 @@
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0011 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0017 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.002 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0011 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0017 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0017 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0015 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0013 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0026 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0007 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.001 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0005 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.002 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0007 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0011 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0007 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0008 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0007 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0015 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0018 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: Foram passado os seguintes dados como GET: {"a":"1"} 
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: Foram passado os seguintes dados como GET: {"a":"1%","b":"2"} 
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0011 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: Foram passado os seguintes dados como GET: {"a":"1%","b":"2"} 
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0007 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: Foram passado os seguintes dados como GET: {"a":"1%","b":"2"} 
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0012 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: 'tste[L]'
+[DEBUG] INPUT: Controller identifcado na URL: 'Tste[L]'
+[DEBUG] CONTROLLER: A classe 'Tste[L]' não existe
+[DEBUG] A página demorou: 0.0009 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: 'tste'
+[DEBUG] INPUT: Controller identifcado na URL: 'Tste'
+[DEBUG] CONTROLLER: A classe 'Tste' não existe
+[DEBUG] A página demorou: 0.0006 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0012 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: ''
+[DEBUG] INPUT: Controller identifcado na URL: 'Index'
+[DEBUG] CONTROLLER: A classe 'Index' não existe
+[DEBUG] A página demorou: 0.0011 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+

@@ -1,0 +1,1160 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"login",
+				"loginFacebook"
+			],
+			[
+				"log",
+				"loginSteam"
+			],
+			[
+				"getUr",
+				"getUserDataByOpenID"
+			],
+			[
+				"aces",
+				"accessToken"
+			],
+			[
+				"ace",
+				"access_token"
+			],
+			[
+				"reques",
+				"request_token_secret"
+			],
+			[
+				"request_to",
+				"request_token_secret"
+			],
+			[
+				"user",
+				"userData"
+			],
+			[
+				"Google",
+				"Google_Client"
+			],
+			[
+				"consum",
+				"consumerKey"
+			],
+			[
+				"redi",
+				"redirectURL"
+			],
+			[
+				"consu",
+				"consumerSecret"
+			],
+			[
+				"red",
+				"redirectURL"
+			],
+			[
+				"secret",
+				"appSecret"
+			],
+			[
+				"faceb",
+				"facebookLogin"
+			],
+			[
+				"app",
+				"appID"
+			],
+			[
+				"load",
+				"loadLibrary"
+			],
+			[
+				"sub",
+				"subject"
+			],
+			[
+				"anim",
+				"animacao_autor"
+			],
+			[
+				"JI",
+				"JI_ERRORS"
+			],
+			[
+				"dir",
+				"dirCache"
+			],
+			[
+				"ext",
+				"extFile"
+			],
+			[
+				"name",
+				"namefile"
+			],
+			[
+				"fie",
+				"fieldLogs"
+			],
+			[
+				"is",
+				"isSelected"
+			],
+			[
+				"html",
+				"htmlspecialchars_decode"
+			],
+			[
+				"form",
+				"formValidation"
+			],
+			[
+				"h",
+				"head	Tag"
+			],
+			[
+				"stru",
+				"strtoupper"
+			],
+			[
+				"failFile",
+				"failFileMaxSize"
+			],
+			[
+				"nameF",
+				"nameField"
+			],
+			[
+				"rul",
+				"rulesOfField"
+			],
+			[
+				"ru",
+				"rules"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"erro",
+				"errors"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"u",
+				"ucfirst"
+			],
+			[
+				"model",
+				"modelName"
+			],
+			[
+				"filter",
+				"filterName"
+			],
+			[
+				"strto",
+				"strtoupper"
+			],
+			[
+				"usu",
+				"usuarioID"
+			],
+			[
+				"notifi",
+				"notificacaoID"
+			],
+			[
+				"noti",
+				"notificacaoID"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"mensa",
+				"mensagens_model"
+			],
+			[
+				"user_",
+				"user_steamID"
+			],
+			[
+				"sort",
+				"sorteios_model"
+			],
+			[
+				"ex",
+				"exSorteado"
+			],
+			[
+				"sorteio_",
+				"sorteios_model"
+			],
+			[
+				"sorteado",
+				"sorteiado"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"sorteio",
+				"sorteioID"
+			],
+			[
+				"sorte",
+				"sorteioID"
+			],
+			[
+				"sot",
+				"sorteados"
+			],
+			[
+				"sor",
+				"sorteio"
+			],
+			[
+				"usuario",
+				"usuarioID"
+			],
+			[
+				"des",
+				"destaqueID"
+			],
+			[
+				"bane",
+				"banners_model"
+			],
+			[
+				"marin",
+				"margin-right"
+			],
+			[
+				"border-",
+				"border-spacing"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"url",
+				"urlSendMessageChat"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"pagina",
+				"paginas_model"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"tx",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"limi",
+				"limite"
+			],
+			[
+				"conve",
+				"convertDate"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"stea",
+				"steamID"
+			],
+			[
+				"__",
+				"__construct"
+			],
+			[
+				"banner",
+				"banners_model"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"ano",
+				"ano2"
+			],
+			[
+				"mes",
+				"mes2"
+			],
+			[
+				"cupom",
+				"cupomID"
+			],
+			[
+				"curs",
+				"cursoComprado"
+			],
+			[
+				"curso",
+				"cursoID"
+			],
+			[
+				"valor",
+				"valorDesconto"
+			],
+			[
+				"tot",
+				"totalComDesconto"
+			],
+			[
+				"che",
+				"checkCupomCurso"
+			],
+			[
+				"cu",
+				"cupom"
+			],
+			[
+				"cur",
+				"cursos"
+			],
+			[
+				"descri",
+				"descricaoAssinatura"
+			],
+			[
+				"p",
+				"pwd"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"api",
+				"apiEndpoint"
+			],
+			[
+				"sig",
+				"signature"
+			],
+			[
+				"sist",
+				"sistema"
+			],
+			[
+				"ite",
+				"iterator"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"nao",
+				"naocapaz"
+			],
+			[
+				"array",
+				"arrays"
+			],
+			[
+				"posi",
+				"posicao"
+			],
+			[
+				"a",
+				"arrays"
+			],
+			[
+				"key",
+				"keyProximo"
+			],
+			[
+				"data",
+				"dataInicial"
+			],
+			[
+				"inscri",
+				"inscrito"
+			],
+			[
+				"oficin",
+				"oficinaID"
+			],
+			[
+				"ofici",
+				"oficinaID"
+			],
+			[
+				"confi",
+				"configuracoes"
+			],
+			[
+				"error_",
+				"error_reporting"
+			],
+			[
+				"partici",
+				"participarLiase"
+			],
+			[
+				"exl",
+				"excluido"
+			],
+			[
+				"participa",
+				"participar_liase"
+			],
+			[
+				"tipo",
+				"tipoUsuario"
+			],
+			[
+				"result",
+				"result_array"
+			],
+			[
+				"inscr",
+				"inscricaoID"
+			],
+			[
+				"oficina",
+				"oficina_id"
+			],
+			[
+				"ins",
+				"inscricaoID"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"LIASE",
+				"LIASE-AL"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"progama",
+				"programacao_model"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"status",
+				"status_pagamento"
+			],
+			[
+				"iin",
+				"inscricaoID"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "system/libraries/LoginFacebook.php",
+			"settings":
+			{
+				"buffer_size": 5162,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "system/.htaccess",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Servidor",
+			"settings":
+			{
+				"buffer_size": 1180,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 150.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"getset",
+				"Snippet: Create getter and setter methods"
+			],
+			[
+				"next",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/jindie",
+		"/var/www/jindie/app",
+		"/var/www/jindie/system"
+	],
+	"file_history":
+	[
+		"/var/www/jindie/app/controllers/Teste.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Login.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/log.php",
+		"/C/xampp/htdocs/jindie/system/libraries/LoginFacebook.php",
+		"/C/xampp/htdocs/jindie/app/logs/debug_2015-07-08.txt",
+		"/C/xampp/htdocs/jindie/system/libraries/LoginSteam.php",
+		"/C/xampp/htdocs/jindie/app/controllers/Teste.php",
+		"/C/xampp/htdocs/jindie/system/libraries/LoginGoogle.php",
+		"/C/xampp/htdocs/jindie/system/libraries/LoginTwitter.php",
+		"/C/xampp/htdocs/jindie/system/libraries/FormValidation.php",
+		"/C/xampp/htdocs/jindie/app/configurations/Login.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/twitter/autoload.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/twitter/src/TwitterOAuth.php",
+		"/D/Eu/Downloads/twitteroauth-0.5.3/twitteroauth-0.5.3/tests/TwitterOAuthTest.php",
+		"/D/Eu/Downloads/twitteroauth-0.5.3/twitteroauth-0.5.3/autoload.php",
+		"/D/Eu/Downloads/twitteroauth-0.5.3/twitteroauth-0.5.3/src/TwitterOAuth.php",
+		"/D/Eu/Downloads/twitteroauth-0.5.3/twitteroauth-0.5.3/tests/TokenTest.php",
+		"/D/Eu/Downloads/twitteroauth-0.5.3/twitteroauth-0.5.3/tests/AbstractSignatureMethodTest.php",
+		"/C/xampp/htdocs/jindie/.htaccess",
+		"/C/xampp/htdocs/jindie/system/core/ControllerFactory.php",
+		"/C/xampp/htdocs/jindie/system/core/JIndie.php",
+		"/C/xampp/htdocs/jindie/system/Errors.txt",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/login.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/class.php",
+		"/C/xampp/htdocs/jindie/system/core/Config.php",
+		"/C/xampp/htdocs/jindie/system/core/Controller.php",
+		"/C/xampp/htdocs/jindie/index.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/src/Google/Config.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/autoload.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/src/Google/Service/Oauth2.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/src/Google/Auth/OAuth2.php",
+		"/D/Eu/Downloads/google-api-php-client-0.6.7/google-api-php-client/src/auth/Google_OAuth2.php",
+		"/C/xampp/htdocs/jindie/system/libraries/LoginGooglePlus.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-api-php-client-master/src/Google/Service/Oauth2.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-api-php-client-master/src/Google/Client.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-login-api/src/Google_Client.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/includes/functions.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/config.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-webdevdummies/google-webdevdummies/googlesdk/src/Google_Client.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-webdevdummies/google-webdevdummies/googlesdk/src/config.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/account.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/index.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-webdevdummies/google-webdevdummies/index.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/src/config.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/error.php",
+		"/C/xampp/htdocs/jindie/system/core/Input.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Session.php",
+		"/C/xampp/htdocs/sorteiosb.git/application/libraries/Steam.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Login/ISocialLogin.php",
+		"/C/xampp/htdocs/jindie/app/logs/debug_2015-07-07.txt",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Log.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Teste.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/LoginFacebook.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Loader.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/debug_2015-07-07.txt",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/JIndie.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Config.php",
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/autoload.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Database.php",
+		"/C/xampp/htdocs/jindie/system/core/Loader.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/facebook-php-sdk-v4-4.0-dev/tests/FacebookRedirectLoginHelperTest.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/ISocialLogin.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Email.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Cookie.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Cache.php",
+		"/C/xampp/htdocs/jindie/system/core/bootstrap.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/FacebookRedirectLoginHelper.php",
+		"/C/xampp/htdocs/jindie/system/core/DefaultStructure.php",
+		"/C/xampp/htdocs/jindie/system/libraries/Upload.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/loader.php",
+		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/facebook-php-sdk-v4-4.0-dev/autoload.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/dbObject-orm.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/tests/model/user.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/tests/model/product.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/tests/examplo_dbObject.php",
+		"/C/xampp/htdocs/jindie/app/views/upload.php",
+		"/C/xampp/htdocs/jindie/system/core/Errors.php",
+		"/C/xampp/htdocs/jindie/system/core/Filter.php",
+		"/C/xampp/htdocs/jindie/system/core/Language.php",
+		"/C/xampp/htdocs/jindie/system/core/Log.php",
+		"/C/xampp/htdocs/carloswgama/system/libraries/Calendar.php",
+		"/C/xampp/htdocs/carloswgama/system/libraries/Cart.php",
+		"/C/xampp/htdocs/jindie/system/core/View.php",
+		"/C/xampp/htdocs/jindie/system/core/Model.php",
+		"/C/xampp/htdocs/jindie/system/core/Library.php",
+		"/C/xampp/htdocs/jindie/app/controllers/AbstractTeste.php",
+		"/C/xampp/htdocs/jindie/system/core/FilterFactory.php",
+		"/C/xampp/htdocs/carloswgama/system/core/Common.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/tests/examplo_mysqliDbTests.php",
+		"/C/xampp/htdocs/jindie/app/configurations/Database.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/database.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/form_validation.php",
+		"/C/xampp/htdocs/jindie/app/logs/debug_2015-07-03.txt",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/MysqliDb-pdo.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/tests/examplo_dbObject.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/dbObject-orm.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/tests/model/user.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/LICENSE",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/dbObject.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/MysqliDb.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/tests/example.php",
+		"/C/xampp/htdocs/carloswgama/system/database/drivers/mysql/mysql_result.php",
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/readme.md",
+		"/D/Eu/Downloads/edb-0.1.3/edb-0.1.3/edb-class/edb.class.php",
+		"/D/Eu/Downloads/edb-0.1.3/edb-0.1.3/example/example4.php",
+		"/C/xampp/htdocs/carloswgama/system/database/DB.php",
+		"/C/xampp/htdocs/carloswgama/system/database/DB_cache.php",
+		"/C/xampp/htdocs/carloswgama/system/database/DB_utility.php",
+		"/C/xampp/htdocs/carloswgama/system/database/DB_active_rec.php",
+		"/C/xampp/htdocs/jindie/app/logs/error_2015-07-02.txt",
+		"/C/xampp/htdocs/jindie/app/views/teste.php",
+		"/C/xampp/htdocs/jindie/system/language/pt-br/upload.php",
+		"/C/xampp/htdocs/jindie/app/logs/debug_2015-07-02.txt",
+		"/C/xampp/htdocs/jindie/app/configurations/General.php",
+		"/C/xampp/htdocs/jindie/app/views/form.php",
+		"/C/Users/Carlos/AppData/Local/Temp/Rar$DIa0.248/class.session.php",
+		"/C/xampp/htdocs/jindie/app/cache/teste.txt",
+		"/C/xampp/htdocs/carloswgama/application/.htaccess",
+		"/C/xampp/htdocs/carloswgama/system/.htaccess",
+		"/C/xampp/htdocs/jindie/app/.htaccess",
+		"/C/xampp/htdocs/jindie/app/logs/.htaccess",
+		"/C/xampp/htdocs/jindie/app/cache/.htaccess",
+		"/C/xampp/htdocs/jindie/system/.htaccess",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/cache variaveis/cache.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Session/Session.php",
+		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Cookie/class.cookie.php"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\jindie",
+			"C:\\xampp\\htdocs\\carloswgama\\system",
+			"D:\\Eu\\Downloads\\vraptor-4.1.4-distribution",
+			"C:\\xampp\\htdocs\\liaseal",
+			"D:\\Eu\\imagensLixo",
+			"C:\\xampp\\htdocs\\colecaoanimes\\application"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"data",
+			"redirectURL",
+			"redirectURLSteam",
+			"domain",
+			"Exception",
+			"consumerKey",
+			"facebook",
+			"ffacebook",
+			"objOAuthService",
+			"returnUrl",
+			"LightOpenID",
+			"mode",
+			"redirect_url ",
+			"create",
+			"private",
+			"ErrorInfo",
+			"$expiry",
+			"where(",
+			"charset",
+			"trace",
+			"_traceGetCaller",
+			"trace",
+			"traceStartQ",
+			"withTotalCount",
+			"count",
+			"get",
+			"columns",
+			"getOne",
+			"get(",
+			"where",
+			"<",
+			"\"<\"",
+			"_instance",
+			"Mysqlidb (",
+			"Mysqlidb",
+			"byId",
+			"createTable",
+			"get",
+			"GetOne",
+			"_buildLimit",
+			"_buildQuery",
+			"lang(",
+			"lang",
+			"setLanguage",
+			"langua",
+			"Config",
+			"Config::",
+			"setLanguage",
+			"langua",
+			"include",
+			"require",
+			"useragent",
+			"'%%'\"",
+			"$this->isPost",
+			"set_value",
+			"$errors",
+			"fields.get(i)",
+			"log",
+			"namespace",
+			"JI_",
+			"method_not_exist ",
+			"attr",
+			"controller",
+			"attribu",
+			"_ci_load",
+			"view",
+			"btn-warning",
+			"chat-comment",
+			"input-sm",
+			"input",
+			"();\n",
+			";",
+			"sortear",
+			"getSorteados",
+			"chaves",
+			"getParticipantes",
+			"perfil",
+			"getFin",
+			"btn-facebook",
+			"facebook",
+			"years",
+			"chaves_check",
+			"callback_chaves_check",
+			"ajustarDadosSorteios",
+			"papert",
+			"}\n",
+			"navbar-brand",
+			"navbar-brand ",
+			"inver",
+			"map",
+			"count",
+			"<script",
+			"btoa",
+			"get",
+			"cache",
+			"fieldset",
+			"options",
+			"index",
+			"icon-briefcase",
+			"getTotalUsuarioTipo",
+			"bannerTopo",
+			"getConfigHome",
+			"alert",
+			"text",
+			"large",
+			"content-grid",
+			"content",
+			"background",
+			"container",
+			".content",
+			"content",
+			"URL",
+			"400",
+			"bannerTopo",
+			"font-family: 'Gloria Hallelujah', cursive;",
+			"font-family",
+			"p",
+			"color",
+			"arrow",
+			"css",
+			"media",
+			"Reflections",
+			"CI_Model",
+			"get_instance",
+			"_ci_load_class",
+			"get_config",
+			"requestStartedEvent",
+			"pagamento_"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"protected",
+			"$this->input->isPost",
+			"$this->errors",
+			"$field['field']",
+			"Tradicional way",
+			"Game",
+			"SOMETIMES",
+			"Sometimes",
+			"YES",
+			"NO",
+			"SIM",
+			"pilha",
+			"valor_liquido",
+			"cursos-",
+			"'Aprendizado',",
+			"'Nota',",
+			"'Aprendizado',",
+			"objetiva",
+			"p.",
+			"'p. discursiva'",
+			"'Outros'",
+			"'Discussões'",
+			"'Seminário'",
+			"'Prova Oral'",
+			"'Prova objetiva'",
+			"'Prova Discursiva'",
+			"Outros,",
+			"Discussões,",
+			"Seminário,",
+			"Prova Oral,",
+			"Prova objetiva,",
+			"Prova Discursiva,",
+			"Outros",
+			"Discussões",
+			"Seminário",
+			"Prova Oral",
+			"Prova objetiva",
+			"",
+			"Prova Discursiva",
+			"",
+			"'Não'",
+			"'As vezes'",
+			"'sim'",
+			"<?=base_url('ferramentas/json')?>",
+			"inscricoes",
+			"inscricao",
+			"inscricoes",
+			"inscricao",
+			"inscricao_model",
+			"palestrante_model",
+			"programacao_model",
+			"pagina_model",
+			"configuracoes",
+			"apoio",
+			"programacao",
+			"palestrante",
+			"usuario_model",
+			"autor",
+			"autores",
+			"autor",
+			"autores",
+			"20",
+			"16",
+			"mangaka",
+			"ova",
+			"anime",
+			"manga",
+			"mítico",
+			"OVA",
+			"Mangá",
+			"OVA",
+			"mangá",
+			"titulo",
+			"autor",
+			"table1",
+			"usuario",
+			"livro",
+			"categoria",
+			"../images",
+			"(..images",
+			"mensagemID",
+			"$animacao",
+			"usuario",
+			"titulo",
+			"mangaka",
+			"mangakas",
+			"personagem",
+			"return",
+			"",
+			"/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "system/libraries/LoginFacebook.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2884,
+								2884
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 339.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "system/.htaccess",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Servidor",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								883,
+								883
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 456.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 250.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

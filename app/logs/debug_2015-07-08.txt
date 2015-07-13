@@ -1,0 +1,39 @@
+[DEBUG] --------- DEBUG COMEÇOU ---------
+[DEBUG] Level Errors - hard
+[DEBUG] Level Errors - hard
+[DEBUG] Charset - utf8
+[DEBUG] FILTER: Iniciando o filtro 'Admin'
+[DEBUG] INPUT: URL identificada: 'teste/login'
+[DEBUG] INPUT: Controller identifcado na URL: 'Teste'
+[DEBUG] INPUT: Método identificado na URL: 'login'
+[DEBUG] CONTROLLER: Iniciando o Controller 'Teste'
+
+[DEBUG] LOADER: Class 'Teste' está tentando carregar a Biblioteca 'loginFacebook'
+[DEBUG] LOGIN FACEBOOK: Setando as Credenciais: AppID(1607139926202193) e AppSecret(4c819f5df7db173807a9268f0f99f267)
+[DEBUG] SESSION: Sessão iniciada
+[DEBUG] LOADER: Biblioteca 'loginFacebook' carregada com o nome 'loginFacebook'
+
+[DEBUG] LOADER: Class 'Teste' está tentando carregar a Biblioteca 'loginGoogle'
+[DEBUG] LOGIN GOOGLE: Setando as Credenciais: clientID(148798204518-k2afl98od24nqoia0p6l534o40sh3ott.apps.googleusercontent.com) e clientSecret(bvKhqwC8sozuWxKadw7QsPg5)
+[DEBUG] LOADER: Biblioteca 'loginGoogle' carregada com o nome 'loginGoogle'
+
+[DEBUG] LOADER: Class 'Teste' está tentando carregar a Biblioteca 'loginTwitter'
+[DEBUG] LOGIN TWITTER: Setando as Credenciais: consumerKey(eR3iK35gIBpLSPSK0U5teUtS3) e consumerSecret(gu9RabP3nLKFHmyEiqiXMV5CahsfEh15TVIoUVonyIcDGLXusl)
+[DEBUG] LOADER: Biblioteca 'loginTwitter' carregada com o nome 'loginTwitter'
+
+[DEBUG] LOADER: Class 'Teste' está tentando carregar a Biblioteca 'loginSteam'
+[DEBUG] LOGIN STEAM: Setando as Credenciais: apiKey(76E9DC99F49A08A5BABA7CB23223098C) e domain(http://local.jindie.com.br/)
+[DEBUG] LOADER: Biblioteca 'loginSteam' carregada com o nome 'loginSteam'
+
+[DEBUG] LOGIN FACEBOOK: URL para login foi gerada (https://www.facebook.com/v2.3/dialog/oauth?client_id=1607139926202193&redirect_uri=http%3A%2F%2Flocal.jindie.com.br%2Fteste%2Ffacebook&state=0ebc5410365822f00716f76ca5b56e8a&sdk=php-sdk-4.0.23&scope=)
+
+[DEBUG] LOGIN GOOGLE: URL para login foi gerada (https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Flocal.jindie.com.br%2Fteste%2Fgoogle&client_id=148798204518-k2afl98od24nqoia0p6l534o40sh3ott.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=online&approval_prompt=auto)
+
+[DEBUG] LOGIN TWITTER: URL para login foi gerada (https://api.twitter.com/oauth/authorize?oauth_token=CecgbwAAAAAAgf0PAAABTm-lCLw)
+
+[DEBUG] LOGIN STEAM: URL para login foi gerada (https://steamcommunity.com/openid/login?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=checkid_setup&openid.return_to=http%3A%2F%2Flocal.jindie.com.br%2Fteste%2Fsteam&openid.realm=http%3A%2F%2Flocal.jindie.com.br&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select)
+
+[DEBUG] CONTROLLER: O método 'login' do controller 'Teste' foi executado (sem argumentos)
+[DEBUG] A página demorou: 1.8043 segundos
+[DEBUG] --------- DEBUG TERMINOU --------- 
+

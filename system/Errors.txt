@@ -1,0 +1,41 @@
+Errors
+	1 - class_not_exists 			// class
+	2 - method_fail					// class
+	3 - method_not_exists 			// class
+	4 - class_not_model 			// load
+	5 - model_not_exists 			// load 
+	6 - class_not_library			// load
+	7 - library_not_exists			// load
+	8 - database_conexao			// database
+	9 -	database_query				// database
+	10 - config_not_exists			//config
+	11 - facebook_credential		//facebook
+	12 - steam_credential			//steam
+	13 - twitter_credential			//Twitter
+	14 - google_credential			//google
+	15 - google login				//google 
+	16 -
+	17 -
+	18 -
+	19 -
+	20 -
+	21 -
+	22 -
+	23 -
+	24 -
+	25 -
+	26 -
+	27 -
+	28 -
+	29 -
+	30 -
+	31 -
+	32 -
+	33 - 
+	34 -
+	35 -
+	36 - 
+	37 -
+	38 -
+	39 -
+	40 -
