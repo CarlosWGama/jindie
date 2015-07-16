@@ -131,7 +131,12 @@ class Session {
 	* @param mix $value
 	*/
 	public function set($name, $value) {
-		$_SESSION[$name] = $value;
+		if (is_object($value)) {
+			$_SESSION[$name]['ji_is_obj'] = true;
+			$_SESSION[$name]['obj'] = serialize($value);
+		}
+		else
+			$_SESSION[$name] = $value;
 	}
 	
 	/**
@@ -139,7 +144,12 @@ class Session {
 	* @return mix
 	*/
 	public function get($name) {
-		return (isset($_SESSION[$name]) ? $_SESSION[$name] : null);
+		if (!isset($_SESSION[$name]))
+			return null;
+
+		if (isset($_SESSION[$name]['ji_is_obj']) && $_SESSION[$name]['ji_is_obj'] === true) 
+			return unserialize($_SESSION[$name]['obj']);
+		return $_SESSION[$name];
 	}
 	
 	/**

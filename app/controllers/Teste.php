@@ -90,13 +90,20 @@ class Teste extends Controller{
 	public function session($dados = false) {
 		$this->loadLibrary("session");
 
+
 		if ($dados == "exibir") {
 			echo "EXIBIR Sessão - " . $this->session->get("teste2");
+			$usuario = $this->session->get('usuario');
+			echo $usuario->getName();
 		} elseif ($dados == "deletar") {
 			$this->session->delete("teste2");
 			echo "Deletou";
 		} else {
-			$this->session->set("teste2", "teste");
+			//$this->session->set("teste2", "teste");
+
+			$usuario = new Usuario;
+			$usuario->setName("João");
+			$this->session->set('usuario', $usuario);
 			echo "SALVOU Sessão";
 		}		
 	}
@@ -194,5 +201,20 @@ class Teste extends Controller{
 
 		//print_r($this->loginSteam->getUserData());
 		print_r($this->loginSteam->getUserDataBySteamID('76561198079065891'));
+	}
+}
+
+
+class Usuario {
+
+	private $nome = 'Carlos';
+	public $idade = 24;
+
+	public function getName() {
+		return $this->nome;
+	}
+
+	public function setName($nome) {
+		$this->nome = $nome;
 	}
 }
