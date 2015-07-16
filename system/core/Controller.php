@@ -9,7 +9,7 @@
 * 	@version   1.0
 */
 
-require_once(dirname(__FILE__).'/View.php');
+require_once(__DIR__.'/View.php');
 
 /**
 * @abstract

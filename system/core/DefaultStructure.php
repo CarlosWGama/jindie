@@ -17,10 +17,26 @@ abstract class JI_DefaultStructure {
 	* @access private
 	* @var Loader
 	*/ 
-	private $loader;
+	private $loader = null;
+
+	protected $game = null;
 
 	public function __construct() {
 		$this->loader = new Loader();
+
+		if (file_exists(GAME_PATH.'/Game.php')) {
+			require_once(GAME_PATH.'/Game.php');
+			$this->game = new Game;
+			var_dump(is_subclass_of($this->game, "JIndie\Game\Game"));die;
+			if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
+				$this->game = null;
+		}
+
+		if ($this->game == null) {
+			require_once(GAME_JI_PATH.'/Game.php');
+			$this->game = new JIndie\Game\Game;
+		}
+
 	}
 
 	/**

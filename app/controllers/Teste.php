@@ -202,6 +202,12 @@ class Teste extends Controller{
 		//print_r($this->loginSteam->getUserData());
 		print_r($this->loginSteam->getUserDataBySteamID('76561198079065891'));
 	}
+
+	public function game() {
+		echo "Teste:";
+		echo var_dump(isset($this->game));
+		echo "AAA";
+	}
 }
 
 
