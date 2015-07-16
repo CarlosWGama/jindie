@@ -22,19 +22,20 @@ abstract class JI_DefaultStructure {
 	protected $game = null;
 
 	public function __construct() {
+		//Loader
 		$this->loader = new Loader();
 
-		if (file_exists(GAME_PATH.'/Game.php')) {
-			require_once(GAME_PATH.'/Game.php');
-			$this->game = new Game;
-			var_dump(is_subclass_of($this->game, "JIndie\Game\Game"));die;
-			if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
-				$this->game = null;
-		}
+		//Game
+		// if (file_exists(GAME_PATH.'/Game.php')) {
+		// 	require_once(GAME_PATH.'/Game.php');
+		// 	$this->game = Game::getInstance();
+		// 	if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
+		// 		$this->game = null;
+		// }
 
 		if ($this->game == null) {
 			require_once(GAME_JI_PATH.'/Game.php');
-			$this->game = new JIndie\Game\Game;
+			$this->game = JIndie\Game\Game::getInstance();
 		}
 
 	}
@@ -108,5 +109,13 @@ abstract class JI_DefaultStructure {
 
 		Log::message(Language::getMessage('log', 'debug_database_new_instance'), 2);
 		$this->{$name} = JI_Database::getInstance();	
+	}
+
+	/**
+	* Salva o Status atual da class Game, para novas requisições
+	*/
+	public function __destruct() {
+		$session = new Session;
+		$session->saveGame($this->game);
 	}
 }

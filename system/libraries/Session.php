@@ -158,4 +158,20 @@ class Session {
 	public function delete($name) {
 		unset($_SESSION[$name]);
 	}
+
+	/**
+	* Usado exclusivamente para salvar o Status da classe Game de uma requisição para outra
+	* @param Game $game
+	*/
+	public function saveGame($game) {
+		return $this->set('ji_object_game', $game);
+	}
+
+
+	/**
+	* @return Game
+	*/
+	public function loadGame() {
+		return $this->get('ji_object_game');
+	}
 }

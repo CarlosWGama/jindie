@@ -528,6 +528,15 @@
 			}
 		},
 		{
+			"file": "app/game/Game.php",
+			"settings":
+			{
+				"buffer_size": 77,
+				"line_ending": "Unix",
+				"name": "<?php"
+			}
+		},
+		{
 			"file": "app/controllers/Teste.php",
 			"settings":
 			{
@@ -547,7 +556,33 @@
 			"file": "system/game/Game.php",
 			"settings":
 			{
-				"buffer_size": 975,
+				"buffer_size": 1222,
+				"line_ending": "Unix",
+				"name": "<?php"
+			}
+		},
+		{
+			"file": "system/game/Score.php",
+			"settings":
+			{
+				"buffer_size": 21,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/game/Menu.php",
+			"settings":
+			{
+				"buffer_size": 25,
+				"line_ending": "Unix",
+				"name": "<?php"
+			}
+		},
+		{
+			"file": "system/game/Goal.php",
+			"settings":
+			{
+				"buffer_size": 23,
 				"line_ending": "Unix",
 				"name": "<?php"
 			}
@@ -564,7 +599,7 @@
 			"file": "system/core/DefaultStructure.php",
 			"settings":
 			{
-				"buffer_size": 2766,
+				"buffer_size": 2844,
 				"line_ending": "Windows"
 			}
 		},
@@ -628,11 +663,13 @@
 		"/var/www/jindie",
 		"/var/www/jindie/app",
 		"/var/www/jindie/app/controllers",
+		"/var/www/jindie/app/game",
 		"/var/www/jindie/system",
 		"/var/www/jindie/system/core"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/system/game/IArtefact.php",
 		"/var/www/jindie/system/core/JIndie.php",
 		"/var/www/jindie/system/core/bootstrap.php",
 		"/var/www/jindie/app/filters/Admin.php",
@@ -759,8 +796,7 @@
 		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/MysqliDb.php",
 		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/tests/example.php",
 		"/C/xampp/htdocs/carloswgama/system/database/drivers/mysql/mysql_result.php",
-		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/readme.md",
-		"/D/Eu/Downloads/edb-0.1.3/edb-0.1.3/edb-class/edb.class.php"
+		"/D/Eu/Downloads/PHP-MySQLi-Database-Class-master/PHP-MySQLi-Database-Class-master/readme.md"
 	],
 	"find":
 	{
@@ -1019,7 +1055,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1048,11 +1084,40 @@
 						"translation.y": 1145.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "app/game/Game.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 77,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "app/controllers/Teste.php",
 					"semi_transient": false,
 					"settings":
@@ -1077,11 +1142,11 @@
 						"translation.y": 2231.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "index.php",
 					"semi_transient": false,
 					"settings":
@@ -1105,24 +1170,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "system/game/Game.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 975,
+						"buffer_size": 1222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								880,
-								880
+								409,
+								418
 							]
 						],
 						"settings":
@@ -1130,15 +1195,101 @@
 							"auto_name": "<?php",
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 156.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
+					"file": "system/game/Score.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "system/game/Menu.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "system/game/Goal.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "system/core/Controller.php",
 					"semi_transient": false,
 					"settings":
@@ -1167,20 +1318,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 9,
 					"file": "system/core/DefaultStructure.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2766,
+						"buffer_size": 2844,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								473,
-								473
+								686,
+								686
 							]
 						],
 						"settings":
@@ -1192,11 +1343,11 @@
 						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "system/core/bootstrap.php",
 					"semi_transient": false,
 					"settings":
@@ -1220,7 +1371,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]

@@ -205,8 +205,10 @@ class Teste extends Controller{
 
 	public function game() {
 		echo "Teste:";
-		echo var_dump(isset($this->game));
-		echo "AAA";
+		//echo var_dump($this->game);
+		$this->game->getScore()->addPoints(10);	
+		echo "<br/>Pontos: " . $this->game->getScore()->getPoints();	
+		
 	}
 }
 
