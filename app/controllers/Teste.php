@@ -205,10 +205,60 @@ class Teste extends Controller{
 
 	public function game() {
 		echo "Teste:";
+
+		$menu = $this->getGameComponent('Menu');
+		var_dump($menu);die;
+
 		//echo var_dump($this->game);
+		//$this->game->oi();die;
+		$this->loadModel('jogo');
 		$this->game->getScore()->addPoints(10);	
-		echo "<br/>Pontos: " . $this->game->getScore()->getPoints();	
-		
+
+		$this->jogo->jogar();
+
+		echo "<br/>Pontos: " . $this->game->getScore()->getPoints();			
+	}
+
+	public function jogo($level) {
+		switch ($level) {
+			case "goal":
+				//$this->game->getGoal()->clearSteps();
+				// $this->game->getGoal()->setDescription('Lá vamos nós!');
+				// $this->game->getGoal()->addStep("Passo 1");
+				// $this->game->getGoal()->addStep("Passo 2");
+				// $this->game->getGoal()->addStep("Passo 3");
+				// $this->game->getGoal()->addStep("Passo 4");
+				// $this->game->getGoal()->addStep("Passo 5", true);
+				// $this->game->getGoal()->addStep("Passo 2.2", true, 2);
+
+				//$this->game->getGoal()->removeStep(1);
+				echo $this->game->getGoal()->getDescription() . '<br/>'; 
+				foreach ($this->game->getGoal()->getSteps() as $step)
+					echo $step['step'] . " (" . ($step['accomplished'] ?  "OK" : "Não") . ") " . '<br/>';
+				echo $this->game->getGoal()->getPercentage() . '%';
+				break;
+			case "menu":
+
+				$this->game->getMenu()->clearItens();
+
+				$menuItem = $this->game->getMenu()->createItem('Home1', '/home');
+				$menuSubItem = $this->game->getMenu()->createItem('SubHome1', '/home', true);
+				$menuSubItem->createSubItem('Sub', '/home2');
+				$menuItem->addItem($menuSubItem);
+				$this->game->getMenu()->addItem($menuItem);
+
+				$menuItem = $this->game->getMenu()->createItem('Home2', '/home');
+				$menuItem->createSubItem('Home2', '/home2');
+				$this->game->getMenu()->addItem($menuItem);
+
+				$menuItem = $this->game->getMenu()->createItem('Home3', '/home', true);
+				$menuItem->createSubItem('Home2', '/home2', true);
+				$this->game->getMenu()->addItem($menuItem);
+
+
+				$menu = $this->game->getMenu()->showMenu();
+				break;
+		}
 	}
 }
 

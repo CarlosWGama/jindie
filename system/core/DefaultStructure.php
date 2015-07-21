@@ -26,12 +26,13 @@ abstract class JI_DefaultStructure {
 		$this->loader = new Loader();
 
 		//Game
-		// if (file_exists(GAME_PATH.'/Game.php')) {
-		// 	require_once(GAME_PATH.'/Game.php');
-		// 	$this->game = Game::getInstance();
-		// 	if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
-		// 		$this->game = null;
-		// }
+		if (file_exists(GAME_PATH.'/Game.php')) {
+		 	require_once(GAME_PATH.'/Game.php');
+		 	$this->game = Game::getInstance();
+
+		 	if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
+		 		$this->game = null;
+		}
 
 		if ($this->game == null) {
 			require_once(GAME_JI_PATH.'/Game.php');
@@ -109,6 +110,19 @@ abstract class JI_DefaultStructure {
 
 		Log::message(Language::getMessage('log', 'debug_database_new_instance'), 2);
 		$this->{$name} = JI_Database::getInstance();	
+	}
+
+	protected function getGameComponent($component) {
+		$component = ucfirst($component);
+		if (file_exists(GAME_PATH.$component.'.php')) {
+			require_once(GAME_PATH.$component.'.php');
+			return new $component;
+		} else if (file_exists(GAME_JI_PATH.$component.'.php')) {
+			require_once(GAME_JI_PATH.$component.'.php');
+			$component = "JIndie\Game\\" . $component;
+			return new $component;
+		}
+		return null;
 	}
 
 	/**

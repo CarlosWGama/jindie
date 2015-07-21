@@ -1,9 +1,9 @@
 <?php
 
-//use JIndie\Game\Game as GameSuper;
+use JIndie\Game\Game as GameSuper;
 
-//class Game extends GameSuper {
-class Game {
+class Game extends GameSuper {
+//class Game {
 	
 
 	public function oi() {
