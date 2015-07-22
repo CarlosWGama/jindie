@@ -74,11 +74,14 @@ class Game {
 			$session = new \Session;
 			$game = $session->loadGame();
 			
-			if (!is_null($game))
+			if (!is_null($game)) {
 				self::$instance = $game;
+				\Log::message(\Language::getMessage('log', 'debug_game_load'), 2);
+			}
 			else {
 				$class = get_called_class();
 				self::$instance = new $class();
+				\Log::message(\Language::getMessage('log', 'debug_game_new', array('class_game' => $class)), 2);
 			}
 		}
 		return self::$instance;
@@ -91,7 +94,7 @@ class Game {
 	* @return string   | Apenas se $returnHTML == true
 	*/
 	public function showHUD($returnHTML = false) {
-		
+		Log::message(\Language::getMessage('log', 'debug_game_hud', array('return_html' => ($returnHTML ? "TRUE" : "FALSE"))), 2);
 		if ($returnHTML == true) {
 			ob_start();
 			include(VIEWS_PATH.'game/hud.php');
@@ -108,10 +111,15 @@ class Game {
 	* @param IArtifact $artifact
 	*/
 	public function setArtifact($artifact) {
-		if ($artifact instanceof IArtefact)
+		if ($artifact instanceof IArtefact) {
+			Log::message(\Language::getMessage('log', 'debug_game_artifact'), 2);
 			$this->artifact = $artifact;
-		else
-			throw new Exception();
+		}
+		else {
+			$msg = \Language::getMessage('error', 'game_not_artifact');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 16);
+		}
 	}
 
 	/**
@@ -127,10 +135,15 @@ class Game {
 	* @param Score $score
 	*/
 	public function setScore($score) {
-		if (is_subclass_of($score, 'JIndie\Game\Score'))
+		if (is_subclass_of($score, 'JIndie\Game\Score') || is_a($score, 'JIndie\Game\Score')) {
+			\Log::message(\Language::getMessage('log', 'debug_game_score'), 2); 
 			$this->score = $score;
-		else
-			throw new Exception();		
+		}
+		else {
+			$msg = \Language::getMessage('error', 'game_not_score');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 17);
+		}
 	}
 
 	/**
@@ -146,10 +159,15 @@ class Game {
 	* @param Goal $goal
 	*/
 	public function setGoal($goal) {
-		if (is_subclass_of($goal, 'JIndie\Game\Goal'))
+		if (is_subclass_of($goal, 'JIndie\Game\Goal') || is_a($goal, 'JIndie\Game\Goal')) {
+			\Log::message(Language::getMessage('log', 'debug_game_goal'), 2); 
 			$this->goal = $goal;
-		else
-			throw new Exception();		
+		}
+		else {
+			$msg = \Language::getMessage('error', 'game_not_goal');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 18);	
+		}
 	}
 
 	/**
@@ -167,14 +185,20 @@ class Game {
 	public function setScene($scene) {
 		if ($scene instanceof IScene) {
 			try {
+				\Log::message(\Language::getMessage('log', 'debug_game_scene_check'), 2); 
 				$scene->check();
 				$this->scene = $scene;	
+				\Log::message(\Language::getMessage('log', 'debug_game_scene'), 2); 
 			} catch (Exception $ex) {
+				\Log::message("GAME/Scene: " . $ex->getMessage(), 2);  
 				throw new Exception($ex->getMessage(), $ex->getCode());
 			}
 		}
-		else
-			throw new Exception();
+		else {
+			$msg = \Language::getMessage('error', 'game_not_scene');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 19);	
+		}
 	}
 
 	/**
@@ -190,10 +214,15 @@ class Game {
 	* @param Menu $menu
 	*/
 	public function setMenu($menu) {
-		if (is_subclass_of($menu, 'JIndie\Game\Menu'))
+		if (is_subclass_of($menu, 'JIndie\Game\Menu') || is_a($menu, 'JIndie\Game\Menu')) {
+			\Log::message(\Language::getMessage('log', 'debug_game_menu'), 2); 
 			$this->menu = $menu;
-		else
-			throw new Exception();		
+		}
+		else {
+			$msg = \Language::getMessage('error', 'game_not_menu');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 20);	
+		}
 	}
 
 	/**

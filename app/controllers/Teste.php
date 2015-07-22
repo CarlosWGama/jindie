@@ -222,41 +222,51 @@ class Teste extends Controller{
 	public function jogo($level) {
 		switch ($level) {
 			case "goal":
-				//$this->game->getGoal()->clearSteps();
-				// $this->game->getGoal()->setDescription('Lá vamos nós!');
-				// $this->game->getGoal()->addStep("Passo 1");
-				// $this->game->getGoal()->addStep("Passo 2");
-				// $this->game->getGoal()->addStep("Passo 3");
-				// $this->game->getGoal()->addStep("Passo 4");
-				// $this->game->getGoal()->addStep("Passo 5", true);
-				// $this->game->getGoal()->addStep("Passo 2.2", true, 2);
+				echo "GOAL<br/>";
+				$this->game->getGoal()->clearSteps();
+				$this->game->getGoal()->setDescription('Lá vamos nós!');
+				$this->game->getGoal()->addStep("Passo 1");
+				$this->game->getGoal()->addStep("Passo 2");
+				$this->game->getGoal()->addStep("Passo 3");
+				$this->game->getGoal()->addStep("Passo 4");
+				$this->game->getGoal()->addStep("Passo 5", true);
+				$this->game->getGoal()->addStep("Passo 2.2", true, 2);
 
-				//$this->game->getGoal()->removeStep(1);
+				$this->game->getGoal()->removeStep(1);
 				echo $this->game->getGoal()->getDescription() . '<br/>'; 
 				foreach ($this->game->getGoal()->getSteps() as $step)
 					echo $step['step'] . " (" . ($step['accomplished'] ?  "OK" : "Não") . ") " . '<br/>';
 				echo $this->game->getGoal()->getPercentage() . '%';
 				break;
 			case "menu":
-
+				echo "MENU<br/>";
 				$this->game->getMenu()->clearItens();
-
-				$menuItem = $this->game->getMenu()->createItem('Home1', '/home');
-				$menuSubItem = $this->game->getMenu()->createItem('SubHome1', '/home', true);
-				$menuSubItem->createSubItem('Sub', '/home2');
+				$menuItem = $this->game->getMenu()->createItem('Home1', '/home', false, true);
+				$menuSubItem = $this->game->getMenu()->createItem('SubHome1', '/home', true, true);
+				
+				$menuSubItem->createSubItem('Sub', '/home2', false, true);
 				$menuItem->addItem($menuSubItem);
 				$this->game->getMenu()->addItem($menuItem);
 
-				$menuItem = $this->game->getMenu()->createItem('Home2', '/home');
+				$menuItem = $this->game->getMenu()->createItem('Home2', '/home', false, true);
 				$menuItem->createSubItem('Home2', '/home2');
 				$this->game->getMenu()->addItem($menuItem);
 
-				$menuItem = $this->game->getMenu()->createItem('Home3', '/home', true);
+				$menuItem = $this->game->getMenu()->createItem('Home3', '/home', true, true);
 				$menuItem->createSubItem('Home2', '/home2', true);
 				$this->game->getMenu()->addItem($menuItem);
 
 
+				$this->game->getMenu()->createItem('Home4', '/home4', false);
+
+
 				$menu = $this->game->getMenu()->showMenu();
+				break;
+			case "score":
+				echo "SCORE<br/>";
+
+				
+
 				break;
 		}
 	}

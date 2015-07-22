@@ -63,10 +63,14 @@ class Goal {
 			'accomplished'		=> $accomplished
 		);
 		
-		if (is_int($position)) 
+		if (is_int($position)) {
+			\Log::message(\Language::getMessage('log', 'debug_game_goal_step_position', array('position' => $position)), 2);
 			array_splice($this->steps, $position, 0, array($step));
-		else
+		}
+		else {
+			\Log::message(\Language::getMessage('log', 'debug_game_goal_step'), 2);
 			$this->steps[] = $step;
+		}
 	}
 
 	/**
@@ -92,6 +96,8 @@ class Goal {
 				}
 			}
 		}
+
+		\Log::message(\Language::getMessage('log', 'debug_game_goal_step_complete', array('index' => $index)), 2);
 	}
 
 	/**
@@ -110,6 +116,8 @@ class Goal {
 			}
 		}
 		$this->steps = array_values($this->steps);
+
+		\Log::message(\Language::getMessage('log', 'debug_game_goal_step_remove', array('index' => $index)), 2);
 	}
 
 	/**
@@ -130,7 +138,9 @@ class Goal {
 		foreach ($this->steps as $key => $step)  
 			if ($step['accomplished'] === true)
 				$accomplished++;
-
-		return number_format((($accomplished * 100) / $total), 2, '.', '');
+		
+		if ($total > 0)
+			return number_format((($accomplished * 100) / $total), 2, '.', '');
+		return (double)0;
 	}
 }

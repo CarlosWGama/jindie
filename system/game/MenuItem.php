@@ -62,11 +62,16 @@ class MenuItem {
 	*/ 
 	public function addItem($item, $position = null) {
 		if (is_a($item, "JIndie\Game\MenuItem") || is_subclass_of($item, "JIndie\Game\MenuItem")) {
-			if (is_int($position)) 
+			if (is_int($position)) {
 				array_splice($this->childrenItens, $position, 0, $item);
-			else
+				\Log::message(\Language::getMessage('log', 'debug_game_item_subitem_position', array("ITEM" => $this->label, 'position' => $position)), 2);
+			}
+			else {
 				$this->childrenItens[] = $item;
-		}
+				\Log::message(\Language::getMessage('log', 'debug_game_item_subitem', array("ITEM" => $this->label)), 2);
+			}
+		} else 
+			throw new Exception(\Language::getMessage('error', 'game_not_menu_item'), 21);
 	}
 
 	/**
@@ -79,9 +84,13 @@ class MenuItem {
 		if (file_exists(GAME_PATH.'MenuItem.php')) {
 			require_once(GAME_PATH.'MenuItem.php');
 			$menu = new \MenuItem($label, $link, $newPage);
+
+			\Log::message(\Language::getMessage('log', 'debug_game_item_create_subitem', array("ITEM" => $this->label, "FROM" => "\MenuItem", "LABEL" => $label, "LINK" => $link, "NEW_PAGE" => $newPage, "RETURN_ITEM" => 0)), 2);
 		} else {
 			require_once(GAME_JI_PATH.'MenuItem.php');
 			$menu = new MenuItem($label, $link, $newPage);
+
+			\Log::message(\Language::getMessage('log', 'debug_game_item_create_subitem', array("ITEM" => $this->label, "FROM" => "JIndie\Game\MenuItem", "LABEL" => $label, "LINK" => $link, "NEW_PAGE" => $newPage, "RETURN_ITEM" => 0)), 2);
 		}
 		
 		$this->childrenItens[] = $menu;
@@ -95,6 +104,8 @@ class MenuItem {
 		if (is_int($position) && isset($this->childrenItens[$position]))  {
 			unset($this->childrenItens[$position]);
 			$this->childrenItens = array_values($this->childrenItens);
+
+			\Log::message(\Language::getMessage('log', 'debug_game_item_remove_subitem', array("ITEM" => $this->label, "INDEX" => $index, 'LABEL' => $label)), 2);
 		}
 	}
 

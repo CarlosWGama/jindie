@@ -50,11 +50,18 @@ class Menu {
 	*/
 	public function addItem($item, $position = null) {
 		if (is_a($item, "JIndie\Game\MenuItem") || is_subclass_of($item, "JIndie\Game\MenuItem")) {
-			if (is_int($position)) 
+			if (is_int($position)) {
 				array_splice($this->itens, $position, 0, $item);
-			else
+
+				\Log::message(\Language::getMessage('log', 'debug_game_menu_item_position', array('position' => $position)), 2);
+			}
+			else {
 				$this->itens[] = $item;
-		}
+
+				\Log::message(\Language::getMessage('log', 'debug_game_menu_item'), 2);
+			}
+		} else 
+			throw new Exception(\Language::getMessage('error', 'game_not_menu_item'), 21);
 	}
 
 	/**
@@ -72,11 +79,13 @@ class Menu {
 		if (file_exists(GAME_PATH.'MenuItem.php')) {
 			require_once(GAME_PATH.'MenuItem.php');
 			$menu = new \MenuItem($label, $link, $newPage);
+			\Log::message(\Language::getMessage('log', 'debug_game_menu_create_item', array("FROM" => "\MenuItem", "LABEL" => $label, "LINK" => $link, "NEW_PAGE" => $newPage, "RETURN_ITEM" => $returnItem)), 2);
 		} else {
 			$menu = new MenuItem($label, $link, $newPage);
+			\Log::message(\Language::getMessage('log', 'debug_game_menu_create_item', array("FROM" => "JIndie\Game\MenuItem", "LABEL" => $label, "LINK" => $link, "NEW_PAGE" => $newPage, "RETURN_ITEM" => $returnItem)), 2);
 		}
 
-		if ($returnItem == true)
+		if ($returnItem == true) 
 			return $menu;
 
 		$this->addItem($menu);
@@ -88,6 +97,7 @@ class Menu {
 	* @return string | Apenas se returnHTML == true
 	*/
 	public function showMenu($returnHTML = false) {
+		\Log::message(\Language::getMessage('log', 'debug_game_menu_create', array("RETURN_HTML" => $returnHTML)), 2);
 		$menu = $this->buildMenu($this->itens);
 		$menuClass = $this->class;
 		$menuID = $this->id;
@@ -139,8 +149,10 @@ class Menu {
 	*/
 	public function removeItem($index) {
 		if (is_int($position) && isset($this->itens[$position]))  {
+			$label = $this->itens[$position]['label'];
 			unset($this->itens[$position]);
 			$this->itens = array_values($this->itens);
+			\Log::message(\Language::getMessage('log', 'debug_game_menu_remove_item', array("INDEX" => $index, 'LABEL' => $label)), 2);
 		}
 	}
 

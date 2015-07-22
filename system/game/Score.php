@@ -14,10 +14,10 @@ namespace JIndie\Game;
 
 class Score {
 	
-	private $points = 0;
-	private $negativeScore = false;
-	private $hasGameOverOnZero = false;
-	private $gameOver = false;
+	protected $points = 0;
+	protected $negativeScore = false;
+	protected $hasGameOverOnZero = false;
+	protected $gameOver = false;
 
 	public function activeGameOver() {
 		$this->hasGameOverOnZero = true;
@@ -36,10 +36,33 @@ class Score {
 	}
 
 	public function setPoints($points) {
-		if (is_int($points) || is_double($points))
+		if ($this->checkGameOver()) {
+			\Log::message(\Language::getMessage('log', 'debug_game_gameover_change_points'), 2);
+			return;
+		}
+
+		$points + 0; //Converte String para numeral se possível
+		
+		if (is_numeric($points))
 			$this->points = $points;
-		else 
-			throw new Exception();
+		else {
+			$msg = \Language::getMessage('error', 'game_points_not_numeric');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 22);
+		}
+
+		//Game Over
+		if ($this->hasGameOverOnZero && $this->points <= 0) {
+			\Log::message(\Language::getMessage('log', 'debug_game_gameover'), 2);
+			$this->gameOver = true;
+		}
+
+		//Pontos negativos
+		if ($this->negativeScore == false && $this->points < 0) {
+			\Log::message(\Language::getMessage('log', 'debug_game_points_negative'), 2);
+			$this->points = 0;
+		}
+
 	}
 
 	public function getPoints() {
@@ -47,17 +70,60 @@ class Score {
 	}
 
 	public function addPoints($points) {
-		if (is_int($points) || is_double($points))
+		if ($this->checkGameOver()) {
+			\Log::message(\Language::getMessage('log', 'debug_game_gameover_change_points'), 2);
+			return;
+		}
+
+		$points + 0; //Converte String para numeral se possível
+		
+		if (is_numeric($points)) {
+			$points = abs($points);
 			$this->points += $points;
-		else 
-			throw new Exception();
+		} else {
+			$msg = \Language::getMessage('error', 'game_points_not_numeric');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 22);
+		}
 	}
 
 	public function removePoints($points) {
-		if (is_int($points) || is_double($points))
+		if ($this->checkGameOver()) {
+			\Log::message(\Language::getMessage('log', 'debug_game_gameover_change_points'), 2);
+			return;
+		}
+
+		$points + 0; //Converte String para numeral se possível
+		
+		if (is_numeric($points)) {
+			$points = abs($points);
 			$this->points -= $points;
-		else 
-			throw new Exception();
+		} else {
+			$msg = \Language::getMessage('error', 'game_points_not_numeric');
+			\Log::message($msg, 2);
+			throw new Exception($msg, 22);
+		}
+
+		//Game Over
+		if ($this->hasGameOverOnZero && $this->points <= 0) {
+			\Log::message(\Language::getMessage('log', 'debug_game_gameover'), 2);
+			$this->gameOver = true;
+		}
+
+		//Pontos Negativos
+		if ($this->negativeScore == false && $this->points < 0) {
+			\Log::message(\Language::getMessage('log', 'debug_game_points_negative'), 2);
+			$this->points = 0;
+		}
+	}
+
+	public function reset() {
+		$this->points = 0;
+		$this->gameOver = false;
+	}
+
+	public function resetGameOver() {
+		$this->gameOver = false;
 	}
 
 	public function checkGameOver() {

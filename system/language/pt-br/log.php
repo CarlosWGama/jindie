@@ -20,8 +20,8 @@ $language = array(
 	'debug_input_file'					=> "INPUT: Foram passado os seguintes dados como FILE: %DATA% ",
 
 	'debug_controller_start'			=> "CONTROLLER: Iniciando o Controller '%CONTROLLER%'",
-	'debug_controller_run'				=> "CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' foi executado (sem argumentos)",
-	'debug_controller_run_args'			=> "CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' foi executado com os argumentos: '%ARGS%'",
+	'debug_controller_run'				=> "CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' será executado (sem argumentos)",
+	'debug_controller_run_args'			=> "CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' será executado com os argumentos: '%ARGS%'",
 	'debug_controller_not_controller'	=> "CONTROLLER: A classe '%CONTROLLER%' não herda a classe Controller",
 	'debug_controller_not_exists'		=> "CONTROLLER: A classe '%CONTROLLER%' não existe",
 	'debug_controller_method_not_exists'=> "CONTROLLER: O metódo '%METHOD%' não existe na classe '%CONTROLLER%'",
@@ -75,6 +75,34 @@ $language = array(
 	'debug_twitter_get_url'				=> "LOGIN TWITTER: URL para login foi gerada (%URL%)",
 	'debug_twitter_get_data'			=> "LOGIN TWITTER: Foram recuperado os seguintes dados após login: %DATA%",
 
+	'debug_game_save'					=> "GAME: Objeto Game salvo",
+	'debug_game_new'					=> "GAME: Objeto '%CLASS_GAME%' criado (Novo)",
+	'debug_game_load'					=> "GAME: Objeto '%CLASS_GAME%' carregado (Já existente)",
+	'debug_game_hud'					=> "GAME: Exibindo HUD. (Retornar em forma de HTML: %RETURN_HTML%)",
+	'debug_game_artifact'				=> "GAME: novo artefato setado com sucesso",
+	'debug_game_score'					=> "GAME: novo score setado com sucesso",
+	'debug_game_goal'					=> "GAME: novo Goal setado com sucesso",
+	'debug_game_scene_check'			=> "GAME: Iniciando validação de Scene",
+	'debug_game_scene'					=> "GAME: nova Scene setada com sucesso",
+	'debug_game_scene'					=> "GAME: novo Menu setado com sucesso",
+
+	'debug_game_goal_step_position'		=> "GAME/GOAL: Nova etapa adicionada na posição %POSITION%",
+	'debug_game_goal_step'				=> "GAME/GOAL: Nova etapa adicionada no final do objetivo",
+	'debug_game_goal_step_complete'		=> "GAME/GOAL: Etapa (%INDEX%) concluída com sucesso",
+	'debug_game_goal_step_remove'		=> "GAME/GOAL: Etapa (%INDEX%) removida com sucesso",
+
+	'debug_game_menu_item_position'		=> "GAME/MENU: Novo item adicionado ao Menu na posição %POSITION%",
+	'debug_game_menu_item'				=> "GAME/MENU: Novo item adicionado ao final do Menu",
+	'debug_game_menu_create_item'		=> "GAME/MENU: Novo item criado (%FROM%) com os seguintes dados: Label '%LABEL%'; Link: '%LINK%'; Abrir em nova aba: '%NEW_PAGE%'",
+	'debug_game_menu_remove_item'		=> "GAME/MENU: Item '%LABEL%' de posição %INDEX% no menu removido com sucesso",
+	'debug_game_menu_create'			=> "GAME/MENU: Criando o Layout do Menu (Arquivo: app/views/game/Menu.php). Retornar html: %RETURN_HTML%",
+
+	'debug_game_item_subitem_position'	=> "GAME/MENUITEM: Novo subitem adicionado ao item '%ITEM%' na posição %POSITION%",
+	'debug_game_item_subitem'			=> "GAME/MENUITEM: Novo subitem adicionado ao final do item '%ITEM%'",
+	'debug_game_item_create_subitem'	=> "GAME/MENUITEM: Novo subitem criado (%FROM%) no item '%ITEM%' com os seguintes dados: Label '%LABEL%'; Link: '%LINK%'; Abrir em nova aba: '%NEW_PAGE%'",
+	'debug_game_item_remove_subitem'	=> "GAME/MENUITEM: Subitem '%LABEL%' de posição %INDEX% no item '%ITEM%' removido com sucesso",
+
+	'debug_game_gameover_change_points'	=> "GAME/SCORE: Não pode alterar a pontuação, pois já teve Game Over",
 
 
 );

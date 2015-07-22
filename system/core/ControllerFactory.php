@@ -53,14 +53,14 @@ final class ControllerFactory {
 			try {
 
 				if (empty($args)) { //Sem argumentos
+					Log::message(Language::getMessage('log', 'debug_controller_run', array('controller' => $nameController, 'method' => $method)), 2);
+					
 					call_user_func(array($controller, $method));
 
-					Log::message(Language::getMessage('log', 'debug_controller_run', array('controller' => $nameController, 'method' => $method)), 2);
-
 				} else { //Com argumentos
-					call_user_func_array(array($controller, $method), $args);
-					
 					Log::message(Language::getMessage('log', 'debug_controller_run_args', array('controller' => $nameController, 'method' => $method, 'args' => json_encode($args))), 2);
+					
+					call_user_func_array(array($controller, $method), $args);					
 				}
 			} catch (Exception $ex) {
 				Log::message(Language::getMessage('log', 'debug_controller_method_fail', array('method' => $method, 'controller' => $nameController, 'cause' => $ex->getMessage())), 2);

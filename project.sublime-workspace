@@ -8,6 +8,10 @@
 				"returnHTML"
 			],
 			[
+				"add",
+				"addItem"
+			],
+			[
 				"new",
 				"newPage"
 			],
@@ -510,15 +514,62 @@
 			[
 				"tipo",
 				"tipoUsuario"
-			],
-			[
-				"result",
-				"result_array"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "system/game/Game.php",
+			"settings":
+			{
+				"buffer_size": 4931,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/game/Menu.php",
+			"settings":
+			{
+				"buffer_size": 4867,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n$language = array(\n	'debug_start' 						=> \"DEBUG COMEÇOU\",\n	'debug_finish'						=> \"DEBUG TERMINOU\",\n	'debug_load_page'					=> \"A página demorou: %TIME% segundos\",\n	\n	'debug_filter'						=> \"FILTER: O filtro '%FILTER%' foi carregado\",\n	'debug_filter_start'				=> \"FILTER: Iniciando o filtro '%FILTER%'\",\n	'debug_filter_not_filter'			=> \"FILTER: A classe '%FILTER%' não herda a classe Filter\",\n	'debug_filter_fail'					=> \"FILTER: Não foi possível executar o filtro '%FILTER%'\",\n\n	'debug_input_url'					=> \"INPUT: URL identificada: '%URL%'\",\n	'debug_input_folder'				=> \"INPUT: Pastas dentro de Controller identificados na URL: '%FOLDER%'\",\n	'debug_input_controller'			=> \"INPUT: Controller identifcado na URL: '%CONTROLLER%'\",\n	'debug_input_method'				=> \"INPUT: Método identificado na URL: '%METHOD%'\",\n	'debug_input_args'					=> \"INPUT: Argumentos identificado na URL: '%ARGS%'\",\n	'debug_input_get'					=> \"INPUT: Foram passado os seguintes dados como GET: %DATA% \",\n	'debug_input_post'					=> \"INPUT: Foram passado os seguintes dados como POST: %DATA% \",\n	'debug_input_file'					=> \"INPUT: Foram passado os seguintes dados como FILE: %DATA% \",\n\n	'debug_controller_start'			=> \"CONTROLLER: Iniciando o Controller '%CONTROLLER%'\",\n	'debug_controller_run'				=> \"CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' foi executado (sem argumentos)\",\n	'debug_controller_run_args'			=> \"CONTROLLER: O método '%METHOD%' do controller '%CONTROLLER%' foi executado com os argumentos: '%ARGS%'\",\n	'debug_controller_not_controller'	=> \"CONTROLLER: A classe '%CONTROLLER%' não herda a classe Controller\",\n	'debug_controller_not_exists'		=> \"CONTROLLER: A classe '%CONTROLLER%' não existe\",\n	'debug_controller_method_not_exists'=> \"CONTROLLER: O metódo '%METHOD%' não existe na classe '%CONTROLLER%'\",\n	'debug_controller_method_fail'		=> \"CONTROLLER: Não foi possível executar o metódo '%METHOD%'. Causa: %CAUSE%\",\n\n	'debug_loader_model_try'			=> \"LOADER: Class '%CLASS%' está tentando carregar o Model '%MODEL%'\",\n	'debug_loader_model_load'			=> \"LOADER: Model '%MODEL%' carregado com o nome '%MODEL_NAME%'\",\n	'debug_loader_model_fail'			=> \"LOADER: Não foi possível carregar o Model '%MODEL%'\",\n\n	'debug_loader_library_try'			=> \"LOADER: Class '%CLASS%' está tentando carregar a Biblioteca '%LIBRARY%'\",\n	'debug_loader_library_load'			=> \"LOADER: Biblioteca '%LIBRARY%' carregada com o nome '%LIBRARY_NAME%'\",\n	'debug_loader_library_fail'			=> \"LOADER: Não foi possível carregar a Biblioteca '%LIBRARY%'\",\n\n	'debug_form_validation_start'		=> \"FORM VALIDATION: Iniciado validação do formulário com os campos: %FIELDS%\",\n	'debug_form_validation_sucess'		=> \"FORM VALIDATION: O formulário foi executado com sucessos\",\n	'debug_form_validation_error'		=> \"FORM VALIDATION: O formulário falhou na verificação. Erros: %ERROR%\",\n\n	'debug_email_start'					=> \"EMAIL: Iniciada tentativa de enviar email usando protocolo %PROTOCOL%\",\n	'debug_email_to'					=> \"EMAIL: Enviando email para: %TO%\",\n	'debug_email_success'				=> \"EMAIL: Email enviado com sucesso\",\n	'debug_email_error'					=> \"EMAIL: Não foi possível enviar email. Erro: %ERROR%\",\n	'debug_email_debug'					=> \"EMAIL: Email Debug: %DEBUG%\",\n\n	'debug_session_start'				=> \"SESSION: Sessão iniciada\",\n	'debug_session_regenerate'			=> \"SESSION: Sessão renovada\",\n	'debug_session_prevent_hijacking'	=> \"SESSION: Sessão será regerada para evitar Hijacking\",\n	'debug_session_validate_fail'		=> \"SESSION: Sessão obsoleta, descartada\",\n\n	'debug_cache_set'					=> \"CACHE: Salvando dados em cache %DATA%\",\n	'debug_cache_get'					=> \"CACHE: Tentando recuperar os dados em cache no arquivo '%FILE%'\",\n	'debug_cache_get_expiry'			=> \"CACHE: Não foi possível recuperar os dados. Cache expirou em %EXPIRY%\",\n	'debug_cache_get_success'			=> \"CACHE: Dados recuperado com sucesso. Dados %DATA%\",\n	'debug_cache_file_not_exists'		=> \"CACHE: Não existe nenhum arquivo em '%FILE%'\",\n\n	'debug_database_old_instance'		=> \"DATABASE: Variavel de banco iniciado com Instância já ativa\",\n	'debug_database_new_instance'		=> \"DATABASE: Variavel de banco iniciado com nova Instância\",\n\n	'debug_facebook_set_credentials'	=> \"LOGIN FACEBOOK: Setando as Credenciais: AppID(%APPID%) e AppSecret(%APPSECRET%)\",\n	'debug_facebook_get_url'			=> \"LOGIN FACEBOOK: URL para login foi gerada (%URL%)\",\n	'debug_facebook_get_data'			=> \"LOGIN FACEBOOK: Foram recuperado os seguintes dados após login: %DATA%\",\n	\n	'debug_google_set_credentials'		=> \"LOGIN GOOGLE: Setando as Credenciais: clientID(%CLIENTID%) e clientSecret(%CLIENTSECRET%)\",\n	'debug_google_get_url'				=> \"LOGIN GOOGLE: URL para login foi gerada (%URL%)\",\n	'debug_google_get_data'				=> \"LOGIN GOOGLE: Foram recuperado os seguintes dados após login: %DATA%\",\n\n	'debug_steam_set_credentials'		=> \"LOGIN STEAM: Setando as Credenciais: apiKey(%APIKEY%) e domain(%DOMAIN%)\",\n	'debug_steam_get_url'				=> \"LOGIN STEAM: URL para login foi gerada (%URL%)\",\n	'debug_steam_get_data'				=> \"LOGIN STEAM: Foram recuperado os seguintes dados após login: %DATA%\",\n\n	'debug_twitter_set_credentials'		=> \"LOGIN TWITTER: Setando as Credenciais: consumerKey(%CONSUMERKEY%) e consumerSecret(%CONSUMERSECRET%)\",\n	'debug_twitter_get_url'				=> \"LOGIN TWITTER: URL para login foi gerada (%URL%)\",\n	'debug_twitter_get_data'			=> \"LOGIN TWITTER: Foram recuperado os seguintes dados após login: %DATA%\",\n\n	'debug_game_save'					=> \"GAME: Objeto Game salvo\",\n	'debug_game_new'					=> \"GAME: Objeto '%CLASS_GAME%' criado (Novo)\",\n	'debug_game_load'					=> \"GAME: Objeto '%CLASS_GAME%' carregado (Já existente)\",\n	'debug_game_hud'					=> \"GAME: Exibindo HUD. (Retornar em forma de HTML: %RETURN_HTML%)\",\n	'debug_game_artifact'				=> \"GAME: novo artefato setado com sucesso\",\n	'debug_game_score'					=> \"GAME: novo score setado com sucesso\",\n	'debug_game_goal'					=> \"GAME: novo Goal setado com sucesso\",\n	'debug_game_scene_check'			=> \"GAME: Iniciando validação de Scene\",\n	'debug_game_scene'					=> \"GAME: nova Scene setada com sucesso\",\n	'debug_game_scene'					=> \"GAME: novo Menu setado com sucesso\",\n\n	'debug_game_goal_step_position'		=> \"GAME/GOAL: Nova etapa adicionada na posição %POSITION%\",\n	'debug_game_goal_step_goal'			=> \"GAME/GOAL: Nova etapa adicionada no final do objetivo\",\n	'debug_game_goal_step_complete'		=> \"GAME/GOAL: Etapa (%INDEX%) concluída com sucesso\",\n	'debug_game_goal_step_remove'		=> \"GAME/GOAL: Etapa (%INDEX%) removida com sucesso\",\n\n	'debug_game_menu_item_position'		=> \"GAME/MENU: Novo item adicionado ao Menu na posição %POSITION%\",\n	'debug_game_menu_item'				=> \"GAME/MENU: Novo item adicionado ao final do Menu\",\n	'debug_game_menu_create_item'		=> \"GAME/MENU: Novo item criado (%FROM%) com os seguintes dados: Label '%LABEL%'; Link: '%LINK%'; Abrir em nova aba: '%NEW_PAGE%'\",\n	'debug_game_menu_remove_item'		=> \"GAME/MENU: Item '%LABEL%' de posição %INDEX% no menu removido com sucesso\",\n	'debug_game_menu_create'			=> \n\n\n);\n",
+			"file": "system/language/pt-br/log.php",
+			"file_size": 7040,
+			"file_write_time": 130820660429086556,
+			"settings":
+			{
+				"buffer_size": 6917,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/carlos/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/SublimePlugin/Tutorial.txt",
+			"settings":
+			{
+				"buffer_size": 745,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "system/game/MenuItem.php",
+			"settings":
+			{
+				"buffer_size": 3383,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/Teste.php",
+			"settings":
+			{
+				"buffer_size": 9159,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -527,7 +578,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
@@ -548,7 +599,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 416.0
+		"width": 440.0
 	},
 	"console":
 	{
@@ -570,29 +621,31 @@
 	[
 		"/var/www/jindie",
 		"/var/www/jindie/app",
-		"/var/www/jindie/app/controllers",
-		"/var/www/jindie/app/game",
-		"/var/www/jindie/app/models",
-		"/var/www/jindie/app/views",
 		"/var/www/jindie/app/views/game",
 		"/var/www/jindie/system",
 		"/var/www/jindie/system/core",
 		"/var/www/jindie/system/game",
+		"/var/www/jindie/system/language",
+		"/var/www/jindie/system/language/pt-br",
 		"/var/www/jindie/system/libraries"
 	],
 	"file_history":
 	[
-		"/var/www/jindie/system/game/Game.php",
-		"/var/www/jindie/system/game/Menu.php",
-		"/var/www/jindie/system/game/MenuItem.php",
-		"/var/www/jindie/system/core/bootstrap.php",
-		"/var/www/jindie/system/game/IScene.php",
+		"/var/www/jindie/system/core/DefaultStructure.php",
+		"/var/www/jindie/system/game/Goal.php",
+		"/var/www/jindie/system/language/pt-br/error.php",
+		"/var/www/jindie/system/Errors.txt",
+		"/var/www/jindie/system/core/Config.php",
 		"/var/www/jindie/app/controllers/Teste.php",
+		"/var/www/jindie/system/game/Menu.php",
+		"/var/www/jindie/app/configurations/AutoLoad.php",
+		"/var/www/jindie/system/core/bootstrap.php",
+		"/var/www/jindie/system/game/Game.php",
+		"/var/www/jindie/system/game/MenuItem.php",
+		"/var/www/jindie/system/game/IScene.php",
 		"/var/www/jindie/app/views/game/Menu.php",
 		"/var/www/jindie/system/libraries/Session.php",
-		"/var/www/jindie/system/core/DefaultStructure.php",
 		"/home/carlos/Downloads/dynamic_menu/index.php",
-		"/var/www/jindie/system/game/Goal.php",
 		"/home/carlos/Downloads/dynamic_menu/styles.css",
 		"/var/www/jindie/system/game/SceneMap.php",
 		"/var/www/jindie/system/libraries/CodeReader.php",
@@ -705,15 +758,11 @@
 		"/D/Eu/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/Database Class/PHP-MySQLi-Database-Class-master/tests/examplo_dbObject.php",
 		"/C/xampp/htdocs/jindie/app/views/upload.php",
 		"/C/xampp/htdocs/jindie/system/core/Errors.php",
-		"/C/xampp/htdocs/jindie/system/core/Filter.php",
-		"/C/xampp/htdocs/jindie/system/core/Language.php",
-		"/C/xampp/htdocs/jindie/system/core/Log.php",
-		"/C/xampp/htdocs/carloswgama/system/libraries/Calendar.php",
-		"/C/xampp/htdocs/carloswgama/system/libraries/Cart.php"
+		"/C/xampp/htdocs/jindie/system/core/Filter.php"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -733,6 +782,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Excep",
+			"die",
 			"id",
 			"cssmenu",
 			"<?=$menuID?>",
@@ -858,9 +909,7 @@
 			"arrow",
 			"css",
 			"media",
-			"Reflections",
-			"CI_Model",
-			"get_instance"
+			"Reflections"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -969,8 +1018,182 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "system/game/Game.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4931,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2410,
+								2410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1071.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "system/game/Menu.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2862,
+								2862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 48.0,
+						"translation.y": 884.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "system/language/pt-br/log.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6911,
+								6911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 780.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/carlos/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/SublimePlugin/Tutorial.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "system/game/MenuItem.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1582,
+								1582
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/controllers/Teste.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8953,
+								8953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],

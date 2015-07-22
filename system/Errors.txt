@@ -14,13 +14,13 @@ Errors
 	13 - twitter_credential			//Twitter
 	14 - google_credential			//google
 	15 - google login				//google 
-	16 -
-	17 -
-	18 -
-	19 -
-	20 -
-	21 -
-	22 -
+	16 - game_not_artifact			//Game
+	17 - game_not_score				//Game
+	18 - game_not_goal				//Game
+	19 - game_not_scene				//Game
+	20 - game_not_menu				//Game
+	21 - game_not_menu_item			//Game
+	22 - game_points_not_numeric	//Game
 	23 -
 	24 -
 	25 -

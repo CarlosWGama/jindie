@@ -131,5 +131,6 @@ abstract class JI_DefaultStructure {
 	public function __destruct() {
 		$session = new Session;
 		$session->saveGame($this->game);
+		Log::message(Language::getMessage('log', 'debug_game_save'), 2);
 	}
 }
