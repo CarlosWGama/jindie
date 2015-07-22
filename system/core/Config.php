@@ -37,4 +37,20 @@ class Config {
 		return null;
 	}
 
+	public static function autoLoad() {
+		$config = self::getConfiguration('autoLoad');
+
+		foreach ($config as $type => $classes) {
+
+			foreach ($classes as $class) {
+				switch($type) {
+					case "Game":
+						if (file_exists(GAME_PATH.$class.'.php'))
+							require_once(GAME_PATH.$class.'.php');
+						break;
+				}
+			}
+		}
+	}
+
 }

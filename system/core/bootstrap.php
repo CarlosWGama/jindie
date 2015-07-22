@@ -17,6 +17,7 @@ define('APP_PATH', dirname(__FILE__).'/../../app/');
 
 //Require
 require_once(dirname(__FILE__).'/../game/Game.php');
+require_once(dirname(__FILE__).'/Config.php');
 require_once(dirname(__FILE__).'/Log.php');
 require_once(dirname(__FILE__).'/Input.php');
 require_once(dirname(__FILE__).'/DefaultStructure.php');
@@ -29,6 +30,7 @@ require_once(dirname(__FILE__).'/Errors.php');
 require_once(dirname(__FILE__).'/ControllerFactory.php');
 require_once(dirname(__FILE__).'/FilterFactory.php');
 require_once(dirname(__FILE__).'/../utils/WordUtil.php');
-require_once(dirname(__FILE__).'/Config.php');
 require_once(dirname(__FILE__).'/../libraries/login/ISocialLogin.php');
 
+//
+Config::autoLoad();
