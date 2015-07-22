@@ -60,19 +60,26 @@ class Menu {
 	/**
 	* Cria um MenuItem
 	* @access public
+	* @uses $this->game->getMenu()->createItem('Home', '/home'); 
+	* @uses $item =  $this->game->getMenu()->createItem('Home', '/home', false, true);
 	* @param string $label
 	* @param string $link
 	* @param bool $newPage | Se abrirá em uma nova página ou na atual
+	* @param bool $returnItem | Retorna o item (true) ou o adiciona no final (false)
 	* @return MenuItem
 	*/
-	public function createItem($label, $link, $newPage = false) {
+	public function createItem($label, $link, $newPage = false, $returnItem = false) {
 		if (file_exists(GAME_PATH.'MenuItem.php')) {
 			require_once(GAME_PATH.'MenuItem.php');
 			$menu = new \MenuItem($label, $link, $newPage);
 		} else {
 			$menu = new MenuItem($label, $link, $newPage);
 		}
-		return $menu;
+
+		if ($returnItem == true)
+			return $menu;
+
+		$this->addItem($menu);
 	}
 
 	/**

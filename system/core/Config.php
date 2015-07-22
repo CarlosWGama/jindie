@@ -37,6 +37,9 @@ class Config {
 		return null;
 	}
 
+	/**
+	* Usado para carregar automaticamente algumas classes
+	*/
 	public static function autoLoad() {
 		$config = self::getConfiguration('autoLoad');
 
