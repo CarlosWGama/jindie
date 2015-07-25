@@ -4,8 +4,12 @@
 		"selected_items":
 		[
 			[
+				"messa",
+				"messageID"
+			],
+			[
 				"link",
-				"linkReload"
+				"linkSubmit"
 			],
 			[
 				"time",
@@ -510,56 +514,24 @@
 			[
 				"data",
 				"dataInicial"
-			],
-			[
-				"inscri",
-				"inscrito"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "system/libraries/Chat.php",
+			"file": "system/language/pt-br/log.php",
 			"settings":
 			{
-				"buffer_size": 1478,
-				"line_ending": "Unix",
-				"name": "<?php"
-			}
-		},
-		{
-			"file": "app/views/library/chat.php",
-			"settings":
-			{
-				"buffer_size": 4165,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/carlos/.cache/.fr-7QecoA/jindie/WebContent/assets/css/chat.css",
-			"settings":
-			{
-				"buffer_size": 2364,
+				"buffer_size": 8640,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/home/carlos/.cache/.fr-OH3x7X/jindie/WebContent/game/includes/chat.jsp",
+			"file": "system/core/bootstrap.php",
 			"settings":
 			{
-				"buffer_size": 1771,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nclass Teste extends Controller{\n\n\n	public function __construct() {\n		parent::__construct();\n	}\n\n	public function index() {\n		//Load Library//\n		//$this->loadLibrary('formValidation');\n		//$this->formValidation->check();\n\n		//$this->loadLibrary('lib');\n		//$this->lib->check();\n\n		//Load Model//\n		//$this->loadModel(\"jogo\", 'teste');\n		//$this->teste->jogar();\n\n		//View teste//\n		//$dados['msg'] = 'nome';\n		//$this->view->render('teste', $dados);\n		die($this->input->get(\"teste\"));\n	}\n\n	public function form() {\n		$this->loadLibrary('formValidation');\n		$dados['errors'] = array();\n		if ($this->input->post('enviar')) {\n			$this->formValidation->addRule('required', 'REQUIRED', 'required');\n			$this->formValidation->addRule('match', 'MATCH', 'matches[required]');\n			$this->formValidation->addRule('min_length', 'MIN LENGTH', 'minLength[3]');\n			$this->formValidation->addRule('max_length', 'MAX LENGTH', 'maxLength[3]');\n			$this->formValidation->addRule('exac_length', 'EXA LENGTH', 'exactLength[3]');\n			$this->formValidation->addRule('max_value', 'MAX VALUE', 'maxValue[3]');\n			$this->formValidation->addRule('max_value', 'MAX VALUE', 'minValue[3]');\n			$this->formValidation->addRule('exa_value', 'EXA VALUE', 'exactValue[3]');\n			$this->formValidation->addRule('number', 'Number', 'numeric');\n			$this->formValidation->addRule('integer', 'Integer', 'integer');\n			$this->formValidation->addRule('email', 'EMAIL', 'email;unique[usuarios.email(id,1)]');\n			$this->formValidation->addRule('cpf', 'CPF', 'cpf');\n			$this->formValidation->addRule('cnpj', 'CNPJ', 'cnpj');\n			$this->formValidation->addRule('arquivo', 'FILE', 'fileRequired;fileExt[doc, png];fileMaxSize[0.5]');\n			\n			//'fileRequired'	\n			//'fileExt'\n			//'fileMaxSize'\n\n			if ($this->formValidation->check()) {\n				echo htmlspecialchars_decode($this->input->post(\"required\"));\n			} else {\n				$dados['errors'] = $this->formValidation->getErrors();\n			}\n		}\n		$this->view->render('form', $dados);\n	}\n\n	public function email() {\n		$this->loadLibrary('email');\n\n		$this->email->subject = \"Teste\";\n		$this->email->msg = \"<strong>Test</strong>e\";\n 		$this->email->setFrom('carlos@jogosindie.com', 'Carlos');\n		$this->email->addTo('carloswgama@gmail.com', 'Carlos 2');\n		$this->email->addAttachment(dirname(__FILE__).'/../../index.php', 'arquivo');\n\n		if ($this->email->send())\n			echo \"Sucesso\";\n		else\n			echo \"Faio\";\n	}\n\n	public function cookie($dados = false) {\n		$this->loadLibrary(\"cookie\");\n\n		$this->cookie->setExpiry('day');\n		if ($dados == \"exibir\") {\n			echo \"EXIBIR COOKIE - \" . $this->cookie->get(\"teste\");\n		} elseif ($dados == \"deletar\") {\n			$this->cookie->delete(\"teste\");\n			echo \"Deletou\";\n		} else {\n			$this->cookie->set(\"teste\", \"teste\");\n			echo \"SALVOU COOKIE\";\n		}		\n	}\n\n	public function session($dados = false) {\n		$this->loadLibrary(\"session\");\n\n\n		if ($dados == \"exibir\") {\n			echo \"EXIBIR Sessão - \" . $this->session->get(\"teste2\");\n			$usuario = $this->session->get('usuario');\n			echo $usuario->getName();\n		} elseif ($dados == \"deletar\") {\n			$this->session->delete(\"teste2\");\n			echo \"Deletou\";\n		} else {\n			//$this->session->set(\"teste2\", \"teste\");\n\n			$usuario = new Usuario;\n			$usuario->setName(\"João\");\n			$this->session->set('usuario', $usuario);\n			echo \"SALVOU Sessão\";\n		}		\n	}\n\n	public function cache() {\n		$this->loadLibrary('cache');\n\n		if ($var = $this->cache->get('teste')) {\n			echo $var;\n		} else {\n			$this->cache->set('teste', 'casa');\n		}\n	}\n\n	public function upload() {\n		if ($this->input->post('enviar')) {\n			$this->loadLibrary('upload');\n\n			$dir = $_SERVER['DOCUMENT_ROOT']. '/upload';\n			//if($this->upload->doUpload('arquivo')) 					//OK\n			//if($this->upload->doUpload('arquivo', $dir)) 				//OK\n			//if($this->upload->doUpload('arquivo', $dir, 'imagem')) 	//OK\n			/*if($this->upload->doUpload('arquivo', $dir, 'imagem', true))//OK\n				echo \"SUCESSO<br/>\";\n			else\n				echo $this->upload->getError();*/\n\n			if($this->upload->doMultiUpload('arquivos', $dir, array('imagem1', 'imagem2')))//OK\n				echo \"SUCESSO<br/>\";\n			else\n				echo $this->upload->getError();\n		}\n\n		$this->view->render('upload');\n	}\n\n	public function database() {\n		$this->loadDatabase('banco');\n		print_r($this->banco->getOne(\"usuarios\"));\n		echo \"OK!\";\n	}\n\n	public function login() {\n		$this->loadLibrary('loginFacebook');\n		$this->loadLibrary('loginGoogle');\n		$this->loadLibrary('loginTwitter');\n		$this->loadLibrary('loginSteam');\n		\n\n		$url['facebook'] 	= $this->loginFacebook->getURLLogin();\n		$url['google'] 		= $this->loginGoogle->getURLLogin();\n		$url['twitter'] 	= $this->loginTwitter->getURLLogin();\n		$url['steam'] 		= $this->loginSteam->getURLLogin();\n		\n		print_r($url);\n\n		//header(\"Location: \" . $urlGoogle);\n		\n		echo '[FIM]';\n	}\n\n	public function facebook() {\n		$this->loadLibrary('loginFacebook');\n		print_r($this->loginFacebook->getUserData());\n	}	\n\n	public function google() {\n		$this->loadLibrary('loginGoogle');\n		print_r($this->loginGoogle->getUserData());	\n\n		//$acessToken = '{\"access_token\":\"ya29.qgGKBL0qyy4EH3SdWcMnnwLt--fVcwFMlTBWsy9yMJ2nhaw7rTSUiFbyS1bsrKef2-ULNgF97DvFYw\",\"token_type\":\"Bearer\",\"expires_in\":3596,\"id_token\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjOGEzMTkyN2FmMjA4NjA0MThmNmIyMjMxYmJmZDdlYmNjMDQ2NjUifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwic3ViIjoiMTE0NjAzNDU2MzkzMjc2MDcyNDAxIiwiYXpwIjoiMTQ4Nzk4MjA0NTE4LWsyYWZsOThvZDI0bnFvaWEwcDZsNTM0bzQwc2gzb3R0LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJjYXJsb3N3Z2FtYUBnbWFpbC5jb20iLCJhdF9oYXNoIjoiMy1PX1ZOOURPM3hDZkhnRGI0d2lQZyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdWQiOiIxNDg3OTgyMDQ1MTgtazJhZmw5OG9kMjRucW9pYTBwNmw1MzRvNDBzaDNvdHQuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJpYXQiOjE0MzYzODAyNTYsImV4cCI6MTQzNjM4Mzg1Nn0.KNsRtdaRC6Yh0fpvaxqf2lth10_IzuZupx2UrdWgpRfaR5_KelT9BlXRsUfqtRdGl4z0z9BqqaSCpL1OdFdmFNWayeMTBcA3yVlWYbPKvZ_P6X0bSzPsHb308LKQUCiP_kCq4ed3Bc8pTthcf5uW_HrC-73HJeXVtwxHotTUejaAX2D-x8JO03ZYznQA6umCwEsqRaD3Pro0iigZuSYAA5ZmXD_DLKE4WPL9MGmsZad0e9yXPHoF6VyYOLdBC33iG0MaGAbAj2BMcT162XXHcS2klGeQE-UC7gFoscP3HLBf6RHrtwOfCiKlGldb9JR7-gzpsG9AEyimJORRo5CzDg\",\"created\":1436380256}';\n\n		//print_r($this->loginGoogle->getUserDataByAccessToken($acessToken));\n	}\n\n	public function twitter() {\n		$this->loadLibrary('loginTwitter');\n\n\n		print_r($this->loginTwitter->getUserData());\n\n		/*$accessToken = Array (\n			'oauth_token' 			=> '2612061025-7gSiTPYYiHexS1lcgsiZA7puq71pH01WMBr3fog',\n			'oauth_token_secret' 	=> 'BvJKu6Caj4Y9zUttGoXUQWv6xY7P5Uf2IvyHvqr4AeDiN',\n			'user_id' 				=> '2612061025',\n			'screen_name' 			=> 'blogjogosindie',\n			'x_auth_expires' 		=> 0);\n		\n		print_r($this->loginTwitter->getUserDataByAccessToken($accessToken));\n		*/\n	}\n\n	public function steam() {\n		$this->loadLibrary('loginSteam');\n\n		//print_r($this->loginSteam->getUserData());\n		print_r($this->loginSteam->getUserDataBySteamID('76561198079065891'));\n	}\n\n	public function game() {\n		echo \"Teste:\";\n\n		$menu = $this->getGameComponent('Menu');\n		var_dump($menu);die;\n\n		//echo var_dump($this->game);\n		//$this->game->oi();die;\n		$this->loadModel('jogo');\n		$this->game->getScore()->addPoints(10);	\n\n		$this->jogo->jogar();\n\n		echo \"<br/>Pontos: \" . $this->game->getScore()->getPoints();			\n	}\n\n	public function jogo($level = \"default\") {\n		switch ($level) {\n			case \"goal\":\n				echo \"GOAL<br/>\";\n				$this->game->getGoal()->clearSteps();\n				$this->game->getGoal()->setDescription('Lá vamos nós!');\n				$this->game->getGoal()->addStep(\"Passo 1\");\n				$this->game->getGoal()->addStep(\"Passo 2\");\n				$this->game->getGoal()->addStep(\"Passo 3\");\n				$this->game->getGoal()->addStep(\"Passo 4\");\n				$this->game->getGoal()->addStep(\"Passo 5\", true);\n				$this->game->getGoal()->addStep(\"Passo 2.2\", true, 2);\n\n				$this->game->getGoal()->removeStep(1);\n				echo $this->game->getGoal()->getDescription() . '<br/>'; \n				foreach ($this->game->getGoal()->getSteps() as $step)\n					echo $step['step'] . \" (\" . ($step['accomplished'] ?  \"OK\" : \"Não\") . \") \" . '<br/>';\n				echo $this->game->getGoal()->getPercentage() . '%';\n				break;\n			case \"menu\":\n				echo \"MENU<br/>\";\n				$this->game->getMenu()->clearItens();\n				$menuItem = $this->game->getMenu()->createItem('Home1', '/home', false, true);\n				$menuSubItem = $this->game->getMenu()->createItem('SubHome1', '/home', true, true);\n				\n				$menuSubItem->createSubItem('Sub', '/home2', false, true);\n				$menuItem->addItem($menuSubItem);\n				$this->game->getMenu()->addItem($menuItem);\n\n				$menuItem = $this->game->getMenu()->createItem('Home2', '/home', false, true);\n				$menuItem->createSubItem('Home2', '/home2');\n				$this->game->getMenu()->addItem($menuItem);\n\n				$menuItem = $this->game->getMenu()->createItem('Home3', '/home', true, true);\n				$menuItem->createSubItem('Home2', '/home2', true);\n				$this->game->getMenu()->addItem($menuItem);\n\n\n				$this->game->getMenu()->createItem('Home4', '/home4', false);\n\n\n				$menu = $this->game->getMenu()->showMenu();\n				break;\n			case \"score\":\n				echo \"SCORE<br/>\";\n\n				//$this->game->getScore()->activeNegativeScore();\n				//$this->game->getScore()->activeGameOver();\n				$this->game->getScore()->resetGameOver();\n				$this->game->getScore()->addPoints(10);				\n				//$this->game->getScore()->removePoints(10);				\n				echo \"Points: \" . $this->game->getScore()->getPoints();\n				echo \"<br/>Game Over: \";\n				var_dump($this->game->getScore()->checkGameOver());\n				break;\n			default:\n				$this->view->render('game');\n				break;\n		}\n	}\n}\n\n\nclass Usuario {\n\n	private $nome = 'Carlos';\n	public $idade = 24;\n\n	public function getName() {\n		return $this->nome;\n	}\n\n	public function setName($nome) {\n		$this->nome = $nome;\n	}\n}",
-			"file": "app/controllers/Teste.php",
-			"file_size": 10309,
-			"file_write_time": 130823166260977330,
-			"settings":
-			{
-				"buffer_size": 9591,
+				"buffer_size": 1485,
 				"line_ending": "Windows"
 			}
 		}
@@ -619,26 +591,30 @@
 		"/var/www/jindie",
 		"/var/www/jindie/app",
 		"/var/www/jindie/app/controllers",
+		"/var/www/jindie/app/logs",
 		"/var/www/jindie/app/views",
-		"/var/www/jindie/app/views/errors",
-		"/var/www/jindie/app/views/game",
 		"/var/www/jindie/app/views/game/scenes",
 		"/var/www/jindie/app/views/library",
 		"/var/www/jindie/system",
-		"/var/www/jindie/system/core",
-		"/var/www/jindie/system/language",
-		"/var/www/jindie/system/language/pt-br",
-		"/var/www/jindie/system/libraries"
+		"/var/www/jindie/system/language/pt-br"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/system/libraries/IMessage.php",
+		"/var/www/jindie/system/libraries/Chat.php",
+		"/var/www/jindie/app/logs/debug_2015-07-25.txt",
+		"/var/www/jindie/app/views/library/chat.php",
+		"/var/www/jindie/app/views/chat.php",
+		"/var/www/jindie/app/controllers/Teste.php",
+		"/var/www/jindie/app/controllers/Chatt.php",
+		"/home/carlos/.cache/.fr-7QecoA/jindie/WebContent/assets/css/chat.css",
+		"/home/carlos/.cache/.fr-OH3x7X/jindie/WebContent/game/includes/chat.jsp",
+		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/PrintScreen.txt",
 		"/var/www/jindie/app/controllers/Chat.php",
 		"/home/carlos/.cache/.fr-H3rDb9/jindie/WebContent/sala.jsp",
 		"/var/www/jindie/system/core/bootstrap.php",
 		"/var/www/jindie/app/views/.htaccess",
-		"/var/www/jindie/app/views/library/chat.php",
 		"/var/www/jindie/system/game/Score.php",
-		"/var/www/jindie/app/controllers/Teste.php",
 		"/var/www/jindie/system/language/pt-br/log.php",
 		"/var/www/jindie/system/core/View.php",
 		"/var/www/jindie/app/views/game.php",
@@ -751,19 +727,11 @@
 		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/autoload.php",
 		"/C/xampp/htdocs/jindie/system/libraries/Database.php",
 		"/C/xampp/htdocs/jindie/system/core/Loader.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/facebook-php-sdk-v4-4.0-dev/tests/FacebookRedirectLoginHelperTest.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/ISocialLogin.php",
-		"/C/xampp/htdocs/jindie/system/libraries/Email.php",
-		"/C/xampp/htdocs/jindie/system/libraries/Cookie.php",
-		"/C/xampp/htdocs/jindie/system/libraries/Cache.php",
-		"/C/xampp/htdocs/jindie/system/core/bootstrap.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/FacebookRedirectLoginHelper.php",
-		"/C/xampp/htdocs/jindie/system/core/DefaultStructure.php",
-		"/C/xampp/htdocs/jindie/system/libraries/Upload.php"
+		"/C/xampp/htdocs/jindie/system/libraries/login/facebook/facebook-php-sdk-v4-4.0-dev/tests/FacebookRedirectLoginHelperTest.php"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -783,6 +751,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2",
+			"lastCheck",
+			"chatJI",
+			"messages",
+			"h1",
+			"input-group",
+			"input-group-btn",
+			"panel-footer",
+			"primary",
+			"lsef",
+			"text-right",
+			"alert",
 			"debug_game_gameover",
 			"addPoints",
 			"Language::",
@@ -898,19 +878,7 @@
 			"bannerTopo",
 			"getConfigHome",
 			"alert",
-			"text",
-			"large",
-			"content-grid",
-			"content",
-			"background",
-			"container",
-			".content",
-			"content",
-			"URL",
-			"400",
-			"bannerTopo",
-			"font-family: 'Gloria Hallelujah', cursive;",
-			"font-family"
+			"text"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -918,6 +886,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"chat-jindie",
 			"<?=$menuID?>",
 			"protected",
 			"$this->input->isPost",
@@ -1019,141 +988,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "system/libraries/Chat.php",
+					"file": "system/language/pt-br/log.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1478,
+						"buffer_size": 8640,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								596,
-								596
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<?php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/library/chat.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2024,
-								2024
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2158.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/carlos/.cache/.fr-7QecoA/jindie/WebContent/assets/css/chat.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2364,
-								2364
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1118.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/carlos/.cache/.fr-OH3x7X/jindie/WebContent/game/includes/chat.jsp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1771,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								270,
-								270
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/Teste.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9591,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2395,
-								2395
+								5563,
+								5563
 							]
 						],
 						"settings":
@@ -1166,6 +1018,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "system/core/bootstrap.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								793,
+								793
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1210,7 +1090,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
