@@ -77,7 +77,7 @@ $language = array(
 
 	'debug_game_save'					=> "GAME: Objeto Game salvo",
 	'debug_game_new'					=> "GAME: Objeto '%CLASS_GAME%' criado (Novo)",
-	'debug_game_load'					=> "GAME: Objeto '%CLASS_GAME%' carregado (Já existente)",
+	'debug_game_load'					=> "GAME: Objeto game carregado (Já existente na sessão)",
 	'debug_game_hud'					=> "GAME: Exibindo HUD. (Retornar em forma de HTML: %RETURN_HTML%)",
 	'debug_game_artifact'				=> "GAME: novo artefato setado com sucesso",
 	'debug_game_score'					=> "GAME: novo score setado com sucesso",
@@ -106,4 +106,12 @@ $language = array(
 	'game_points_not_numeric'			=> "GAME/SCORE: O valor adicionado não é numérico",
 	'debug_game_gameover'				=> "GAME/SCORE: GameOver, pontuação negativa",
 	'debug_game_points_negative'		=> "GAME/SCORE: A pontuação foi alterada para zero, por não poder ser negativa",
+
+	'debug_chat_format_date'			=> "CHAT: Novo formato de datas: '%FORMAT%'",
+	'debug_chat_time'					=> "CHAT: Setado tempo de reload de chat: '%TIME%' milisegundos",
+	'debug_chat_link_reload'			=> "CHAT: Setado link para buscar novos comentários: '%LINK%'",
+	'debug_chat_link_submit'			=> "CHAT: Setado link para enviar novos comentários: '%LINK%'",
+	'debug_chat_new_message'			=> "CHAT: Adicionado nova mensagem: Nome: '%NAME%'; Comentário: '%COMMENT%'; Avatar: '%AVATAR%'; Data: '%DATE%'",
+	'debug_chat_json'					=> "CHAT: Gerado Json com mensagens: %JSON%",
+	'debug_chat_create'					=> "CHAT: Gerado html do chat: Tempo Reload ('%TIME_RELOAD%'); Link Reload ('%LINK_RELOAD%'); Link Sumit('%LINK_SUBMIT%');"
 );

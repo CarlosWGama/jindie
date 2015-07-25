@@ -51,6 +51,8 @@ class Chat {
 	*/
 	public function setFormatDate($formatDate) {
 		$this->formatDate = $formatDate;
+
+		Log::message(Language::getMessage('log', 'debug_chat_format_date', array('format' => $this->formatDate)), 2);
 	}
 
 	/**
@@ -62,6 +64,8 @@ class Chat {
 			$time *= 1000; //transform to miliseconds
 			$this->timeReload = $time;	
 		}
+
+		Log::message(Language::getMessage('log', 'debug_chat_time', array('time' => $this->timeReload)), 2);
 		
 	}
 
@@ -73,6 +77,8 @@ class Chat {
 			$link = 'http://' . $link;
 
 		$this->linkReload = $link;
+
+		Log::message(Language::getMessage('log', 'debug_chat_link_reload', array('link' => $this->linkReload)), 2);
 	}
 
 	/**
@@ -83,6 +89,8 @@ class Chat {
 			$link = 'http://' . $link;
 
 		$this->linkSubmit = $link;	
+
+		Log::message(Language::getMessage('log', 'debug_chat_link_submit', array('link' => $this->linkSubmit)), 2);
 	}
 
 	/**
@@ -99,6 +107,8 @@ class Chat {
 			'avatar'		=> $avatar,
 			'date'			=> $this->formatDate($date)
 		);
+
+		Log::message(Language::getMessage('log', 'debug_chat_new_message', array('name' => $name, 'comment' => $comment, 'avatar' => $avatar, 'date' => $this->formatDate($date))), 2);
 	}
 	/**
 	* Retorna as mensagens em formato Json
@@ -109,6 +119,8 @@ class Chat {
 			'comments' 		=> $this->messages,
 			'last_check'	=> date('Y-m-d H:i:s')
 		);
+
+		Log::message(Language::getMessage('log', 'debug_chat_json', array('json' => json_encode($json))), 2);
 		return json_encode($json);
 	}
 
@@ -120,12 +132,17 @@ class Chat {
 		$linkReload = $this->linkReload;
 		$linkSubmit = $this->linkSubmit;
 		$timeReload = $this->timeReload;
+
+
 		if (!empty($this->messages))
 			$comments = $this->getJsonMessages();
 
 		ob_start();
 		require(VIEWS_PATH.'library/chat.php');
 		$html = ob_get_clean();
+
+		Log::message(Language::getMessage('log', 'debug_chat_create', array('link_reload' => $linkReload, 'link_submit' => $linkSubmit, 'time_reload' => $timeReload)), 2);
+		
 		return $html;
 	}
 
