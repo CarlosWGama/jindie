@@ -31,6 +31,6 @@ require_once(dirname(__FILE__).'/ControllerFactory.php');
 require_once(dirname(__FILE__).'/FilterFactory.php');
 require_once(dirname(__FILE__).'/../utils/WordUtil.php');
 require_once(dirname(__FILE__).'/../libraries/login/ISocialLogin.php');
-
+require_once(dirname(__FILE__).'/../libraries/ICode.php');
 //
 Config::autoLoad();
