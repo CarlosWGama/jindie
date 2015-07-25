@@ -17,6 +17,8 @@ final class View {
 	* @param array $args
 	*/
 	public function render($file, $args = array()) {
+		$game = $this->getGame();
+		
 		if (!empty($args))
 			extract($args);
 		if (file_exists(VIEWS_PATH.$file.'.php'))
@@ -30,10 +32,36 @@ final class View {
 	* @param array $args
 	*/
 	public function template($template, $content, $args = array()) {
+		$game = $this->getGame();
+
 		if (!empty($args))
 			extract($args);
 
 		if (file_exists(VIEWS_PATH.$template.'.php'))
 			require(VIEWS_PATH.$template.'.php');
+	}
+
+	/**
+	* Retorna o objeto jogo
+	* @access private
+	* @return Game
+	*/
+	private function getGame() {
+		$game = null;
+		//Game
+		if (file_exists(GAME_PATH.'/Game.php')) {
+		 	require_once(GAME_PATH.'/Game.php');
+		 	$game = Game::getInstance();
+
+		 	if  (!is_subclass_of($game, "JIndie\Game\Game"))
+		 		$game = null;
+		}
+
+		if ($game == null) {
+			require_once(GAME_JI_PATH.'/Game.php');
+			$game = JIndie\Game\Game::getInstance();
+		}
+
+		return $game;
 	}
 }

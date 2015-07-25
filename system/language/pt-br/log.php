@@ -103,6 +103,7 @@ $language = array(
 	'debug_game_item_remove_subitem'	=> "GAME/MENUITEM: Subitem '%LABEL%' de posição %INDEX% no item '%ITEM%' removido com sucesso",
 
 	'debug_game_gameover_change_points'	=> "GAME/SCORE: Não pode alterar a pontuação, pois já teve Game Over",
-
-
+	'game_points_not_numeric'			=> "GAME/SCORE: O valor adicionado não é numérico",
+	'debug_game_gameover'				=> "GAME/SCORE: GameOver, pontuação negativa",
+	'debug_game_points_negative'		=> "GAME/SCORE: A pontuação foi alterada para zero, por não poder ser negativa",
 );

@@ -219,7 +219,7 @@ class Teste extends Controller{
 		echo "<br/>Pontos: " . $this->game->getScore()->getPoints();			
 	}
 
-	public function jogo($level) {
+	public function jogo($level = "default") {
 		switch ($level) {
 			case "goal":
 				echo "GOAL<br/>";
@@ -265,8 +265,17 @@ class Teste extends Controller{
 			case "score":
 				echo "SCORE<br/>";
 
-				
-
+				//$this->game->getScore()->activeNegativeScore();
+				//$this->game->getScore()->activeGameOver();
+				$this->game->getScore()->resetGameOver();
+				$this->game->getScore()->addPoints(10);				
+				//$this->game->getScore()->removePoints(10);				
+				echo "Points: " . $this->game->getScore()->getPoints();
+				echo "<br/>Game Over: ";
+				var_dump($this->game->getScore()->checkGameOver());
+				break;
+			default:
+				$this->view->render('game');
 				break;
 		}
 	}
