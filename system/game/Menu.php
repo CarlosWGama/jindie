@@ -108,7 +108,7 @@ class Menu {
 			$menu = ob_get_clean();
 			return $menu;
 		} else 
-			include(APP_PATH.'views/game/menu.php');
+			include(APP_PATH.'views/game/enmTu.php');
 	}
 
 	/**
