@@ -104,11 +104,11 @@ class Menu {
 
 		if ($returnHTML) {
 			ob_start();
-			include(APP_PATH.'views/game/Menu.php');
+			include(APP_PATH.'views/game/menu.php');
 			$menu = ob_get_clean();
 			return $menu;
 		} else 
-			include(APP_PATH.'views/game/Menu.php');
+			include(APP_PATH.'views/game/menu.php');
 	}
 
 	/**
