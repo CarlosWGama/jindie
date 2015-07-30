@@ -1,5 +1,0 @@
-[ERROR] Aconteceu o seguinte erro: 'Não foi possível chamar o método 'database''(2015-07-03 19:02:32)
-[ERROR] Aconteceu o seguinte erro: 'Falha na configurações do banco. Verifique o campo 'username''(2015-07-03 19:04:21)
-[ERROR] Problem preparing query (SELECT  * FROM animacao_utor WHERE  animacao_id > ? ) Table 'colecaoanimes.animacao_utor' doesn't exist(2015-07-03 19:41:19)
-[ERROR] Falha na query: SELECT  * FROM animacao_utor WHERE  animacao_id > ?  .Erro: Table 'colecaoanimes.animacao_utor' doesn't exist(2015-07-03 19:43:36)
-[ERROR] Falha na configurações do banco. Verifique o campo 'charset'(2015-07-03 19:56:37)

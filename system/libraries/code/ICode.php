@@ -13,5 +13,9 @@ namespace JIndie\Code;
 
 interface ICode {
 	
+	public function getBreakLine();
 
+	public function getCommands();
+
+	public function getCaseSensitive();
 }

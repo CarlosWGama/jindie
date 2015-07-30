@@ -34,12 +34,12 @@ require_once(CORE_PATH.'ControllerFactory.php');
 require_once(CORE_PATH.'FilterFactory.php');
 
 //Util
-require_once(UTIL_JI_PATH.'WordUtil.php');
+require_once(UTIL_JI_PATH.'WordsUtil.php');
 require_once(UTIL_JI_PATH.'JSONUtil.php');
 
 //Interfaces
 require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');
-require_once(LIBRARIES_JI_PATH.'ICode.php');
+require_once(LIBRARIES_JI_PATH.'code/ICode.php');
 require_once(MODELS_JI_PATH.'IMessage.php');
 require_once(MODELS_JI_PATH.'IUser.php');
 //
