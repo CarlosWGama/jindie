@@ -32,6 +32,42 @@ class Navegation implements ICode {
 		return $commands;
 	}
 
+	public function getAND() {
+		return "&&";
+	}
+
+	public function getOR() {
+		return "||";
+	}
+
+	public function getLeftParen() {
+		return "(";
+	}
+
+	public function getRightParen() {
+		return ")";
+	}
+
+	public function getIfStructure() {
+		return "if \([CONDITION]\) {";
+	}
+
+	public function getElseStructure() {
+		return "else {";
+	}
+
+	public function getEndIfStructure() {
+		return "}";
+	}
+
+	public function getWhileStructure() {
+		return "WHILE \([CONDITION]\) {";	
+	}
+
+	public function getEndWhileStructure() {
+		return "}";	
+	}
+
 	public function moveUp() {
 		echo ("Subiu!<br/>");
 	}

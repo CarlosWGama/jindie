@@ -62,6 +62,8 @@ class CodeReader {
 	*/
 	protected $error = array();
 
+	protected $auxLexer = array();
+
 	public function __construct() {
 		$this->setRules('Navegation');
 	}
@@ -105,54 +107,186 @@ class CodeReader {
 
 		$this->script = $script;
 
-		//Recupera  as linhas
-		$this->lines = explode($this->code->getBreakLine(), $script);
-
-		//Remove a ultima linha caso seja vázia
-		if (empty(end($this->lines)))
-			unset($this->lines[(count($this->lines) - 1)]);
-
-		//Recupera o total de linhas
-		$this->totalLine = count($this->lines);
+		//Gera as linhas de comando
+		$this->lines = $this->explodeLines($script);
 
 		//Seleciona a primeira linha
-		$this->currentLine = 0;
-		$line = false;
-		if ($this->totalLine > 0) 
-			$line = $this->nextLine();
+		
+		if ($this->totalLine > 0)  {
+			return $this->runLines($this->lines);
+		}
 
-		//Executa linha por linha
-		while ($line != false) {			
+		return true;
+	}
+
+	private function runLines($lines) {
+		foreach ($lines as $currentLine => $line) {
+			$this->currentLine = $currentLine;
+			//IF
+			if ($line['type'] == "IF") {
+
+				//Exec IF
+				if ($this->checkCondition($line['condition'])) {
+					
+					if (!$this->runLines($line['statements']))
+						return false;  //ERROR
+
+					$this->currentLine = $currentLine;
+				} else {					
+					
+					//CHECK ELSE
+					$nextKey = (array_search($currentLine, array_keys($lines))+1);
+					$nextLine = array_keys($lines);
+					if (!isset($nextLine[$nextKey]))
+						continue;
+					$this->currentLine = $nextLine[$nextKey];
+					$line = $lines[$this->currentLine];
+
+					//Exec ELSE
+					if (!empty($line) && $line['type'] == "ELSE") {
+						$this->currentLine = $currentLine;
+						
+						if (!$this->runLines($line['statements'])) 
+							return false; //ERROR
+						$this->currentLine = $currentLine;
+					}
+
+					$this->currentLine = $currentLine;
+				}
+				continue;
+			}
+
+			//WHILE
+			if ($line['type'] == "WHILE") {
+				while ($line($line['condition'])) {
+					if (!$this->runLines($line['statements'])) 
+						return false; //ERROR
+				}
+				$this->currentLine = $currentLine;
+				continue;
+			}
 			
-			if (!empty($line)) {
+			//COMMAND
+			if ($line['type'] == "COMMAND") {
 			
 				//Recupera comando
-				$command = $this->getCommand($line);
+				$command = $this->getCommand($line['line']);
 				if ($command != false) {
 					$this->execCommand($command);
 				} else {
 					$this->error = array(
 						'line'		=> $this->currentLine,
-						'code'		=> $line,
+						'code'		=> $line['line'],
 					);
 					return false;					
 				}
 			}
-
-			$line = $this->nextLine();			
 		}
 
 		return true;
-
 	}
 
-	protected function nextLine() {
-		if ($this->currentLine < $this->totalLine) {
-			$this->currentLine++;
-			return $line = trim($this->lines[($this->currentLine-1)]);
-		}
+	private function explodeLines($scripts) {
 
-		return false;
+		//Quebra Linhas
+		$this->auxLexer['lines'] = explode($this->code->getBreakLine(), $scripts);
+		$this->auxLexer['position'] = 0;
+
+		//Remove linhs em branco no final
+		// if (empty(end($lines)))
+		// 	unset($lines[(count($lines) - 1)]);
+
+		return $this->lexerLines();
+	}
+
+	private function lexerLines($returnCondition = null) {
+		$ifStructure 		= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getIfStructure()) . '/';
+		$elseStructure 		= '/^' . $this->code->getElseStructure() . '/';
+		$endIfStructure 	= '/^' . $this->code->getEndIfStructure() . '/';
+		$whileStructure 	= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getWhileStructure()) . '/';
+		$endWhileStructure 	= '/^' . $this->code->getEndWhileStructure() . '/';
+
+		$lines = array();
+
+		for (; $this->auxLexer['position'] < count($this->auxLexer['lines']);) {
+			$line = trim($this->auxLexer['lines'][$this->auxLexer['position']]);
+			$this->totalLine++;
+			$this->auxLexer['position']++;
+
+			//IF
+			if (preg_match($ifStructure, $line, $match)) {
+				$nextCommand = trim(substr($line, strlen($match[0])));
+				
+				if (!empty($nextCommand))
+					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
+				//$this->lexerLines();	
+				
+				$lines[$this->totalLine] = array(
+					'line'			=> $match[0],
+					'type'			=> "IF",
+					'condition'		=> $match[1],
+					'statements'	=> $this->lexerLines("END-IF")
+				);
+				continue;
+			}
+
+			//ENDIF
+			if (preg_match($endIfStructure, $line, $match)) {
+				$nextCommand = trim(substr($line, strlen($match[0])));
+				if (!empty($nextCommand))
+					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
+
+				$lines[$this->totalLine] = array(
+					'line'			=> $match[0],
+					'type'			=> "END-IF",
+				);
+			}
+
+			//ELSE
+			if (preg_match($elseStructure, $line, $match)) {
+				$nextCommand = trim(substr($line, strlen($match[0])));
+
+				if (!empty($nextCommand))
+					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
+
+				$lines[$this->totalLine] = array(
+					'line'			=> $match[0],
+					'type'			=> "ELSE",
+					'statements'	=> $this->lexerLines("END-IF")
+				);
+				continue;
+			}	
+
+			//WHILE
+			if (preg_match($whileStructure, $line, $match)) {
+				$lines[$this->totalLine] = array(
+					'line'			=> $match[0],
+					'type'			=> "WHILE",
+					'condition'		=> $match[1],
+					'statements'	=> $this->lexerLines("END-WHILE")
+				);
+			}
+
+			//ENDWHILE
+			// if (preg_match($endWhileStructure, $line, $match)) {
+			// 	$lines2[$this->totalLine] = array(
+			// 		'line'			=> $line,
+			// 		'type'			=> "END-WHILE",
+			// 	);				
+			// }
+
+			//COMMAND
+			if (empty($lines[$this->totalLine])) {
+				$lines[$this->totalLine] = array(
+					'line'		=> $line,
+					'type'		=> "COMMAND"
+				);				
+			} else {
+				if (!is_null($returnCondition) && ($returnCondition == $lines[$this->totalLine]['type']))
+					return $lines;
+			}
+		}
+		return $lines;
 	}
 
 	/**
@@ -181,11 +315,11 @@ class CodeReader {
 				
 			} catch (Exception $ex) {
 				$ok = false;
-				$errors[] = "Linha: " . $this->currentLine . "Erro: '" . $ex->getMessage() . "'";
+				$this->error = "Linha: " . $this->currentLine . "Erro: '" . $ex->getMessage() . "'";
 			}
 		} else {
 			$ok = false;
-			$errors[] = "Linha: " . $this->currentLine . "METODO '" . $command['method'] . "' NÂO EXISTE!";
+			$this->error = "Linha: " . $this->currentLine . "METODO '" . $command['method'] . "' NÂO EXISTE!";
 		}
 
 		return $ok;
@@ -223,6 +357,12 @@ class CodeReader {
 	*/
 	protected function checkCondition($condition) {
 
+		$and = $this->code->getAND();
+		$or = $this->code->getOR();
+		$leftParen = $this->code->getLeftParen();
+		$rightParen = $this->code->getRightParen();
+
+		return false;		
 	}
 
 

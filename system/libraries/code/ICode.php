@@ -18,4 +18,22 @@ interface ICode {
 	public function getCommands();
 
 	public function getCaseSensitive();
+
+	public function getAND();
+
+	public function getOR();
+
+	public function getLeftParen();
+
+	public function getRightParen();
+
+	public function getIfStructure();
+
+	public function getElseStructure();
+
+	public function getEndIfStructure();
+
+	public function getWhileStructure();
+
+	public function getEndWhileStructure();
 }
