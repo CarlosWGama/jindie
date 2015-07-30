@@ -32,7 +32,10 @@ require_once(CORE_PATH.'Language.php');
 require_once(CORE_PATH.'Errors.php');
 require_once(CORE_PATH.'ControllerFactory.php');
 require_once(CORE_PATH.'FilterFactory.php');
+
+//Util
 require_once(UTIL_JI_PATH.'WordUtil.php');
+require_once(UTIL_JI_PATH.'JSONUtil.php');
 
 //Interfaces
 require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');

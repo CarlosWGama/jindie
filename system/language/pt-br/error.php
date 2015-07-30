@@ -12,11 +12,13 @@ $language = array(
 
 	"config_not_exists"				=> "O arquivo de configuração '%CONFIG%' não existe",
 
-	"game_not_artifact"				=> "O componente setado no Game não implementa IArtifact",
-	"game_not_score"				=> "O componente setado no Game não é/herda a classe Score",
-	"game_not_goal"					=> "O componente setado no Game não é/herda a classe Goal",
-	"game_not_scene"				=> "O componente setado no Game não implementa IScene",
-	"game_not_menu"					=> "O componente setado no Game não é/herda a classe Menu",
-	"game_not_menu_item"			=> "O componente adicionado ao Menu não é/herda a classe MenuItem",
-	"game_points_not_numeric"		=> "O valor adicionado no Score não é um número.",
+	//Especfic
+	//Game
+	"game_not_artifact"				=> "GAME: O componente setado no Game não implementa IArtifact",
+	"game_not_score"				=> "GAME: O componente setado no Game não é/herda a classe Score",
+	"game_not_goal"					=> "GAME: O componente setado no Game não é/herda a classe Goal",
+	"game_not_scene"				=> "GAME: O componente setado no Game não implementa IScene",
+	"game_not_menu"					=> "GAME: O componente setado no Game não é/herda a classe Menu",
+	"game_not_menu_item"			=> "GAME: O componente adicionado ao Menu não é/herda a classe MenuItem",
+	"game_points_not_numeric"		=> "GAME: O valor adicionado no Score não é um número.",
 );

@@ -21,15 +21,15 @@ Errors
 	20 - game_not_menu				//Game
 	21 - game_not_menu_item			//Game
 	22 - game_points_not_numeric	//Game
-	23 -
-	24 -
-	25 -
-	26 -
-	27 -
-	28 -
-	29 -
-	30 -
-	31 -
+	23 - error_int_val				//Map
+	24 - error_param_not_exists		//Map
+	25 - tile_not_exists			//Map
+	26 - not_array					//Map
+	27 - error_position				//Map
+	28 - error_map_structure		//Map
+	29 - error_tile_structure		//Map
+	30 - error_count_param_vector	//Map
+	31 - error_position_zero		//Map
 	32 -
 	33 - 
 	34 -
