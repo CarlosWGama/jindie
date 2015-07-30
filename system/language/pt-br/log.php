@@ -113,5 +113,16 @@ $language = array(
 	'debug_chat_link_submit'			=> "CHAT: Setado link para enviar novos comentários: '%LINK%'",
 	'debug_chat_new_message'			=> "CHAT: Adicionado nova mensagem: Nome: '%NAME%'; Comentário: '%COMMENT%'; Avatar: '%AVATAR%'; Data: '%DATE%'",
 	'debug_chat_json'					=> "CHAT: Gerado Json com mensagens: %JSON%",
-	'debug_chat_create'					=> "CHAT: Gerado html do chat: Tempo Reload ('%TIME_RELOAD%'); Link Reload ('%LINK_RELOAD%'); Link Sumit('%LINK_SUBMIT%');"
-);
+	'debug_chat_create'					=> "CHAT: Gerado html do chat: Tempo Reload ('%TIME_RELOAD%'); Link Reload ('%LINK_RELOAD%'); Link Sumit('%LINK_SUBMIT%');",
+
+	"debug_map_new_default_tile"		=> "MAPA: Novo Tile Padrão: %TILE%",
+	"debug_map_new_image_size"			=> "MAPA: Novo tamanho definido para imagens: %SIZE%px",
+	"debug_map_new_map_size"			=> "MAPA: Novo tamanho definido para o mapa: %MAP%",
+	"debug_map_reset_map"				=> "MAPA: Dados do mapa zerados",
+	"debug_map_new_tile_array"			=> "MAPA: Novo tile adicionado como array na posição %POSITION%",
+	"debug_map_new_tile"				=> "MAPA: Novo tile adicionado na posição %POSITION%",
+	"debug_map_current_position"		=> "MAPA: Nova posição do ponteiro do mapa: %POSITION%",
+	"debug_map_alter_value"				=> "MAPA: Alterado o valor do campo '%PARAM%' para '%VALUE%' do tile de posição %POSITION%",
+	"debug_map_generate"				=> "MAPA: Iniciando a criação do mapa",
+	"debug_map_set_map"					=> "MAPA: Novo mapa definido",
+);	

@@ -50,8 +50,12 @@ class MapGenerator {
 	* @param int $size
 	*/
 	public function setImageSize($size) {
-		if (filter_var($size, FILTER_VALIDATE_INT) && $size > 0)
+		if (filter_var($size, FILTER_VALIDATE_INT) && $size > 0) {
 			$this->imageSize = $size;
+
+			$msg = Language::getMessage('log', 'debug_map_new_image_size', array('size' => $size));
+			Log::message($msg, 2);
+		}
 		else {
 			$msg = Language::getMessage('map', 'error_int_val');
 			Log::message($msg, 2);
@@ -77,6 +81,9 @@ class MapGenerator {
 		if (!is_null($field)) $this->defaultTile['field'] = $field;
 		if (!is_null($object)) $this->defaultTile['object'] = $object;
 		if (!is_null($url)) $this->defaultTile['url'] = $url;
+
+		$msg = Language::getMessage('log', 'debug_map_new_default_tile', array('tile' => json_encode($this->defaultTile)));
+		Log::message($msg, 2);
 	}
 
 	/**
@@ -96,6 +103,9 @@ class MapGenerator {
 
 		$this->resetMap();
 		$this->mapSize = $vector;
+
+		$msg = Language::getMessage('log', 'debug_map_new_map_size', array('map' => '('.$this->mapSize['x'].','.$this->mapSize['y'].')'));
+		Log::message($msg, 2);
 	}
 
 	/**
@@ -105,6 +115,9 @@ class MapGenerator {
 		$this->tiles = array();
 		$this->mapSize = null;
 		$this->currentPosition = array('x' => 1, 'y' => 1);
+
+		$msg = Language::getMessage('log', 'debug_map_reset_map');
+		Log::message($msg, 2);
 	}
 
 	/**
@@ -146,6 +159,9 @@ class MapGenerator {
 				'url'			=> $url
 			);
 
+			$msg = Language::getMessage('log', 'debug_map_new_tile', array('position' => '(' . $x . ',' . $y . ')'));
+			Log::message($msg, 2);
+
 			//Change vector to new position
 			if (array_diff_assoc($this->currentPosition, $this->mapSize)) {
 				$x++;
@@ -156,6 +172,9 @@ class MapGenerator {
 				}
 
 				$this->currentPosition = array('x' => $x, 'y' => $y);
+
+				$msg = Language::getMessage('log', 'debug_map_current_position', array('position' => '(' . $this->currentPosition['x'] . ',' . $this->currentPosition['y'] . ')'));
+				Log::message($msg, 2);
 			}
 		}
 	}
@@ -206,8 +225,12 @@ class MapGenerator {
 		} else {
 
 			if (isset($this->tiles[$vector['x']][$vector['y']])) {
-				if (in_array($param, array('object', 'field', 'url')))
+				if (in_array($param, array('object', 'field', 'url'))) {
 					$this->tiles[$vector['x']][$vector['y']][$param] = $value;
+
+					$msg = Language::getMessage('log', 'debug_map_alter_value', array('position' => '('.$vector['x'].','.$vector['y'].')', 'param' => $param, 'value' => $value));
+					Log::message($msg, 2);
+				}
 				else {
 					$msg = Language::getMessage('map', 'error_param_not_exists', array('param' => $param));
 					Log::message($msg, 2);
@@ -294,6 +317,9 @@ class MapGenerator {
 
 		$this->setMapSize($maxValueX, $maxValueY);
 		$this->tiles = $newTiles;
+
+		$msg = Language::getMessage('log', 'debug_map_set_map');
+		Log::message($msg, 2);
 	}
 
 	/**
@@ -302,6 +328,11 @@ class MapGenerator {
 	* @return string |Caso returnHTML = true
 	*/
 	public function generate($returnHTML = true) {
+
+		$msg = Language::getMessage('log', 'debug_map_generate');
+		Log::message($msg, 2);
+
+		//
 		$tiles = array();
 		
 		for ($x = 1; $x <= $this->mapSize['x']; $x++) {

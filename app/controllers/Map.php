@@ -49,7 +49,7 @@ class Map extends Controller {
 		//Get Tile
 		$tile = $this->map->getTile(array(2, 1));
 		$tile = $this->map->getTile(2, 1);
-		print_r($tile);die;
+		//print_r($tile);die;
 
 		$map = $this->map->generate();
 		echo "AAA: <br/>";
