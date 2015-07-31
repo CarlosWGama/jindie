@@ -17,6 +17,8 @@ define('ROOT_PATH', 			__DIR__.'/../../');
 define('SYSTEM_PATH', 			__DIR__.'/../');
 define('APP_PATH', 				__DIR__.'/../../app/');
 
+//Exceptions
+require_once(LIBRARIES_JI_PATH.'code/CodeReaderException.php');
 
 //Require
 require_once(GAME_JI_PATH.'Game.php');

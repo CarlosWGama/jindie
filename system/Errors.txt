@@ -30,9 +30,9 @@ Errors
 	29 - error_tile_structure		//Map
 	30 - error_count_param_vector	//Map
 	31 - error_position_zero		//Map
-	32 -
-	33 - 
-	34 -
+	32 - error_rules				//CodeReader
+	33 - error_icode				//CodeReader
+	34 - error_no_code				//CodeReader
 	35 -
 	36 - 
 	37 -

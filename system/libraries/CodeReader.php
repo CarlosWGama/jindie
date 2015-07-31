@@ -62,152 +62,61 @@ class CodeReader {
 	*/
 	protected $error = array();
 
-	protected $auxLexer = array();
+	/**
+	* Variável que serve para armazenar informações na montagem das linhas
+	* @access private
+	* @var array
+	*/
+	private $auxLexer = array();
+
+	/**
+	* Variavel que armazena o momento que o script começou a ser executado, para controlar o tempo máximo de execução
+	* @var int
+	*/
+	private $timeExecution = 0;
 
 	public function __construct() {
 		$this->setRules('Navegation');
 	}
-
+	/****************** PREPARAÇÃO *********************/
 	/**
-	* Informa o código que será verificado
-	* @param string $codeName
+	* Classifica o script por tipo e dividi por linhas
+	* @access private
+	* @return array (Linhas)
 	*/
-	public function setRules($codeName) {
-		$codeName = ucfirst($codeName);
-
-		if (file_exists(LIBRARIES_PATH.'code/'.$codeName.'.php')) 
-			require_once(LIBRARIES_PATH.'code/'.$codeName.'.php');
-		elseif(file_exists(LIBRARIES_JI_PATH.'code/'.$codeName.'.php')) 
-			require_once(LIBRARIES_JI_PATH.'code/'.$codeName.'.php');
-		else
-			throw new Exception('Código não existe');
-
-		$code = new $codeName;
-
-		$this->setCode($code);
-		$this->codeName = $codeName;
-	}
-
-	public function setCode($code) {
-		if ($code instanceof JIndie\Code\ICode) 
-			$this->code = $code;
-		else 
-			throw new Exception('Esse código não é um ICODE');
-	}
-
-	/**
-	* Executa o código do usuário
-	* @param string $script
-	* @return bool
-	*/
-	public function runScript($script) {
-		if (is_null($this->code))
-			throw new Exception("Nenhum interpretador de código selecionado");
-
-
-		$this->script = $script;
-
-		//Gera as linhas de comando
-		$this->lines = $this->explodeLines($script);
-
-		//Seleciona a primeira linha
-		
-		if ($this->totalLine > 0)  {
-			return $this->runLines($this->lines);
-		}
-
-		return true;
-	}
-
-	private function runLines($lines) {
-		foreach ($lines as $currentLine => $line) {
-			$this->currentLine = $currentLine;
-			//IF
-			if ($line['type'] == "IF") {
-
-				//Exec IF
-				if ($this->checkCondition($line['condition'])) {
-					
-					if (!$this->runLines($line['statements']))
-						return false;  //ERROR
-
-					$this->currentLine = $currentLine;
-				} else {					
-					
-					//CHECK ELSE
-					$nextKey = (array_search($currentLine, array_keys($lines))+1);
-					$nextLine = array_keys($lines);
-					if (!isset($nextLine[$nextKey]))
-						continue;
-					$this->currentLine = $nextLine[$nextKey];
-					$line = $lines[$this->currentLine];
-
-					//Exec ELSE
-					if (!empty($line) && $line['type'] == "ELSE") {
-						$this->currentLine = $currentLine;
-						
-						if (!$this->runLines($line['statements'])) 
-							return false; //ERROR
-						$this->currentLine = $currentLine;
-					}
-
-					$this->currentLine = $currentLine;
-				}
-				continue;
-			}
-
-			//WHILE
-			if ($line['type'] == "WHILE") {
-				while ($line($line['condition'])) {
-					if (!$this->runLines($line['statements'])) 
-						return false; //ERROR
-				}
-				$this->currentLine = $currentLine;
-				continue;
-			}
-			
-			//COMMAND
-			if ($line['type'] == "COMMAND") {
-			
-				//Recupera comando
-				$command = $this->getCommand($line['line']);
-				if ($command != false) {
-					$this->execCommand($command);
-				} else {
-					$this->error = array(
-						'line'		=> $this->currentLine,
-						'code'		=> $line['line'],
-					);
-					return false;					
-				}
-			}
-		}
-
-		return true;
-	}
-
-	private function explodeLines($scripts) {
+	private function explodeLines() {
 
 		//Quebra Linhas
-		$this->auxLexer['lines'] = explode($this->code->getBreakLine(), $scripts);
+		$this->auxLexer['lines'] = explode($this->code->getBreakLine(), $this->script);
 		$this->auxLexer['position'] = 0;
 
 		//Remove linhs em branco no final
-		// if (empty(end($lines)))
-		// 	unset($lines[(count($lines) - 1)]);
+		for ($i = count($this->auxLexer['lines']); $i >= 0; $i--) {
 
+			if (!empty($this->auxLexer['lines'][$i]))
+				break;
+			unset($this->auxLexer['lines'][$i]);
+		}
+		
 		return $this->lexerLines();
 	}
 
+	/**
+	* Classifica as linhas por tipo (COMMAND, IF, ELSE, END-IF, WHILE, END-WHILE)
+	* @access private
+	* @return array (Linhas)
+	*/
 	private function lexerLines($returnCondition = null) {
-		$ifStructure 		= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getIfStructure()) . '/';
-		$elseStructure 		= '/^' . $this->code->getElseStructure() . '/';
-		$endIfStructure 	= '/^' . $this->code->getEndIfStructure() . '/';
-		$whileStructure 	= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getWhileStructure()) . '/';
-		$endWhileStructure 	= '/^' . $this->code->getEndWhileStructure() . '/';
+		//Recupera as estruturas do IF e WHILE
+		$ifStructure 		= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getIfStructure()) . '/' . ($this->code->isCaseSensitive()? "" :"i");
+		$elseStructure 		= '/^' . $this->code->getElseStructure() . '/'  . ($this->code->isCaseSensitive()? "" :"i");
+		$endIfStructure 	= '/^' . $this->code->getEndIfStructure() . '/'  . ($this->code->isCaseSensitive()? "" :"i");
+		$whileStructure 	= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getWhileStructure()) . '/'  . ($this->code->isCaseSensitive()? "" :"i");
+		$endWhileStructure 	= '/^' . $this->code->getEndWhileStructure() . '/'  . ($this->code->isCaseSensitive()? "" :"i");
 
 		$lines = array();
 
+		//Atribuid o que a linha representa e seta a linha em sua Key
 		for (; $this->auxLexer['position'] < count($this->auxLexer['lines']);) {
 			$line = trim($this->auxLexer['lines'][$this->auxLexer['position']]);
 			$this->totalLine++;
@@ -219,7 +128,7 @@ class CodeReader {
 				
 				if (!empty($nextCommand))
 					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
-				//$this->lexerLines();	
+				
 				
 				$lines[$this->totalLine] = array(
 					'line'			=> $match[0],
@@ -240,6 +149,9 @@ class CodeReader {
 					'line'			=> $match[0],
 					'type'			=> "END-IF",
 				);
+
+				if (!is_null($returnCondition) && ($returnCondition == "END-IF")) 
+					return $lines;
 			}
 
 			//ELSE
@@ -259,21 +171,35 @@ class CodeReader {
 
 			//WHILE
 			if (preg_match($whileStructure, $line, $match)) {
+				$nextCommand = trim(substr($line, strlen($match[0])));
+
+				if (!empty($nextCommand))
+					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
+
 				$lines[$this->totalLine] = array(
 					'line'			=> $match[0],
 					'type'			=> "WHILE",
 					'condition'		=> $match[1],
 					'statements'	=> $this->lexerLines("END-WHILE")
 				);
+				continue;
 			}
 
 			//ENDWHILE
-			// if (preg_match($endWhileStructure, $line, $match)) {
-			// 	$lines2[$this->totalLine] = array(
-			// 		'line'			=> $line,
-			// 		'type'			=> "END-WHILE",
-			// 	);				
-			// }
+			if (preg_match($endWhileStructure, $line, $match)) {
+				$nextCommand = trim(substr($line, strlen($match[0])));
+
+				if (!empty($nextCommand))
+					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
+
+				$lines[$this->totalLine] = array(
+					'line'			=> $match[0],
+					'type'			=> "END-WHILE",
+				);
+
+				if (!is_null($returnCondition) && ($returnCondition == "END-WHILE")) 
+					return $lines;
+			}
 
 			//COMMAND
 			if (empty($lines[$this->totalLine])) {
@@ -281,57 +207,197 @@ class CodeReader {
 					'line'		=> $line,
 					'type'		=> "COMMAND"
 				);				
-			} else {
-				if (!is_null($returnCondition) && ($returnCondition == $lines[$this->totalLine]['type']))
-					return $lines;
-			}
+			} 
 		}
 		return $lines;
 	}
 
+	/******************************* EXECUÇÃO *******************************/
 	/**
-	* Retorna os erros no script do usuário
-	* @return array;
+	* Executa o código do usuário
+	* @param string $script
+	* @return bool
 	*/
-	public function getError() {
-		return $this->error;
-	}
-
-	/**
-	* Executa o comando que o usuário digitou e retorna se foi sucesso ou não
-	* @access protected
-	* @param string $method
-	* @param array $param
-	* @return bool;
-	*/
-	protected function execCommand($command) {
-		$ok = true;
-		if (method_exists($this->code, $command['method'])) {
-			try {
-				if (!empty($command['param']))
-					call_user_func_array(array($this->code, $command['method']), $command['param']);
-				else 
-					call_user_func(array($this->code, $command['method']));		
-				
-			} catch (Exception $ex) {
-				$ok = false;
-				$this->error = "Linha: " . $this->currentLine . "Erro: '" . $ex->getMessage() . "'";
-			}
-		} else {
-			$ok = false;
-			$this->error = "Linha: " . $this->currentLine . "METODO '" . $command['method'] . "' NÂO EXISTE!";
+	public function runScript($script) {
+		if (is_null($this->code)) {
+			$msg = Language::getMessage('code_reader', 'error_no_code');
+			Log::message($msg, 2);
+			throw new Exception($msg, 34);
 		}
 
-		return $ok;
+
+		$this->script = $script;
+
+		//Gera as linhas de comando
+		Log::message(Language::getMessage('code_reader', 'parse_script'), 2);
+		$this->lines = $this->explodeLines();
+		Log::message(Language::getMessage('code_reader', 'end_parse_script', array('total_lines' => $this->totalLine)), 2);
+
+		//Seleciona a primeira linha
+		
+		if ($this->totalLine > 0)  {
+			$this->timeExecution = microtime(true);
+			try {
+				Log::message(Language::getMessage('code_reader', 'start_run_script'), 2);
+				return $this->runLines($this->lines);
+			} catch (CodeReaderException $ex) {
+				$this->error['error'] = array($ex->getMessage());
+				return false;
+			}
+			
+		}
+
+		return true;
 	}
 
-	protected function getCommand($line) {
+	/**
+	* Executa as linhas do Script
+	* @access private
+	* @param array $lines
+	* @return bool
+	*/
+	private function runLines($lines) {
+		foreach ($lines as $currentLine => $line) {
+			
+			$this->checkLimitTimeExecution();
+			
+			$this->currentLine = $currentLine;
+			
+			//IF
+			try { 
+				if ($line['type'] == "IF") {
+					Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+					//Exec IF
+					if ($this->checkCondition($line['condition'])) {
+						
+						if (!$this->runLines($line['statements']))
+							return false;  //ERROR
+
+						$this->currentLine = $currentLine;
+					} else {					
+						
+						//CHECK ELSE
+						$nextKey = (array_search($currentLine, array_keys($lines))+1);
+						$nextLine = array_keys($lines);
+						if (!isset($nextLine[$nextKey]))
+							continue;
+						$this->currentLine = $nextLine[$nextKey];
+						$line = $lines[$this->currentLine];
+
+						Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+						//Exec ELSE
+						if (!empty($line) && $line['type'] == "ELSE") {
+							$this->currentLine = $currentLine;
+							
+							if (!$this->runLines($line['statements'])) 
+								return false; //ERROR
+							$this->currentLine = $currentLine;
+						}
+
+						$this->currentLine = $currentLine;
+					}
+					continue;
+				}
+
+				//WHILE
+				if ($line['type'] == "WHILE") {
+					Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+					while ($this->checkCondition($line['condition'])) {
+						if (!$this->runLines($line['statements'])) 
+							return false; //ERROR
+
+						$this->currentLine = $currentLine;
+						Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+					}
+					continue;
+				}
+
+				//END IF/WHILE
+				if (in_array($line['type'], array("END-IF", "END-WHILE"))) {
+					Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+				}
+				
+				//COMMAND
+				if ($line['type'] == "COMMAND") {
+					Log::message(Language::getMessage('code_reader', 'run_line', array('code' => $line['line'], 'line' => $this->getCurrentLine())), 2);
+					
+					//Recupera comando
+					$command = $this->getCommand($line['line']);
+					$this->execCommand($command);	
+				}
+
+			} catch (CodeReaderException $ex) {
+				if ($ex->getCode() == 2) {
+					$this->error = array(
+						'error'		=> $ex->getMessage()
+					);	
+				} else {
+					$this->error = array(
+						'line'		=> $this->currentLine,
+						'code'		=> $line['line'],
+						'error'		=> $ex->getMessage()
+					);	
+				}
+				
+				return false;					
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	* Verifica se uma condição retorna true ou false
+	* @access private
+	* @param string $condition
+	* @return bool;
+	*/
+	private function checkCondition($condition) {
+		$search = '/\s+(' . $this->code->getAND() . '|' . $this->code->getOR() . ')\s+/'  . ($this->code->isCaseSensitive()? "" :"i");
+	
+		$return = null;  	//Condição que será retornada
+		$position = 0;		//Posição atual da condição na String
+		$commands = (preg_split($search, $condition, -1, PREG_SPLIT_OFFSET_CAPTURE)); //Lista de comandos na condição
+
+		foreach ($commands as $subcondition) {
+
+			//Executa o comando
+			$command = $this->getCommand(trim($subcondition[0]));
+			$result = (bool)$this->execCommand($command);
+
+			//Atribui o valor que será retornado
+			if (is_null($return))
+				$return = $result;
+			else {
+				//Caso exista mais de uma condição, verifica se a ação é de AND ou OR
+				$operator = substr($condition, $position, $subcondition[1] - $position);
+				$position = strlen($subcondition[0]);
+
+				//AND
+				if (preg_match('/('.$this->code->getAND().')/'  . ($this->code->isCaseSensitive()? "" :"i"), $operator))     //AND
+				$return = ($return && $result); 
+
+				//OR
+				elseif (preg_match('/('.$this->code->getOR().')/'  . ($this->code->isCaseSensitive()? "" :"i"), $operator))  //OR
+				$return = ($return || $result); 
+			}
+		}
+		Log::message(Language::getMessage('code_reader', 'check_condition', array('line' => $this->getCurrentLine(), 'condition' => $condition, 'return' => ($return? "true" : "false"))), 2);
+		return (bool)$return;		
+	}
+
+	/**
+	* Recupera o método e os parametros de uma linha de comando
+	* @access private
+	* @param string $line
+	* @return array (command)
+	*/
+	private function getCommand($line) {
 		$commandList = $this->code->getCommands();
 		$commandLine = false;
 		foreach ($commandList as $command => $method) {
-			$command = WordsUtil::convertToRegex($command, $this->code->getCaseSensitive());
-			//print_r($command);die;
-			
+			$command = WordsUtil::convertToRegex($command, $this->code->isCaseSensitive());
+
 			if (preg_match($command, $line, $match)) {				
 
 				$param = array();
@@ -345,35 +411,107 @@ class CodeReader {
 				break;
 			}
 		}
+
+		if ($commandLine == false) 
+			throw new CodeReaderException(Language::message('code_reader', 'code_not_found', array('line' => $line)));
 		
 		return $commandLine;
 	}
 
 	/**
-	* Verifica se uma condição retorna true ou false
-	* @access protected
-	* @param string $condition
+	* Executa o comando que o usuário digitou 
+	* @access private
+	* @param array $command
 	* @return bool;
 	*/
-	protected function checkCondition($condition) {
+	private function execCommand($command) {
+		if (method_exists($this->code, $command['method'])) {
+			Log::message(Language::getMessage('code_reader', 'run_command', array('method' => $command['method'], 'param' => json_encode($command['param']))), 2);			
 
-		$and = $this->code->getAND();
-		$or = $this->code->getOR();
-		$leftParen = $this->code->getLeftParen();
-		$rightParen = $this->code->getRightParen();
-
-		return false;		
+			if (!empty($command['param']))
+				return call_user_func_array(array($this->code, $command['method']), $command['param']);
+			else 
+				return call_user_func(array($this->code, $command['method']));			
+		} 
 	}
 
+	/**
+	* faz o controle do tempo máximo de execução
+	* @access private
+	*/
+	private function checkLimitTimeExecution() {
+		$time = microtime(true);
+		$time = round(($time - $this->timeExecution), 4);
+		if ($time > $this->code->maxTimeExecution()) 
+			throw new CodeReaderException(Language::getMessage('code_reader', 'max_time_execution'), 2);
+			
+	}
+	/****************** GETTERS E SETTERS *************************/
+	/**
+	* Informa o código que será verificado
+	* @param string $codeName
+	*/
+	public function setRules($codeName) {
+		$codeName = ucfirst($codeName);
 
+		if (file_exists(LIBRARIES_PATH.'code/'.$codeName.'.php')) 
+			require_once(LIBRARIES_PATH.'code/'.$codeName.'.php');
+		elseif(file_exists(LIBRARIES_JI_PATH.'code/'.$codeName.'.php')) 
+			require_once(LIBRARIES_JI_PATH.'code/'.$codeName.'.php');
+		else {
+			$msg = Language::getMessage('code_reader', 'error_rules', array('code_name' => $codeName));
+			Log::message($msg, 2);
+			throw new Exception($msg, 32);
+		}
+
+		$code = new $codeName;
+
+		$this->setCode($code);
+		$this->codeName = $codeName;
+	}
+
+	/**
+	* Seta o código que será interpretado na execução do script
+	* @param ICode $code
+	*/
+	public function setCode($code) {
+		if ($code instanceof JIndie\Code\ICode) 
+			$this->code = $code;
+		else {
+			$msg = Language::getMessage('code_reader', 'error_icode');
+			Log::message($msg, 2);
+			throw new Exception($msg, 33);
+		}
+	}
+
+	/**
+	* Retorna o erro no script do usuário
+	* @return array;
+	*/
+	public function getError() {
+		return $this->error;
+	}
+
+	/**
+	* Retorna a ultima linha executada
+	* @return int
+	*/
 	public function getCurrentLine() {
 		return $this->currentLine;
 	}
 
+	/**
+	* Retorna o total de linhas geradas no script
+	* @return int
+	*/
 	public function getTotalLine() {
 		return $this->totalLine;
 	}
 
+	/**
+	* Retorna as linhas geradas no script
+	* @return array
+	*/
 	public function getLines() {
 		return $this->lines;
 	}

@@ -14,8 +14,8 @@ class Command extends Controller {
 
 		$script = 
 		"moveUp();
-		if (moveDown()) {
-			if ((moveDown())) {
+		if (true && false) {
+			if (false) {
 				moveLeft();	
 			} else {
 				moveRight();	
@@ -26,11 +26,11 @@ class Command extends Controller {
 		else {
 			moveUp();
 
-			if (moveLeft()) {
+			if (true) {
 				moveRight();	
 			} else {
 				moveDown();	
-				moveDwn();	
+				moveDown();	
 			}
 		}
 		";
