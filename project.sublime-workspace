@@ -573,50 +573,45 @@
 	"expanded_folders":
 	[
 		"/var/www/jindie",
-		"/var/www/jindie/app",
-		"/var/www/jindie/app/controllers",
-		"/var/www/jindie/app/logs",
-		"/var/www/jindie/app/views",
-		"/var/www/jindie/app/views/errors",
-		"/var/www/jindie/app/views/game",
 		"/var/www/jindie/app/views/game/scenes",
-		"/var/www/jindie/app/views/library",
-		"/var/www/jindie/system",
-		"/var/www/jindie/system/core",
-		"/var/www/jindie/system/game",
-		"/var/www/jindie/system/language",
-		"/var/www/jindie/system/language/pt-br",
-		"/var/www/jindie/system/libraries",
-		"/var/www/jindie/system/libraries/code",
-		"/var/www/jindie/system/libraries/login",
 		"/var/www/jindie/system/libraries/login/facebook"
 	],
 	"file_history":
 	[
+		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Servidor",
+		"/var/www/jindie/system/game/IScene.php",
+		"/var/www/jindie/system/language/pt-br/upload.php",
+		"/var/www/jindie/system/language/pt-br/scenes.php",
+		"/var/www/jindie/system/libraries/Upload.php",
+		"/var/www/jindie/system/game/Goal.php",
+		"/var/www/jindie/system/language/pt-br/code_reader.php",
+		"/var/www/jindie/app/controllers/Teste.php",
+		"/var/www/jindie/system/helpers/url.php",
+		"/var/www/jindie/system/libraries/MapGenerator.php",
+		"/var/www/jindie/system/libraries/Email.php",
+		"/var/www/jindie/system/game/Score.php",
+		"/var/www/jindie/system/core/DefaultStructure.php",
+		"/var/www/jindie/system/core/Log.php",
+		"/var/www/jindie/system/core/Config.php",
 		"/var/www/jindie/app/views/game/scenes/PointAndClickCode.php",
 		"/var/www/jindie/system/libraries/code/Navegation.php",
 		"/var/www/jindie/system/libraries/CodeReader.php",
-		"/var/www/jindie/app/controllers/Teste.php",
 		"/var/www/jindie/app/controllers/Map.php",
 		"/var/www/jindie/app/controllers/SceneMap.php",
 		"/var/www/jindie/system/game/SceneMap.php",
 		"/var/www/jindie/system/game/Game.php",
 		"/var/www/jindie/system/language/pt-br/navegation.php",
 		"/var/www/jindie/system/Errors.txt",
-		"/var/www/jindie/system/libraries/MapGenerator.php",
 		"/var/www/jindie/app/views/library/map.php",
 		"/var/www/jindie/app/views/game/scenes/map.php",
 		"/var/www/jindie/app/logs/debug_2015-08-04.txt",
 		"/var/www/jindie/app/logs/log_2015-08-04.txt",
-		"/var/www/jindie/system/language/pt-br/code_reader.php",
 		"/var/www/jindie/app/controllers/Command.php",
 		"/var/www/jindie/system/language/pt-br/error.php",
 		"/var/www/jindie/system/libraries/login/facebook/autoload.php",
 		"/var/www/jindie/system/core/Errors.php",
 		"/var/www/jindie/system/core/JIndie.php",
 		"/var/www/jindie/system/core/ControllerFactory.php",
-		"/var/www/jindie/system/language/pt-br/scenes.php",
-		"/var/www/jindie/system/core/Config.php",
 		"/var/www/jindie/app/configurations/AutoLoad.php",
 		"/var/www/jindie/app/logs/debug_2015-08-03.txt",
 		"/var/www/jindie/app/configurations/General.php",
@@ -624,9 +619,6 @@
 		"/var/www/jindie/app/logs/log_2015-07-30.txt",
 		"/var/www/jindie/system/core/bootstrap.php",
 		"/var/www/jindie/system/language/pt-br/scene.php",
-		"/var/www/jindie/system/helpers/url.php",
-		"/var/www/jindie/system/core/DefaultStructure.php",
-		"/var/www/jindie/system/game/IScene.php",
 		"/var/www/jindie/app/controllers/SceneMap",
 		"/var/www/jindie/system/libraries/code/CodeReaderException.php",
 		"/var/www/jindie/system/exceptions/CodeReaderException.php",
@@ -656,12 +648,10 @@
 		"/var/www/jindie/app/controllers/Chat.php",
 		"/home/carlos/.cache/.fr-H3rDb9/jindie/WebContent/sala.jsp",
 		"/var/www/jindie/app/views/.htaccess",
-		"/var/www/jindie/system/game/Score.php",
 		"/var/www/jindie/system/core/View.php",
 		"/var/www/jindie/app/views/game.php",
 		"/var/www/jindie/system/libraries/ICode.php",
 		"/var/www/jindie/system/game/MenuItem.php",
-		"/var/www/jindie/system/game/Goal.php",
 		"/var/www/jindie/app/logs/debug_2015-07-22.txt",
 		"/home/carlos/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/SublimePlugin/Tutorial.txt",
 		"/var/www/jindie/app/views/game/Menu.php",
@@ -691,7 +681,6 @@
 		"/var/www/jindie/app/logs/debug_2015-07-14.txt",
 		"/var/www/jindie/system/core/Input.php",
 		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Git",
-		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Servidor",
 		"/var/www/jindie/.htaccess",
 		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Login.php",
 		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/.htaccess",
@@ -716,15 +705,11 @@
 		"/C/xampp/htdocs/jindie/system/core/JIndie.php",
 		"/C/xampp/htdocs/jindie/system/Errors.txt",
 		"/C/xampp/htdocs/jindie/system/language/pt-br/login.php",
-		"/C/xampp/htdocs/jindie/system/language/pt-br/class.php",
-		"/C/xampp/htdocs/jindie/system/core/Config.php",
-		"/C/xampp/htdocs/jindie/system/core/Controller.php",
-		"/C/xampp/htdocs/jindie/index.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/src/Google/Config.php"
+		"/C/xampp/htdocs/jindie/system/language/pt-br/class.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -1032,7 +1017,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
