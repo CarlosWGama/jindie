@@ -50,7 +50,22 @@ class Config {
 					case "Game":
 						if (file_exists(GAME_PATH.$class.'.php'))
 							require_once(GAME_PATH.$class.'.php');
+						else 
+							require_once(GAME_JI_PATH.$class.'.php');
 						break;
+					case "Library":
+						if (file_exists(LIBRARIES_PATH.$class.'.php'))
+							require_once(LIBRARIES_PATH.$class.'.php');
+						else 
+							require_once(LIBRARIES_JI_PATH.$class.'.php');
+						break;
+					case "Code":
+						if (file_exists(LIBRARIES_PATH.'code/'.$class.'.php'))
+							require_once(LIBRARIES_PATH.'code/'.$class.'.php');
+						else 
+							require_once(LIBRARIES_JI_PATH.'code/'.$class.'.php');
+						break;
+
 				}
 			}
 		}

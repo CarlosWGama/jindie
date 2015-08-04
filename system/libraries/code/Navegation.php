@@ -27,6 +27,12 @@ class Navegation implements ICode {
 	*/
 	protected $timeExecution = 3;
 
+	protected $session;
+
+	public function __construct() {
+		$this->session = new Session();
+	}
+
 	/**
 	* @return string
 	*/
@@ -86,63 +92,140 @@ class Navegation implements ICode {
 		return true;
 	}
 
+	private function move($data) {
+		if ($data['map']->hasTile($data['position'])) {
+			$tile = $data['map']->getTile($data['position']);
+
+			if (empty($tile['object'])) {
+				$tile['object'] = $data['player'];
+				$data['map']->alterTile($data['position'], $tile);
+			}
+		} else {
+			$tile = $data['map']->getDefaultTile();
+			$tile['object'] = $data['player'];
+			$data['map']->addTileAtPosition($data['position'], $tile);
+		}
+	}
+
 	/**
 	* 
 	*/
 	public function moveUp() {
-		echo ("Subiu!<br/>");
+		//Start
+		$data = $this->session->get('ji_move_player');
+
+		//Remove oldPosition
+		$data['map']->alterTile($data['position'], 'object', '');
+
+
+		//moveUp
+		$data['position']['y']--;
+		$this->move($data);
+
+		//End
+		$this->session->set('ji_move_player', $data);
 	}
 
 	/**
 	* 
 	*/
 	public function moveUpSteps($steps) {
-		if (!is_int($steps))
-			throw new CodeReaderException("AAAA");
-		echo ("Subiu " . $steps . " passos!<br/>");
+		if ($steps < 0)
+			throw new CodeReaderException(Language::getMessage("navegation", 'move_negative'));
+		
+		for ($i = 1; $i <= $steps; $i++) 
+			$this->moveUp();
+		
 	}
 
 	/**
 	* 
 	*/
 	public function moveDown() {
-		echo ("Desceu!<br/>");	
-		return false;
+		//Start
+		$data = $this->session->get('ji_move_player');
+
+		//Remove oldPosition
+		$data['map']->alterTile($data['position'], 'object', '');
+
+
+		//moveUp
+		$data['position']['y']++;
+		$this->move($data);
+
+		//End
+		$this->session->set('ji_move_player', $data);	
 	}
 
 	/**
 	* 
 	*/
 	public function moveDownSteps($steps) {
-		echo ("Desceu " . $steps . " passos!<br/>");
+		if ($steps < 0)
+			throw new CodeReaderException(Language::getMessage("navegation", 'move_negative'));
+
+		for ($i = 1; $i <= $steps; $i++) 
+			$this->moveDown();
 	}
 
 	/**
 	* 
 	*/
 	public function moveLeft() {
-		echo ("Esquerda!<br/>");
+		//Start
+		$data = $this->session->get('ji_move_player');
+
+		//Remove oldPosition
+		$data['map']->alterTile($data['position'], 'object', '');
+
+
+		//moveUp
+		$data['position']['x']--;
+		$this->move($data);
+
+		//End
+		$this->session->set('ji_move_player', $data);	
 	}
 
 	/**
 	* 
 	*/
 	public function moveLeftSteps($steps) {
-		echo ("Esquerda " . $steps . " passos!<br/>");
+		if ($steps < 0)
+			throw new CodeReaderException(Language::getMessage("navegation", 'move_negative'));
+
+		for ($i = 1; $i <= $steps; $i++) 
+			$this->moveLeft();
 	}
 
 	/**
 	* 
 	*/
 	public function moveRight() {
-		echo ("Direita!<br/>");
+		//Start
+		$data = $this->session->get('ji_move_player');
+
+		//Remove oldPosition
+		$data['map']->alterTile($data['position'], 'object', '');
+
+
+		//moveUp
+		$data['position']['x']++;
+		$this->move($data);
+
+		//End
+		$this->session->set('ji_move_player', $data);		
 	}
 
 	/**
 	* 
 	*/
 	public function moveRightSteps($steps) {
-		echo ("Direita " . $steps . " passos!<br/>");
+		if ($steps < 0)
+			throw new CodeReaderException(Language::getMessage("navegation", 'move_negative'));
+
+		for ($i = 1; $i <= $steps; $i++) 
+			$this->moveRight();
 	}
 
 	/******* OPERATORS *******/

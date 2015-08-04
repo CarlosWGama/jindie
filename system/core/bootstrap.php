@@ -5,12 +5,19 @@ define('FILTERS_PATH', 			__DIR__.'/../../app/filters/');
 define('MODELS_JI_PATH', 		__DIR__.'/../models/');
 define('MODELS_PATH', 			__DIR__.'/../../app/models/');
 define('VIEWS_PATH', 			__DIR__.'/../../app/views/');
+
 define('LIBRARIES_JI_PATH', 	__DIR__.'/../libraries/');
 define('LIBRARIES_PATH', 		__DIR__.'/../../app/libraries/');
+
 define('LANGUAGE_PATH', 		__DIR__.'/../language/');
+
 define('GAME_PATH', 			__DIR__.'/../../app/game/');
 define('GAME_JI_PATH', 			__DIR__.'/../game/');
+
 define('UTIL_JI_PATH', 			__DIR__.'/../utils/');
+define('HELPER_JI_PATH', 		__DIR__.'/../helpers/');
+define('HELPER_PATH', 			__DIR__.'/../../app/helpers/');
+
 define('CORE_PATH', 			__DIR__.'/');
 
 define('ROOT_PATH', 			__DIR__.'/../../');
@@ -40,6 +47,7 @@ require_once(UTIL_JI_PATH.'WordsUtil.php');
 require_once(UTIL_JI_PATH.'JSONUtil.php');
 
 //Interfaces
+require_once(GAME_JI_PATH.'IScene.php');
 require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');
 require_once(LIBRARIES_JI_PATH.'code/ICode.php');
 require_once(MODELS_JI_PATH.'IMessage.php');

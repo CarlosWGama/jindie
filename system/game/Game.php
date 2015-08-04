@@ -210,6 +210,14 @@ class Game {
 	}
 
 	/**
+	* Exibe os conteúdos da Scene
+	*/
+	public function showScene() {
+		$this->scene->check();
+		$this->scene->showScene();
+	}
+
+	/**
 	* @access public
 	* @param Menu $menu
 	*/

@@ -112,6 +112,11 @@ abstract class JI_DefaultStructure {
 		$this->{$name} = JI_Database::getInstance();	
 	}
 
+	/**
+	* Recupera algum componente do jogo na pasta Game
+	* @param string $component
+	* @return object
+	*/
 	protected function getGameComponent($component) {
 		$component = ucfirst($component);
 		if (file_exists(GAME_PATH.$component.'.php')) {
@@ -123,6 +128,17 @@ abstract class JI_DefaultStructure {
 			return new $component;
 		}
 		return null;
+	}
+
+	/**
+	* Carrega algum helper
+	* @param string $helper
+	*/
+	protected function loadHelper($helper) {
+		if (file_exists(HELPER_PATH.$helper.'.php'))
+			require_once(HELPER_PATH.$helper.'.php');
+		else
+			require_once(HELPER_JI_PATH.$helper.'.php');
 	}
 
 	/**

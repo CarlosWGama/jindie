@@ -413,7 +413,7 @@ class CodeReader {
 		}
 
 		if ($commandLine == false) 
-			throw new CodeReaderException(Language::message('code_reader', 'code_not_found', array('line' => $line)));
+			throw new CodeReaderException(Language::getMessage('code_reader', 'code_not_found', array('line' => $line)));
 		
 		return $commandLine;
 	}

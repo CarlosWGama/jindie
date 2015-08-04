@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"setPlaye",
+				"setPlayerPosition"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"pa",
+				"parse"
+			],
+			[
+				"url",
+				"urlBase"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
 				"END",
 				"END-WHILE"
 			],
@@ -90,10 +114,6 @@
 			[
 				"valid",
 				"validVector"
-			],
-			[
-				"url",
-				"urlToAction"
 			],
 			[
 				"addT",
@@ -392,10 +412,6 @@
 				"sorteiado"
 			],
 			[
-				"margin",
-				"margin-left"
-			],
-			[
 				"sorteio",
 				"sorteioID"
 			],
@@ -476,10 +492,6 @@
 				"text-align"
 			],
 			[
-				"pa",
-				"padding"
-			],
-			[
 				"limi",
 				"limite"
 			],
@@ -502,31 +514,80 @@
 			[
 				"banner",
 				"banners_model"
-			],
-			[
-				"rb",
-				"rgba()"
-			],
-			[
-				"text-",
-				"text-align"
-			],
-			[
-				"margi",
-				"margin-bottom"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "<?php\n/**\n*   JIndie\n*   @package JIndie\n*   @category Exceptions\n*   @author Carlos W. Gama <carloswgama@gmail.com>\n*   @copyright Copyright (c) 2015\n*   @license   http://opensource.org/licenses/gpl-3.0.html GNU Public License\n*   @version   1.0\n*/\n/**\n* \n*/ \nclass CodeReaderException extends Exception {\n	\n}",
-			"file": "system/exceptions/CodeReaderException.php",
-			"file_size": 0,
-			"file_write_time": 130828563902936678,
+			"file": "app/controllers/SceneMap.php",
 			"settings":
 			{
-				"buffer_size": 311,
+				"buffer_size": 1595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/logs/log_2015-07-30.txt",
+			"settings":
+			{
+				"buffer_size": 344,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/configurations/General.php",
+			"settings":
+			{
+				"buffer_size": 343,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "system/game/SceneMap.php",
+			"settings":
+			{
+				"buffer_size": 3917,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/language/pt-br/scenes.php",
+			"settings":
+			{
+				"buffer_size": 584,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/game/scenes/map.php",
+			"settings":
+			{
+				"buffer_size": 1346,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/libraries/CodeReader.php",
+			"settings":
+			{
+				"buffer_size": 14253,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/libraries/MapGenerator.php",
+			"settings":
+			{
+				"buffer_size": 14773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/library/map.php",
+			"settings":
+			{
+				"buffer_size": 2534,
 				"line_ending": "Unix"
 			}
 		}
@@ -588,24 +649,37 @@
 		"/var/www/jindie/app/configurations",
 		"/var/www/jindie/app/controllers",
 		"/var/www/jindie/app/logs",
+		"/var/www/jindie/app/views",
+		"/var/www/jindie/app/views/library",
 		"/var/www/jindie/system",
 		"/var/www/jindie/system/core",
+		"/var/www/jindie/system/game",
+		"/var/www/jindie/system/helpers",
 		"/var/www/jindie/system/language",
-		"/var/www/jindie/system/language/pt-br"
+		"/var/www/jindie/system/language/pt-br",
+		"/var/www/jindie/system/libraries",
+		"/var/www/jindie/system/libraries/code"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/system/game/Game.php",
+		"/var/www/jindie/system/core/bootstrap.php",
+		"/var/www/jindie/system/language/pt-br/scene.php",
+		"/var/www/jindie/system/helpers/url.php",
+		"/var/www/jindie/app/configurations/General.php",
+		"/var/www/jindie/system/core/DefaultStructure.php",
+		"/var/www/jindie/system/game/IScene.php",
+		"/var/www/jindie/app/controllers/SceneMap",
+		"/var/www/jindie/system/libraries/code/CodeReaderException.php",
+		"/var/www/jindie/system/exceptions/CodeReaderException.php",
 		"/var/www/jindie/system/libraries/code/ICode.php",
 		"/var/www/jindie/system/libraries/CodeReader.php",
 		"/var/www/jindie/system/libraries/code/Navegation.php",
 		"/var/www/jindie/app/controllers/Command.php",
 		"/var/www/jindie/system/Errors.txt",
 		"/var/www/jindie/system/language/pt-br/code_reader.php",
-		"/var/www/jindie/app/configurations/General.php",
 		"/var/www/jindie/app/logs/debug_2015-07-31.txt",
-		"/var/www/jindie/system/core/bootstrap.php",
 		"/var/www/jindie/system/language/pt-br/error.php",
-		"/var/www/jindie/system/exceptions/CodeReaderException.php",
 		"/var/www/jindie/system/utils/WordsUtil.php",
 		"/var/www/jindie/app/logs/log_2015-07-30.txt",
 		"/var/www/jindie/system/utils/WordUtil.php",
@@ -638,17 +712,14 @@
 		"/var/www/jindie/system/game/Score.php",
 		"/var/www/jindie/system/core/View.php",
 		"/var/www/jindie/app/views/game.php",
-		"/var/www/jindie/system/game/Game.php",
 		"/var/www/jindie/system/libraries/ICode.php",
 		"/var/www/jindie/system/game/MenuItem.php",
 		"/var/www/jindie/system/game/Goal.php",
 		"/var/www/jindie/system/core/ControllerFactory.php",
 		"/var/www/jindie/app/logs/debug_2015-07-22.txt",
 		"/home/carlos/Dropbox/Meus/Desenvolvimento/KMF/PHP-Java recursos/SublimePlugin/Tutorial.txt",
-		"/var/www/jindie/system/core/DefaultStructure.php",
 		"/var/www/jindie/system/core/Config.php",
 		"/var/www/jindie/app/configurations/AutoLoad.php",
-		"/var/www/jindie/system/game/IScene.php",
 		"/var/www/jindie/app/views/game/Menu.php",
 		"/var/www/jindie/system/libraries/Session.php",
 		"/home/carlos/Downloads/dynamic_menu/index.php",
@@ -718,15 +789,11 @@
 		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-api-php-client-master/src/Google/Client.php",
 		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-login-api/src/Google_Client.php",
 		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/includes/functions.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/config.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-webdevdummies/google-webdevdummies/googlesdk/src/Google_Client.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/gplus/google-webdevdummies/google-webdevdummies/googlesdk/src/config.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/account.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/index.php"
+		"/C/xampp/htdocs/jindie/system/libraries/login/googleplus/config.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -746,6 +813,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"valid",
+			"validat",
+			"validate",
+			"get",
+			"getDefa",
+			"hasTile",
+			"getMap",
+			"rule",
 			"getCaseSensitive",
 			"lexer",
 			"Excep",
@@ -865,15 +940,7 @@
 			"langua",
 			"include",
 			"require",
-			"useragent",
-			"'%%'\"",
-			"$this->isPost",
-			"set_value",
-			"$errors",
-			"fields.get(i)",
-			"log",
-			"namespace",
-			"JI_"
+			"useragent"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -987,16 +1054,44 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "system/exceptions/CodeReaderException.php",
+					"file": "app/controllers/SceneMap.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 311,
+						"buffer_size": 1595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1506,
+								1506
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/logs/log_2015-07-30.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 344,
 						"regions":
 						{
 						},
@@ -1009,13 +1104,214 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/configurations/General.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "system/game/SceneMap.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2817,
+								2817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1139.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "system/language/pt-br/scenes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								580,
+								580
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 24.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/game/scenes/map.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								952,
+								952
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "system/libraries/CodeReader.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11663,
+								11663
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5230.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "system/libraries/MapGenerator.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9327,
+								9327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4004.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/views/library/map.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2534,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								710,
+								710
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1060,7 +1356,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":

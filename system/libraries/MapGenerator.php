@@ -47,6 +47,12 @@ class MapGenerator {
 	protected $defaultTile = array('field' => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFElEQVR42mNI687+TwxmGFVIX4UAWFTrjQunmzcAAAAASUVORK5CYII=');
 
 	/**
+	* Usuário pode clicar caso haja URL configurada
+	* @access protected
+	* @var bool
+	*/
+	protected $clickable = true;
+	/**
 	* @param int $size
 	*/
 	public function setImageSize($size) {
@@ -322,6 +328,24 @@ class MapGenerator {
 		Log::message($msg, 2);
 	}
 
+	public function getMap($full = false) {
+		if (!$full) 
+			return $this->tile;
+
+		//Com o Default
+		$tiles = array();
+		
+		for ($x = 1; $x <= $this->mapSize['x']; $x++) {
+			for ($y = 1; $y <= $this->mapSize['y']; $y++) {
+				if (isset($this->tiles[$x][$y]))
+					$tiles[$x][$y] = $this->tiles[$x][$y];
+				else 
+					$tiles[$x][$y] = $this->defaultTile;
+			}
+		}
+		return $tiles;
+	}
+
 	/**
 	* Gera o mapa
 	* @param bool $returnHTML
@@ -333,18 +357,11 @@ class MapGenerator {
 		Log::message($msg, 2);
 
 		//
-		$tiles = array();
-		
-		for ($x = 1; $x <= $this->mapSize['x']; $x++) {
-			for ($y = 1; $y <= $this->mapSize['y']; $y++) {
-				if (isset($this->tiles[$x][$y]))
-					$tiles[$x][$y] = $this->tiles[$x][$y];
-				else 
-					$tiles[$x][$y] = $this->defaultTile;
-			}
-		}
-
 		$imageSize = $this->imageSize;
+		$map['tiles'] = $this->getMap(true);
+		$map['clickable'] = $this->isClickable();
+		$map = json_encode($map);
+
 
 		if ($returnHTML) {
 			ob_start();
@@ -392,6 +409,20 @@ class MapGenerator {
 	}
 
 	/**
+	* @param bool clickable
+	*/
+	public function setClickable($clickable) {
+		$this->clickable = (bool) $clickable;
+	}
+
+	/**
+	* @return bool
+	*/
+	public function isClickable() {
+		return $this->clickable;
+	}
+
+	/**
 	* Realiza validações no Vector(x, y)
 	* @access protected
 	* @param array $vector
@@ -429,7 +460,7 @@ class MapGenerator {
 		}
 
 		if ($isset) {
-			if (!isset($this->tiles[$vector['x']][$vector['y']])) {
+			if (!$this->hasTile($vector)) {
 				$msg = Language::getMessage('map', 'tile_not_exists', array('position' => $vector['x'].','.$vector['y']));
 				Log::message($msg, 2);
 				throw new Exception($msg, 25);
@@ -448,5 +479,21 @@ class MapGenerator {
 		}
 
 		return $vector;
+	}
+
+	/**
+	* @return array
+	*/
+	public function getDefaultTile() {
+		return $this->defaultTile;
+	}
+
+	public function hasTile($vector, $y = null) {
+		if (!is_null($y))
+			$vector = array($vector, $y);
+		
+		$this->validVector($vector, true);
+		$vector = $this->formatVector($vector);
+		return isset($this->tiles[$vector['x']][$vector['y']]);
 	}
 }

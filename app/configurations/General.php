@@ -2,7 +2,7 @@
 
 $config = array(
 
-	'urlBase' 			=> '',
+	'urlBase' 			=> 'http://local.jindie.com.br/',
 	'language' 			=> 'pt-br',
 	'defaultController' => 'index',
 	

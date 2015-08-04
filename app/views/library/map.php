@@ -1,5 +1,5 @@
 
-<div class="ji_map">
+<div>
 	<style scoped>
 		.ji_map {
 			border-radius: 10px;
@@ -33,53 +33,22 @@
 		}
 	</style>
 
-	  	<?php foreach($tiles as $x => $row): ?>
-	  	<!-- ROW -->
-	      <ul>
-	      	<!-- TILE -->
-	      	<?php foreach($row as $y => $tile):	?>
-	          <li data-posicao="<?php echo $x . ',' . $y ?>">
-	          	
-	          	<!--  ACTION -->
-	          	<?php if (isset($tile['url']) && !empty($tile['url'])): ?>
-	          		<a href="javascript:doActionJI('<?php echo $tile['url'] ?>')">
-	          	<?php endif; ?>
-	          	
-	          	<!-- FIELD -->
-	          	<?php if (isset($tile['field']) && !empty($tile['field'])): ?>
-	          		<div class="field"  style="background:url(<?php echo $tile['field'] ?>);">
-	            <?php else: ?>
-					<div class="field">
-				<?php endif; ?>
-	              
-	            	<!--  OBJECT -->
-	            	<?php if (isset($tile['object']) && !empty($tile['object'])): ?>
-	               		<img src="<?php echo $tile['object']?>"/>
-	            	<?php endif; ?>
-	            	<!--  END OBJECT -->
-	                  
-	            </div>
-	            <!--  END FIELD -->
-	              
-	            <!-- END ACTION -->
-	            <?php if (isset($tile['url']) && !empty($tile['url'])): ?>
-	            </a>
-	            <?php endif; ?>
-	              
-	          </li>
-	          <!-- END TILE -->
-	          <?php endforeach; ?>
-	      </ul>
-	      <?php endforeach; ?>
-	      <!-- END ROW -->
-      </div>
-  </div>
+	<div class="ji_map">
+	  	
+    </div>
+</div>
   
 <!-- JQUERY -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 <!-- SCRIPT -->
 <script type="text/javascript">
+
+
+	var map = JSON.parse('<?=$map?>');
+	reloadMap(map);
+
 	function doActionJI(url) {
   		$.post(url, function(json) { 
   			doResultJI (json);
@@ -103,5 +72,50 @@
 				doResultJI (json);
 			});
 		}
+	}
+
+	function reloadMap(json) {
+		
+		html = '';
+
+		$.each(json.tiles, function (x, row) {
+  		  	
+  		  	html += '<ul>';
+    		$.each(row, function (y, tile) {
+        		html += '<li data-posicao="' + x  +',' + y + '">';
+	          	
+	          	
+	          	if (tile.url != null && tile.url != "" && json.clickable) { 
+	          		/* ACTION */
+	          		html += '<a href="javascript:doActionJI(\'' + tile.url  + '\')">';
+	          	}
+	          	
+	          	/* FIELD */
+	          	if (tile.field != null && tile.field != "") { 
+	          		html += '<div class="field"  style="background:url('+ tile.field + ');">';
+	            } else { 
+					html += '<div class="field">';
+				}
+	              
+	            /* OBJECT */
+	            if (tile.object != null && tile.object != "") { 
+	               	html += '<img src="' +  tile.object + '"/>';
+	            }
+	            /* END OBJECT */
+	                  
+	            html += '</div>';
+	            /* END FIELD */
+
+	            if (tile.url != null && tile.url != "" && json.clickable) { 
+	            	html += '</a>';
+	            	/* END ACTION */
+	            }
+	            
+	            html += '</li>';
+    		});
+
+    		html += '</ul>';
+		});
+		$('.ji_map').html(html);
 	}
 </script>

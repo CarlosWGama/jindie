@@ -10,6 +10,8 @@
 * 	@version   1.0
 */
 
+namespace JIndie\Game;
+
 interface IScene {
 	
 	public function check();
