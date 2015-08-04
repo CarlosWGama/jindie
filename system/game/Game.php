@@ -21,46 +21,46 @@ require_once(SYSTEM_PATH.'libraries/Session.php');
 class Game {
 	
 	/**
-	* @access private
+	* @access protected
 	* @var IArtefact
 	*/
-	private $artifact;
+	protected $artifact;
 
 	/**
-	* @access private
+	* @access protected
 	* @var Score
 	*/
-	private $score;
+	protected $score;
 
 	/**
-	* @access private
+	* @access protected
 	* @var Goal
 	*/
-	private $goal;
+	protected $goal;
 
 	/**
 	* Exibe um conteúdo visto pelo usuário
-	* @access private
+	* @access protected
 	* @var IScene
 	*/
-	private $scene;
+	protected $scene;
 
 	/**
-	* @access private
+	* @access protected
 	* @var Menu
 	*/
-	private $menu;
+	protected $menu;
 
 	/**
-	* @access private
+	* @access protected
 	* @var this
 	*/
-	private static $instance;
+	protected static $instance;
 
 	/**
-	* @access private
+	* @access protected
 	*/
-	private function __construct() {
+	protected function __construct() {
 		$this->score = new Score;
 		$this->goal = new Goal;
 		$this->menu = new Menu;
@@ -105,7 +105,7 @@ class Game {
 		}
 	}
 
-	////// Getters and Setters ///////
+	/******* Getters and Setters ********/
 	/**
 	* @access public
 	* @param IArtifact $artifact
@@ -211,10 +211,23 @@ class Game {
 
 	/**
 	* Exibe os conteúdos da Scene
+	* @param bool $returnHTML
+	* @return string
 	*/
-	public function showScene() {
+	public function showScene($returnHTML = false) {
+		if (is_null($this->scene)) {
+			$msg = \Language::getMessage('error', 'game_scene_null');
+			\Log::message($msg, 2);
+			throw new \Exception($msg, 35);	
+		}
 		$this->scene->check();
-		$this->scene->showScene();
+		if ($returnHTML) {
+			ob_start();
+			$this->scene->showScene();
+			return ob_get_clean();
+		}
+		else
+			$this->scene->showScene();
 	}
 
 	/**
@@ -235,7 +248,7 @@ class Game {
 
 	/**
 	* @access public
-	* @param Menu
+	* @return Menu
 	*/
 	public function getMenu() {
 		return $this->menu;

@@ -13,7 +13,7 @@ class Command extends Controller {
 		$script = 'moveUp(1231212);moveDown();moveDown(1);moveLeft();';
 
 		$script = 
-		"moveUp();
+		"moveUp(\"\");
 		if (true && false) {
 			if (false) {
 				moveLeft();	
@@ -38,5 +38,7 @@ class Command extends Controller {
 		if (!$this->code->runScript($script)) {
 			print_r($this->code->getError());
 		}
+
+		print_r($this->code->getLines());
 	}
 }

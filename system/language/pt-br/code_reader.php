@@ -5,7 +5,7 @@ $language = array(
 	"error_icode"						=> "CODE READER: O arquivo setado não implementa ICode",
 	"error_no_code"						=> "CODE READER: Nenhum interpretador de código foi selecionado",
 
-	"code_not_found"					=> "Código na Linha '%LINE%' não reconhecido",
+	"code_not_found"					=> "Código '%LINE%' na Linha '%CURRENT_LINE%' não reconhecido",
 	"max_time_execution"				=> "O código atingiu o tempo limite de execução",
 
 	"parse_script"						=> "CODE READER: O Script será análisado e classificado para execução",

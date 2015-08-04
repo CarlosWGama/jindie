@@ -21,4 +21,5 @@ $language = array(
 	"game_not_menu"					=> "GAME: O componente setado no Game não é/herda a classe Menu",
 	"game_not_menu_item"			=> "GAME: O componente adicionado ao Menu não é/herda a classe MenuItem",
 	"game_points_not_numeric"		=> "GAME: O valor adicionado no Score não é um número.",
+	"game_scene_null"				=> "GAME: A Scene não foi definida"
 );

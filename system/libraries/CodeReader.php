@@ -87,15 +87,17 @@ class CodeReader {
 	private function explodeLines() {
 
 		//Quebra Linhas
-		$this->auxLexer['lines'] = explode($this->code->getBreakLine(), $this->script);
+		$this->auxLexer['lines'] 	= explode($this->code->getBreakLine(), $this->script);		
 		$this->auxLexer['position'] = 0;
+		$this->totalLine 			= 0;
 
 		//Remove linhs em branco no final
-		for ($i = count($this->auxLexer['lines']); $i >= 0; $i--) {
+		for ($i = (count($this->auxLexer['lines']) - 1); $i >= 0; $i--) {
 
-			if (!empty($this->auxLexer['lines'][$i]))
+			if (empty($this->auxLexer['lines'][$i]) || $this->auxLexer['lines'][$i] == "\n")
+				unset($this->auxLexer['lines'][$i]);
+			else
 				break;
-			unset($this->auxLexer['lines'][$i]);
 		}
 		
 		return $this->lexerLines();
@@ -230,6 +232,7 @@ class CodeReader {
 
 		//Gera as linhas de comando
 		Log::message(Language::getMessage('code_reader', 'parse_script'), 2);
+		$this->currentLine = 0;
 		$this->lines = $this->explodeLines();
 		Log::message(Language::getMessage('code_reader', 'end_parse_script', array('total_lines' => $this->totalLine)), 2);
 
@@ -393,6 +396,7 @@ class CodeReader {
 	* @return array (command)
 	*/
 	private function getCommand($line) {
+
 		$commandList = $this->code->getCommands();
 		$commandLine = false;
 		foreach ($commandList as $command => $method) {
@@ -413,7 +417,7 @@ class CodeReader {
 		}
 
 		if ($commandLine == false) 
-			throw new CodeReaderException(Language::getMessage('code_reader', 'code_not_found', array('line' => $line)));
+			throw new CodeReaderException(Language::getMessage('code_reader', 'code_not_found', array('line' => $line, 'current_line' => $this->getCurrentLine())));
 		
 		return $commandLine;
 	}
@@ -482,6 +486,13 @@ class CodeReader {
 			Log::message($msg, 2);
 			throw new Exception($msg, 33);
 		}
+	}
+	/**
+	* Retorna o ICode usado
+	* @return ICode
+	*/
+	public function getCode() {
+		return $this->code;
 	}
 
 	/**

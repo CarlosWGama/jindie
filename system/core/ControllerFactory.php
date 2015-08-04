@@ -63,9 +63,9 @@ final class ControllerFactory {
 					call_user_func_array(array($controller, $method), $args);					
 				}
 			} catch (Exception $ex) {
-				Log::message(Language::getMessage('log', 'debug_controller_method_fail', array('method' => $method, 'controller' => $nameController, 'cause' => $ex->getMessage())), 2);
+				Log::message(Language::getMessage('log', 'debug_controller_method_fail', array('method' => $method, 'controller' => $nameController, 'cause' => $ex->getMessage() . " (#" . $ex->getCode() . ")")), 2);
 
-				throw new Exception(Language::getMessage('class', 'method_fail', array('method' => $method, 'cause' => $ex->getMessage())), 2);	
+				throw new Exception(Language::getMessage('class', 'method_fail', array('method' => $method, 'cause' => $ex->getMessage() . " (#" . $ex->getCode() . ")")), 2);	
 			}
 
 		} else {

@@ -33,9 +33,9 @@ Errors
 	32 - error_rules				//CodeReader
 	33 - error_icode				//CodeReader
 	34 - error_no_code				//CodeReader
-	35 -
-	36 - 
-	37 -
-	38 -
-	39 -
+	35 - game_scene_null			//Game
+	36 - scenemap_no_map			//SceneMap
+	37 - scenemap_position_no_vector//SceneMap
+	38 - scenemap_position_no_valid //SceneMap
+	39 - scenemap_no_submit_code	//SceneMap
 	40 -

@@ -26,20 +26,40 @@
 		<!-- SCRIPT -->
 		<script type="text/javascript">
 
+			//Botão TAB
+			$(document).delegate('#ji_code_navegation', 'keydown', function(e) {
+				var keyCode = e.keyCode || e.which;
+
+  				if (keyCode == 9) {
+    				e.preventDefault();
+    				var start = $(this).get(0).selectionStart;
+    				var end = $(this).get(0).selectionEnd;
+
+    				
+    				$(this).val($(this).val().substring(0, start) + "\t" + $(this).val().substring(end));
+
+    				// put caret at right position again
+    				$(this).get(0).selectionStart = $(this).get(0).selectionEnd = start + 1;
+  				}
+			});
+
+
+			//Envia Código
 			function submitCode() {
 				
-				$.post('<?php echo $urlSubmitCode?>', {code: $('#ji_code_navegation').val()}, function (json) {
+				$.post('<?php echo $urlSubmitCode?>', {code: $('#ji_code_navegation').val()}, function (json) {					
 					//alert(json);
 					result = JSON.parse(json);
-
 					if (result.success == false) {
 						alert(result.error.error)
 					} else {
-						//alert("Sucesso");
 						$('#ji_code_navegation').val('');
 						reloadMap(result.map);	
+	
+						if (result.action) {
+							doActionJI(result.action);
+						}
 					}
-					
 				});
 			}
 		</script>

@@ -267,7 +267,7 @@ class Teste extends Controller{
 
 				//$this->game->getScore()->activeNegativeScore();
 				//$this->game->getScore()->activeGameOver();
-				$this->game->getScore()->resetGameOver();
+				$this->game->gescenesceneMapMaptScore()->resetGameOver();
 				$this->game->getScore()->addPoints(10);				
 				//$this->game->getScore()->removePoints(10);				
 				echo "Points: " . $this->game->getScore()->getPoints();
@@ -278,6 +278,12 @@ class Teste extends Controller{
 				$this->view->render('game');
 				break;
 		}
+	}
+
+	public function helper() {
+		$this->loadHelper('url');
+		//redirect("http://google.com.br");
+		redirect("sceneMap/");
 	}
 }
 

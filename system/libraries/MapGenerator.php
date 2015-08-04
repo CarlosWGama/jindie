@@ -492,8 +492,13 @@ class MapGenerator {
 		if (!is_null($y))
 			$vector = array($vector, $y);
 		
-		$this->validVector($vector, true);
-		$vector = $this->formatVector($vector);
-		return isset($this->tiles[$vector['x']][$vector['y']]);
+		try {
+			$vector = $this->formatVector($vector, true);
+			return isset($this->tiles[$vector['x']][$vector['y']]);	
+		} catch (Exception $ex) {
+			return false;
+		}
+
+		
 	}
 }

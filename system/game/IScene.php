@@ -14,8 +14,14 @@ namespace JIndie\Game;
 
 interface IScene {
 	
+	/**
+	* Verifica se os pre-requisitos foram atenditos antes de chamar o showScene
+	*/
 	public function check();
 
+	/**
+	* Gera a Scene
+	*/
 	public function showScene();
 
 }

@@ -19,6 +19,11 @@ abstract class JI_DefaultStructure {
 	*/ 
 	private $loader = null;
 
+	/**
+	* Objeto que armazena as ações e lógica do jogo
+	* @access protected
+	* @var Game
+	*/
 	protected $game = null;
 
 	public function __construct() {
