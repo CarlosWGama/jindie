@@ -49,22 +49,27 @@ abstract class JI_DefaultStructure {
 	/**
 	* carrega os models
 	* @access protected
+	* @uses $this->loadModel('jogo'); 						-> $this->jogo->play();
+	* @uses $this->loadModel('jogo', 'game'); 				-> $this->game->play();
+	* @uses $jogo = $this->loadModel('jogo', null, true); 	-> $jogo->play();
 	* @param string $model
 	* @param string $nameVar
 	* @return bool
 	*/
-	protected function loadModel($model, $nameVar = '') {
+	protected function loadModel($model, $nameVar = '', $return = false) {
 		if (empty($nameVar) ||!is_string($nameVar)) 
 			$nameVar = $model; 
 
 		try {
 			Log::message(Language::getMessage('log', 'debug_loader_model_try', array('model' => $model, 'class' => get_class())), 2);
 			
-			$this->{$nameVar} = $this->loader->model($model);
+			if ($return)
+				return $this->loader->model($model);
+			else
+				$this->{$nameVar} = $this->loader->model($model);
 			
 			Log::message(Language::getMessage('log', 'debug_loader_model_load', array('model' => $model, 'model_name' => $nameVar)), 2);
 
-			return true;	
 		} catch (Exception $ex) {
 			Log::message(Language::getMessage('log', 'debug_loader_model_fail', array('model' => $model)), 2);
 			

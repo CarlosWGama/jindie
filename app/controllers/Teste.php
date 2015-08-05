@@ -203,6 +203,15 @@ class Teste extends Controller{
 		print_r($this->loginSteam->getUserDataBySteamID('76561198079065891'));
 	}
 
+	public function model() {
+		//$jogo = $this->loadModel('jogo', null, true);
+		//$jogo->jogar();
+
+		$this->loadModel('jogo', "game");
+		$this->game->jogar();
+
+	}
+
 	public function game() {
 		echo "Teste:";
 

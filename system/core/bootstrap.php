@@ -48,9 +48,12 @@ require_once(UTIL_JI_PATH.'JSONUtil.php');
 
 //Interfaces
 require_once(GAME_JI_PATH.'IScene.php');
+require_once(GAME_JI_PATH.'IQuestion.php');
 require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');
 require_once(LIBRARIES_JI_PATH.'code/ICode.php');
+require_once(MODELS_JI_PATH.'IMailBox.php');
 require_once(MODELS_JI_PATH.'IMessage.php');
 require_once(MODELS_JI_PATH.'IUser.php');
+
 //
 Config::autoLoad();
