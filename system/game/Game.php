@@ -184,17 +184,9 @@ class Game {
 	*/
 	public function setScene($scene) {
 		if ($scene instanceof IScene) {
-			try {
-				\Log::message(\Language::getMessage('log', 'debug_game_scene_check'), 2); 
-				$scene->check();
-				$this->scene = $scene;	
-				\Log::message(\Language::getMessage('log', 'debug_game_scene'), 2); 
-			} catch (Exception $ex) {
-				\Log::message("GAME/Scene: " . $ex->getMessage(), 2);  
-				throw new Exception($ex->getMessage(), $ex->getCode());
-			}
-		}
-		else {
+			$this->scene = $scene;	
+			\Log::message(\Language::getMessage('log', 'debug_game_scene'), 2); 
+		} else {
 			$msg = \Language::getMessage('error', 'game_not_scene');
 			\Log::message($msg, 2);
 			throw new Exception($msg, 19);	
@@ -220,14 +212,22 @@ class Game {
 			\Log::message($msg, 2);
 			throw new \Exception($msg, 35);	
 		}
-		$this->scene->check();
-		if ($returnHTML) {
-			ob_start();
-			$this->scene->showScene();
-			return ob_get_clean();
+
+		try {
+			\Log::message(\Language::getMessage('log', 'debug_game_scene_check'), 2); 		
+			$this->scene->check();
+
+			if ($returnHTML) {
+				ob_start();
+				$this->scene->showScene();
+				return ob_get_clean();
+			}
+			else
+				$this->scene->showScene();
+		} catch (Exception $ex) {
+				\Log::message("GAME/Scene: " . $ex->getMessage(), 2);  
+				throw new Exception($ex->getMessage(), $ex->getCode());
 		}
-		else
-			$this->scene->showScene();
 	}
 
 	/**

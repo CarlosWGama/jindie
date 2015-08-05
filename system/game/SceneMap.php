@@ -128,7 +128,8 @@ class SceneMap implements IScene {
 	* Gera a Scene
 	*/
 	public function showScene() {
-
+		\Log::message(\Language::getMessage('log', 'debug_scene_show_scene', array('scene' => "SceneMap")), 2);
+		
 		if ($this->navegation == "PointAndClick") {
 			$this->map->setClickable(true);		//Pode Clicar no mapa
 			$hasCode = false;					//Não tem campo para digitar código
@@ -156,6 +157,7 @@ class SceneMap implements IScene {
 	* Verifica se todos os requisitos foram realizados para executar a Scene
 	*/
 	public function check () {
+		\Log::message(\Language::getMessage('log', 'debug_scene_start_check', array('scene' => "SceneMap")), 2);
 
 		if (empty($this->map->getMap(true)))
 			throw new \Exception(\Language::getMessage("scenes", "scenemap_no_map"));
@@ -187,6 +189,8 @@ class SceneMap implements IScene {
 				
 				break;
 		}
+
+		\Log::message(\Language::getMessage('log', 'debug_scene_end_check', array('scene' => "SceneMap")), 2);
 	}
 
 	/******* Exec Code *******/
@@ -196,7 +200,7 @@ class SceneMap implements IScene {
 	* @return string (json)
 	*/
 	public function runScript($code) {
-
+		\Log::message(\Language::getMessage('log', 'debug_scenemap_run_code'), 2);
 		//Formata o código
 		$code = html_entity_decode($code, ENT_QUOTES);
 		$code = str_replace("\"", "'", $code);

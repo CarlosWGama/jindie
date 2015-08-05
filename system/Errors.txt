@@ -38,4 +38,4 @@ Errors
 	37 - scenemap_position_no_vector//SceneMap
 	38 - scenemap_position_no_valid //SceneMap
 	39 - scenemap_no_submit_code	//SceneMap
-	40 -
+	40 - scenedialog_no_dialog		//SceneDialog

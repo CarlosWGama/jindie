@@ -125,4 +125,11 @@ $language = array(
 	"debug_map_alter_value"				=> "MAPA: Alterado o valor do campo '%PARAM%' para '%VALUE%' do tile de posição %POSITION%",
 	"debug_map_generate"				=> "MAPA: Iniciando a criação do mapa",
 	"debug_map_set_map"					=> "MAPA: Novo mapa definido",
+
+	'debug_scene_start_check'			=> "%SCENE%: Iniciando a validação/check da Scene",
+	'debug_scene_end_check'				=> "%SCENE%: Validação da Scene concluída",
+	'debug_scene_show_scene'			=> "%SCENE%: Exibindo conteúdo da Scene",
+
+	'debug_scenemap_run_code'			=> "SceneMap: Iniciando a executar o código do usuário"
+
 );	
