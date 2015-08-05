@@ -9,5 +9,6 @@ $language = array(
 	'scenemap_no_submit_code'			=> "SceneMap: Não foi definido nenhuma URL para enviar o código do usuário",
 
 	/* SCENE DIALOG */
-	'scenedialog_no_dialog'				=> "SceneDialog: Nenhum diálogo foi adicionado"
+	'scenedialog_no_dialog'				=> "SceneDialog: Nenhum diálogo foi adicionado",
+	'scenedialog_no_iquestion'			=> "SceneDialog: O objeto Question setado não implementa IQuestion"
 );

@@ -33,6 +33,12 @@ class SceneDialog implements IScene {
 	protected $speechs = array();
 
 	/**
+	* @access protected
+	* @var IQuestion
+	*/
+	protected $question;
+
+	/**
 	* Adiciona a fala dos personagens
 	* @uses $scene->addSpeech('carlos', 'Hello World', 'link-da-imagem');
 	* @uses $scene->addSpeech(array('text' => 'carlos', 'avatar' => 'Hello World', 'name' => 'link-da-imagem'));
@@ -78,6 +84,9 @@ class SceneDialog implements IScene {
 		if (count($this->speechs) == 0) 
 			throw new \Exception(\Language::getMessage('scenes', 'scenedialog_no_dialog'), 40);	
 
+		if (!is_null($this->question) && !($this->question instanceof IQuestion)) 
+			throw new \Exception(\Language::getMessage('scenes', 'scenedialog_no_iquestion'), 41);	
+
 		\Log::message(\Language::getMessage('log', 'debug_scene_end_check', array('scene' => "SceneDialog")), 2);
 	}
 
@@ -90,6 +99,8 @@ class SceneDialog implements IScene {
 
 		$speechs = $this->getSpeechs();
 		$colors = $this->getColors();
+		$question = (!is_null($this->question) ? $this->question->showQuestion(true) : '');
+
 		require(APP_PATH."views/game/scenes/dialog.php");	
 	}
 
@@ -149,4 +160,12 @@ class SceneDialog implements IScene {
 	protected function getColors() {
 		return $this->colors;
 	}
+
+	public function getQuestion() {
+		return $this->question;
+	}
+
+	public function setQuestion($question) {
+		$this->question = $question;
+	}	
 }

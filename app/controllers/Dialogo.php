@@ -16,4 +16,31 @@ class Dialogo extends Controller {
 	public function index() {
 		$this->view->render('dialog');
 	}
+
+	public function question() {
+		$question = $this->getGameComponent('MultipleChoice');		
+		$question->setQuestion('O que é isso?');
+		$question->setURLToSubmit('question/resposta/2');
+
+		$question->isCheckBox();
+		$question->addAlternative('Alternativa A', 'A');
+		$question->addAlternative('Alternativa B', 'B');
+		$question->addAlternative('Alternativa C', 'C', true);
+		$question->addAlternative('Alternativa D', 'D');
+		$question->addAlternative('Alternativa E', 'E');
+
+		$this->game->getScene()->setQuestion($question);
+
+		$this->view->render('dialog');	
+	}
+
+	public function question2() {
+		$question = $this->getGameComponent('ShortAnswer1');		
+		$question->setQuestion('O que é isso?');
+		$question->setURLToSubmit('question/resposta/2');
+
+		$this->game->getScene()->setQuestion($question);
+
+		$this->view->render('dialog');	
+	}
 }
