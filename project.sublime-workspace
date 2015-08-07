@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"com",
+				"component"
+			],
+			[
+				"componen",
+				"components"
+			],
+			[
+				"comp",
+				"component"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"implemen",
+				"class_implements"
+			],
+			[
+				"alte",
+				"alternative"
+			],
+			[
 				"Shor",
 				"ShortAnswer"
 			],
@@ -12,16 +52,8 @@
 				"alternatives"
 			],
 			[
-				"ma",
-				"margin-left"
-			],
-			[
 				"st",
 				"style	Tag"
-			],
-			[
-				"margin",
-				"margin-left"
 			],
 			[
 				"f",
@@ -252,10 +284,6 @@
 				"steps"
 			],
 			[
-				"com",
-				"component"
-			],
-			[
 				"load",
 				"loadModel"
 			],
@@ -424,10 +452,6 @@
 				"notificacaoID"
 			],
 			[
-				"mar",
-				"margin-right"
-			],
-			[
 				"mensa",
 				"mensagens_model"
 			],
@@ -490,99 +514,75 @@
 			[
 				"bor",
 				"border"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"pad",
-				"padding"
-			],
-			[
-				"margin-",
-				"margin-left"
-			],
-			[
-				"padd",
-				"padding-left"
-			],
-			[
-				"hei",
-				"height"
-			],
-			[
-				"bord",
-				"border-radius"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "system/game/SceneDialog.php",
+			"file": "app/controllers/Artifact.php",
 			"settings":
 			{
-				"buffer_size": 3339,
+				"buffer_size": 543,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "system/game/MultipleChoice.php",
+			"file": "system/core/bootstrap.php",
 			"settings":
 			{
-				"buffer_size": 3115,
+				"buffer_size": 2062,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "system/game/IArtefact.php",
+			"settings":
+			{
+				"buffer_size": 794,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "system/game/IQuestion.php",
+			"file": "system/game/Artefact.php",
 			"settings":
 			{
-				"buffer_size": 882,
+				"buffer_size": 1483,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/game/Game.php",
+			"settings":
+			{
+				"buffer_size": 5437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/game/IComponent.php",
+			"settings":
+			{
+				"buffer_size": 321,
 				"line_ending": "Unix",
 				"name": "<?php"
 			}
 		},
 		{
-			"file": "system/game/ShortAnswer.php",
+			"file": "system/game/Tile.php",
 			"settings":
 			{
-				"buffer_size": 1562,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/Question.php",
-			"settings":
-			{
-				"buffer_size": 207,
+				"buffer_size": 1620,
 				"line_ending": "Unix",
 				"name": "<?php"
 			}
 		},
 		{
-			"file": "app/models/Jogo.php",
+			"file": "app/configurations/AutoLoad.php",
 			"settings":
 			{
-				"buffer_size": 131,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "system/language/pt-br/log.php",
-			"settings":
-			{
-				"buffer_size": 9756,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "system/Errors.txt",
-			"settings":
-			{
-				"buffer_size": 1375,
-				"line_ending": "Windows"
+				"buffer_size": 177,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -640,39 +640,55 @@
 	[
 		"/var/www/jindie",
 		"/var/www/jindie/app",
+		"/var/www/jindie/app/configurations",
 		"/var/www/jindie/app/controllers",
-		"/var/www/jindie/app/logs",
-		"/var/www/jindie/app/models",
-		"/var/www/jindie/app/views",
+		"/var/www/jindie/app/libraries/code",
 		"/var/www/jindie/system",
 		"/var/www/jindie/system/core",
 		"/var/www/jindie/system/game",
 		"/var/www/jindie/system/helpers",
-		"/var/www/jindie/system/models",
+		"/var/www/jindie/system/language",
+		"/var/www/jindie/system/language/pt-br",
+		"/var/www/jindie/system/libraries",
 		"/var/www/jindie/system/utils"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/system/game/Artifact.php",
+		"/var/www/jindie/system/libraries/MapGenerator.php",
+		"/var/www/jindie/app/controllers/Artifact.php",
+		"/var/www/jindie/app/controllers/Dialogo.php",
+		"/var/www/jindie/app/controllers/Question.php",
+		"/var/www/jindie/app/views/game/question.php",
+		"/var/www/jindie/app/views/game/scenes/dialog.php",
+		"/home/carlos/Downloads/examples/stylesheet-pure-css.css",
+		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/demo.html",
+		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/style.css",
+		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/readme.txt",
+		"/var/www/jindie/system/game/SceneDialog.php",
+		"/var/www/jindie/system/game/ShortAnswer.php",
+		"/var/www/jindie/system/game/IQuestion.php",
+		"/var/www/jindie/system/game/MultipleChoice.php",
+		"/var/www/jindie/app/views/game/scenes/map.php",
 		"/var/www/jindie/system/language/pt-br/scenes.php",
+		"/var/www/jindie/system/Errors.txt",
+		"/var/www/jindie/system/language/pt-br/log.php",
+		"/var/www/jindie/app/game/ShortAnswer1.php",
+		"/var/www/jindie/app/models/Jogo.php",
 		"/var/www/jindie/app/logs/debug_2015-08-05.txt",
 		"/var/www/jindie/system/core/DefaultStructure.php",
 		"/var/www/jindie/system/core/ControllerFactory.php",
 		"/var/www/jindie/app/views/game/ShortAnswer1.php",
-		"/var/www/jindie/app/controllers/Dialogo.php",
 		"/var/www/jindie/system/models/IMessage.php",
-		"/var/www/jindie/system/game/ShortAnswer.php",
 		"/var/www/jindie/system/core/bootstrap.php",
 		"/var/www/jindie/system/game/SceneMap.php",
 		"/var/www/jindie/system/models/IMailBox.php",
 		"/var/www/jindie/app/controllers/Teste.php",
 		"/var/www/jindie/system/libraries/IMailBox",
-		"/var/www/jindie/system/Errors.txt",
-		"/var/www/jindie/system/game/SceneDialog.php",
 		"/var/www/jindie/system/game/Game.php",
 		"/home/carlos/.cache/.fr-RPhZeN/jindie/WebContent/game/scenes/dialog.jsp",
 		"/home/carlos/.cache/.fr-TWaJDI/jindie/WebContent/assets/css/stages.css",
 		"/var/www/jindie/app/views/dialog.php",
-		"/var/www/jindie/app/views/game/scenes/dialog.php",
 		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Servidor",
 		"/var/www/jindie/system/game/IScene.php",
 		"/var/www/jindie/system/language/pt-br/upload.php",
@@ -680,7 +696,6 @@
 		"/var/www/jindie/system/game/Goal.php",
 		"/var/www/jindie/system/language/pt-br/code_reader.php",
 		"/var/www/jindie/system/helpers/url.php",
-		"/var/www/jindie/system/libraries/MapGenerator.php",
 		"/var/www/jindie/system/libraries/Email.php",
 		"/var/www/jindie/system/game/Score.php",
 		"/var/www/jindie/system/core/Log.php",
@@ -692,7 +707,6 @@
 		"/var/www/jindie/app/controllers/SceneMap.php",
 		"/var/www/jindie/system/language/pt-br/navegation.php",
 		"/var/www/jindie/app/views/library/map.php",
-		"/var/www/jindie/app/views/game/scenes/map.php",
 		"/var/www/jindie/app/logs/debug_2015-08-04.txt",
 		"/var/www/jindie/app/logs/log_2015-08-04.txt",
 		"/var/www/jindie/app/controllers/Command.php",
@@ -714,7 +728,6 @@
 		"/var/www/jindie/system/utils/WordsUtil.php",
 		"/var/www/jindie/system/utils/WordUtil.php",
 		"/var/www/jindie/app/logs/debug_2015-07-30.txt",
-		"/var/www/jindie/system/language/pt-br/log.php",
 		"/var/www/jindie/app/logs/debug_2015-07-29.txt",
 		"/var/www/jindie/system/language/pt-br/map.php",
 		"/var/www/jindie/system/utils/JSONUtil.php",
@@ -747,7 +760,6 @@
 		"/var/www/jindie/system/game/IArtefact.php",
 		"/var/www/jindie/system/game/MapGenerator.php",
 		"/var/www/jindie/app/game/Game.php",
-		"/var/www/jindie/app/models/Jogo.php",
 		"/var/www/jindie/system/game/ScenePointAndClick.php",
 		"/var/www/jindie/app/views/game/scenes/PointAndClick.php",
 		"/var/www/jindie/system/game/ScenePointAndClickCode.php",
@@ -769,18 +781,7 @@
 		"/home/carlos/Dropbox/Meus/Eu/Outros/Linux/Git",
 		"/var/www/jindie/.htaccess",
 		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/Login.php",
-		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/.htaccess",
-		"/C/xampp/htdocs/jindie/system/language/pt-br/log.php",
-		"/C/xampp/htdocs/jindie/system/libraries/LoginFacebook.php",
-		"/C/xampp/htdocs/jindie/app/logs/debug_2015-07-08.txt",
-		"/C/xampp/htdocs/jindie/system/libraries/LoginSteam.php",
-		"/C/xampp/htdocs/jindie/app/controllers/Teste.php",
-		"/C/xampp/htdocs/jindie/system/libraries/LoginGoogle.php",
-		"/C/xampp/htdocs/jindie/system/libraries/LoginTwitter.php",
-		"/C/xampp/htdocs/jindie/system/libraries/FormValidation.php",
-		"/C/xampp/htdocs/jindie/app/configurations/Login.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/twitter/autoload.php",
-		"/C/xampp/htdocs/jindie/system/libraries/login/twitter/src/TwitterOAuth.php"
+		"/C/Users/Carlos/AppData/Local/Temp/fz3temp-1/.htaccess"
 	],
 	"find":
 	{
@@ -804,6 +805,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"url",
+			"tiles",
+			"balao",
+			"fala",
+			"fala-nome-personagem",
+			"fala-avatar",
+			"roundedOne",
 			"model",
 			"SceneDialog",
 			"log",
@@ -924,14 +932,7 @@
 			"count",
 			"get",
 			"columns",
-			"getOne",
-			"get(",
-			"where",
-			"<",
-			"\"<\"",
-			"_instance",
-			"Mysqlidb (",
-			"Mysqlidb"
+			"getOne"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -939,6 +940,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"balloon",
+			"speech",
+			"speech-name-char",
+			"speech-avatar",
+			"ji_type_radio",
 			"SceneMap",
 			"$this->data['positionOld']",
 			"->playerPosition",
@@ -1049,30 +1055,29 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "system/game/SceneDialog.php",
+					"file": "app/controllers/Artifact.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3339,
+						"buffer_size": 543,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3233,
-								3233
+								241,
+								241
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1083,19 +1088,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "system/game/MultipleChoice.php",
+					"file": "system/core/bootstrap.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3115,
+						"buffer_size": 2062,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2277,
-								2277
+								1943,
+								1943
 							]
 						],
 						"settings":
@@ -1103,56 +1108,27 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 273.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "system/game/IQuestion.php",
+					"file": "system/game/IArtefact.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 882,
+						"buffer_size": 794,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								880,
-								880
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<?php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "system/game/ShortAnswer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1562,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								282,
-								282
+								794,
+								794
 							]
 						],
 						"settings":
@@ -1167,20 +1143,78 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/controllers/Question.php",
+					"buffer": 3,
+					"file": "system/game/Artefact.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 207,
+						"buffer_size": 1483,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								125,
-								125
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "system/game/Game.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "system/game/IComponent.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
 							]
 						],
 						"settings":
@@ -1192,24 +1226,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/models/Jogo.php",
+					"buffer": 6,
+					"file": "system/game/Tile.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 131,
+						"buffer_size": 1620,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/configurations/AutoLoad.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
 							]
 						],
 						"settings":
@@ -1220,65 +1283,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "system/language/pt-br/log.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9756,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9634,
-								9634
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1326.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "system/Errors.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1323,7 +1328,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -27,6 +27,18 @@ define('APP_PATH', 				__DIR__.'/../../app/');
 //Exceptions
 require_once(LIBRARIES_JI_PATH.'code/CodeReaderException.php');
 
+
+//Interfaces
+require_once(GAME_JI_PATH.'IScene.php');
+require_once(GAME_JI_PATH.'IQuestion.php');
+require_once(GAME_JI_PATH.'IArtefact.php');
+require_once(GAME_JI_PATH.'IComponent.php');
+require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');
+require_once(LIBRARIES_JI_PATH.'code/ICode.php');
+require_once(MODELS_JI_PATH.'IMailBox.php');
+require_once(MODELS_JI_PATH.'IMessage.php');
+require_once(MODELS_JI_PATH.'IUser.php');
+
 //Require
 require_once(GAME_JI_PATH.'Game.php');
 require_once(CORE_PATH.'Config.php');
@@ -45,15 +57,6 @@ require_once(CORE_PATH.'FilterFactory.php');
 //Util
 require_once(UTIL_JI_PATH.'WordsUtil.php');
 require_once(UTIL_JI_PATH.'JSONUtil.php');
-
-//Interfaces
-require_once(GAME_JI_PATH.'IScene.php');
-require_once(GAME_JI_PATH.'IQuestion.php');
-require_once(LIBRARIES_JI_PATH.'login/ISocialLogin.php');
-require_once(LIBRARIES_JI_PATH.'code/ICode.php');
-require_once(MODELS_JI_PATH.'IMailBox.php');
-require_once(MODELS_JI_PATH.'IMessage.php');
-require_once(MODELS_JI_PATH.'IUser.php');
 
 //
 Config::autoLoad();

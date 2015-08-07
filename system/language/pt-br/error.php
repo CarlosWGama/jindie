@@ -14,7 +14,7 @@ $language = array(
 
 	//Especfic
 	//Game
-	"game_not_artifact"				=> "GAME: O componente setado no Game não implementa IArtifact",
+	"game_not_artefact"				=> "GAME: O componente setado no Game não implementa IArtefact",
 	"game_not_score"				=> "GAME: O componente setado no Game não é/herda a classe Score",
 	"game_not_goal"					=> "GAME: O componente setado no Game não é/herda a classe Goal",
 	"game_not_scene"				=> "GAME: O componente setado no Game não implementa IScene",
@@ -22,4 +22,6 @@ $language = array(
 	"game_not_menu_item"			=> "GAME: O componente adicionado ao Menu não é/herda a classe MenuItem",
 	"game_points_not_numeric"		=> "GAME: O valor adicionado no Score não é um número.",
 	"game_scene_null"				=> "GAME: A Scene não foi definida"
+
+	"game_not_component"			=> "GAME\ARTEFACT: O componente setado no Game não implementa IComponent",
 );

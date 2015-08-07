@@ -65,6 +65,18 @@ class Config {
 						else 
 							require_once(LIBRARIES_JI_PATH.'code/'.$class.'.php');
 						break;
+					case "Model":
+						if (file_exists(MODELS_PATH.$class.'.php'))
+							require_once(MODELS_PATH.$class.'.php');
+						else 
+							require_once(MODELS_JI_PATH.$class.'.php');
+						break;
+					case "Helper":
+						if (file_exists(HELPER_PATH.$class.'.php'))
+							require_once(HELPER_PATH.$class.'.php');
+						else 
+							require_once(HELPER_JI_PATH.$class.'.php');
+						break;
 
 				}
 			}

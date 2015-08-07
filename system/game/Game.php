@@ -3,7 +3,7 @@
 * 	JIndie
 *	@package JIndie
 *	@subpackage Game
-*	@category Components 
+*	@category Components of Game 
 * 	@author Carlos W. Gama <carloswgama@gmail.com>
 * 	@copyright Copyright (c) 2015
 * 	@license   http://opensource.org/licenses/gpl-3.0.html GNU Public License
@@ -15,7 +15,7 @@ namespace JIndie\Game;
 require_once(GAME_JI_PATH.'Goal.php');
 require_once(GAME_JI_PATH.'Score.php');
 require_once(GAME_JI_PATH.'Menu.php');
-require_once(GAME_JI_PATH.'IArtefact.php');
+require_once(GAME_JI_PATH.'Artefact.php');
 require_once(SYSTEM_PATH.'libraries/Session.php');
 
 class Game {
@@ -24,7 +24,7 @@ class Game {
 	* @access protected
 	* @var IArtefact
 	*/
-	protected $artifact;
+	protected $artefact;
 
 	/**
 	* @access protected
@@ -61,9 +61,10 @@ class Game {
 	* @access protected
 	*/
 	protected function __construct() {
-		$this->score = new Score;
-		$this->goal = new Goal;
-		$this->menu = new Menu;
+		$this->score 	= new Score;
+		$this->goal 	= new Goal;
+		$this->menu 	= new Menu;
+		$this->artefact = new Artefact;
 	}
 
 	/**
@@ -108,26 +109,26 @@ class Game {
 	/******* Getters and Setters ********/
 	/**
 	* @access public
-	* @param IArtifact $artifact
+	* @param IArtefact $artefact
 	*/
-	public function setArtifact($artifact) {
-		if ($artifact instanceof IArtefact) {
-			Log::message(\Language::getMessage('log', 'debug_game_artifact'), 2);
-			$this->artifact = $artifact;
+	public function setArtefact($artefact) {
+		if ($artefact instanceof IArtefact) {
+			\Log::message(\Language::getMessage('log', 'debug_game_artefact'), 2);
+			$this->artefact = $artefact;
 		}
 		else {
-			$msg = \Language::getMessage('error', 'game_not_artifact');
+			$msg = \Language::getMessage('error', 'game_not_artefact');
 			\Log::message($msg, 2);
-			throw new Exception($msg, 16);
+			throw new \Exception($msg, 16);
 		}
 	}
 
 	/**
 	* @access public
-	* @return IArtifact 
+	* @return IArtefact 
 	*/
-	public function getArtifact() {
-		return $this->artifact;
+	public function getArtefact() {
+		return $this->artefact;
 	}
 
 	/**

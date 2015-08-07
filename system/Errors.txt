@@ -40,3 +40,4 @@ Errors
 	39 - scenemap_no_submit_code	//SceneMap
 	40 - scenedialog_no_dialog		//SceneDialog
 	41 - scenedialog_no_iquestion	//SceneDialog
+	42 - game_not_component			//Game/Artefact

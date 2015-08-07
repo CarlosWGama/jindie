@@ -3,7 +3,7 @@
 * 	JIndie
 *	@package JIndie
 *	@subpackage Game
-*	@category Components 
+*	@category Components of Game 
 * 	@author Carlos W. Gama <carloswgama@gmail.com>
 * 	@copyright Copyright (c) 2015
 * 	@license   http://opensource.org/licenses/gpl-3.0.html GNU Public License
