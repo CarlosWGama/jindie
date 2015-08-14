@@ -34,6 +34,16 @@ interface IUser {
 	public function getName();
 
 	/**
+	* @param String $email
+	*/
+	public function setEmail($email);
+
+	/**
+	* @return string
+	*/
+	public function getEmail();
+
+	/**
 	* @param string $avatar
 	*/
 	public function setAvatar($avatar);

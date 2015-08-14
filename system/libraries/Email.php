@@ -126,10 +126,16 @@ class Email {
 	/**
 	* @uses $email->setFrom('carloswgama@gmail.com')
 	* @uses $email->setFrom('carloswgama@gmail.com', 'Carlos')
-	* @param string $email
+	* @uses $email->setFrom($usuario);
+	* @param string|IUser $email
 	* @param string $name
 	*/
 	public function setFrom($email, $name = '') {
+		if ($email instanceof JIndie\Model\IUser) {
+			$name = $email->getName();
+			$email = $email->getEmail();
+		}
+
 		if (empty($name)) $name = $email;
 		$this->from = array('email' => $email, 'name' => $name);
 	}
@@ -137,10 +143,16 @@ class Email {
 	/**
 	* @uses $email->setReplyTo('carloswgama@gmail.com')
 	* @uses $email->setReplyTo('carloswgama@gmail.com', 'Carlos')
-	* @param string $email
+	* @uses $email->setReplyTo($usuario);
+	* @param string|IUser $email
 	* @param string $name
 	*/
 	public function setReplyTo($email, $name = '') {
+		if ($email instanceof JIndie\Model\IUser) {
+			$name = $email->getName();
+			$email = $email->getEmail();
+		}
+
 		if (empty($name)) $name = $email;
 		$this->replyTo = array('email' => $email, 'name' => $name);
 	}
@@ -148,10 +160,16 @@ class Email {
 	/**
 	* @uses $email->addTo('carloswgama@gmail.com')
 	* @uses $email->addTo('carloswgama@gmail.com', 'Carlos')
-	* @param string $email
+	* @uses $email->addTo($usuario);
+	* @param string|IUser $email
 	* @param string $name
 	*/
 	public function addTo($email, $name = '') {
+		if ($email instanceof JIndie\Model\IUser) {
+			$name = $email->getName();
+			$email = $email->getEmail();
+		}
+
 		if (empty($name)) $name = $email;
 		$this->to[] = array('email' => $email, 'name' => $name);
 	}

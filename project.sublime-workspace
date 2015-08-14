@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/configurations/Login.php",
+			"settings":
+			{
+				"buffer_size": 804,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -574,20 +582,14 @@
 	[
 		"/var/www/jindie",
 		"/var/www/jindie/app",
-		"/var/www/jindie/app/configurations",
-		"/var/www/jindie/app/models",
-		"/var/www/jindie/system",
-		"/var/www/jindie/system/core",
-		"/var/www/jindie/system/game",
-		"/var/www/jindie/system/helpers",
-		"/var/www/jindie/system/language",
-		"/var/www/jindie/system/language/pt-br",
-		"/var/www/jindie/system/libraries",
-		"/var/www/jindie/system/utils"
+		"/var/www/jindie/app/configurations"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/app/configurations/General.php",
 		"/var/www/jindie/app/controllers/Start.php",
+		"/var/www/jindie/index.php",
+		"/var/www/jindie/app/configurations/AutoLoad.php",
 		"/var/www/jindie/app/views/start.php",
 		"/var/www/jindie/system/core/Config.php",
 		"/var/www/jindie/system/core/bootstrap.php",
@@ -597,11 +599,9 @@
 		"/var/www/jindie/system/language/pt-br/error.php",
 		"/var/www/jindie/app/cache/teste.txt",
 		"/var/www/jindie/app/logs/debug_2015-08-07.txt",
-		"/var/www/jindie/app/configurations/AutoLoad.php",
 		"/var/www/jindie/app/configurations/Database.php",
 		"/var/www/jindie/app/configurations/Email.php",
 		"/var/www/jindie/app/configurations/Login.php",
-		"/var/www/jindie/app/configurations/General.php",
 		"/var/www/jindie/system/game/Tile.php",
 		"/var/www/jindie/system/game/ShortAnswer.php",
 		"/var/www/jindie/system/game/Score.php",
@@ -707,7 +707,6 @@
 		"/var/www/jindie/app/views/game/scenes/PointAndClick.php",
 		"/var/www/jindie/system/game/ScenePointAndClickCode.php",
 		"/var/www/jindie/system/core/Controller.php",
-		"/var/www/jindie/index.php",
 		"/var/www/jindie/app/filters/Admin.php",
 		"/var/www/jindie/system/core/Model.php",
 		"/var/www/jindie/system/core/Filter.php",
@@ -989,8 +988,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/configurations/Login.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								356,
+								356
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

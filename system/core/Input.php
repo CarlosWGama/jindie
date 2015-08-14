@@ -216,7 +216,7 @@ final class Input {
 	* @return string
 	*/
 	public function getUrlPosition($position) {
-		$this->path[++$position];
+		return $this->path[++$position];
 	}
 
 	/**

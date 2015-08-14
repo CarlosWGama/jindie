@@ -41,3 +41,4 @@ Errors
 	40 - scenedialog_no_dialog		//SceneDialog
 	41 - scenedialog_no_iquestion	//SceneDialog
 	42 - game_not_component			//Game/Artefact
+	43 - scenedtext_no_text			//SceneText

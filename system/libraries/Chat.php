@@ -95,12 +95,23 @@ class Chat {
 
 	/**
 	* Adicion as novas mensagens que serão transformadas em json no getJsonMessages
-	* @param string $name
+	* @uses $chat->addMessage($usuario, 'hello');
+	* @uses $chat->addMessage('carlos', 'hello', 'link-imagem', '2015-01-01');
+	* @uses $chat->addMessage('carlos', 'hello', 'link-imagem');
+	* @uses $chat->addMessage('carlos', 'hello', 'link-imagem');
+	* @uses $chat->addMessage('carlos', 'hello');
+	* @param string|IUser $name
 	* @param string $comment
 	* @param string $avatar
 	* @param string $date
 	*/
 	public function addMessage($name, $comment, $avatar = null, $date = null) {
+		if ($name instanceof JIndie\Model\IUser) {
+			$avatar = $name->getAvatar();
+			$name = $name->getName();
+		}
+
+
 		$this->messages[] = array(
 			'name'			=> $name,
 			'comment'		=> $comment,
