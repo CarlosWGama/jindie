@@ -53,6 +53,13 @@ class SceneText implements IScene {
 	public function setImage($image) {
 		$this->image = $image;
 	}
+
+	/**
+	* @access protected
+	* @var IQuestion
+	*/
+	protected $question;
+
 	
 	/**
 	* Realiza a validação da Scene
@@ -62,6 +69,9 @@ class SceneText implements IScene {
 
 		if (empty($this->text)) 
 			throw new \Exception(\Language::getMessage('scenes', 'scenedtext_no_text'), 43);	
+
+		if (!is_null($this->question) && !($this->question instanceof IQuestion)) 
+			throw new \Exception(\Language::getMessage('scenes', 'scenedialog_no_iquestion'), 41);	
 
 		\Log::message(\Language::getMessage('log', 'debug_scene_end_check', array('scene' => "SceneText")), 2);
 	}
@@ -73,11 +83,28 @@ class SceneText implements IScene {
 	public function showScene() {
 		\Log::message(\Language::getMessage('log', 'debug_scene_show_scene', array('scene' => "SceneText")), 2);
 
-		$text = $this->getText();
+		$text = nl2br(trim($this->getText()));
 		$image = $this->getImage();
+		$question = (!is_null($this->question) ? $this->question->showQuestion(true) : '');
 
 		require(APP_PATH."views/game/scenes/text.php");	
 	}
+
+	/**
+	* Recupera a questão
+	* @return IQuestion
+	*/
+	public function getQuestion() {
+		return $this->question;
+	}
+
+	/**
+	* Altera a questão
+	* @param IQuestion $question
+	*/
+	public function setQuestion($question) {
+		$this->question = $question;
+	}	
 
 
 

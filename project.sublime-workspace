@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
 				"h",
 				"html	html"
 			],
@@ -18,10 +26,6 @@
 			[
 				"comp",
 				"component"
-			],
-			[
-				"margin",
-				"margin-bottom"
 			],
 			[
 				"marg",
@@ -510,23 +514,11 @@
 			[
 				"border-",
 				"border-spacing"
-			],
-			[
-				"bor",
-				"border"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "app/configurations/Login.php",
-			"settings":
-			{
-				"buffer_size": 804,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -582,10 +574,28 @@
 	[
 		"/var/www/jindie",
 		"/var/www/jindie/app",
-		"/var/www/jindie/app/configurations"
+		"/var/www/jindie/app/configurations",
+		"/var/www/jindie/app/views",
+		"/var/www/jindie/app/views/game",
+		"/var/www/jindie/app/views/game/scenes",
+		"/var/www/jindie/system",
+		"/var/www/jindie/system/game",
+		"/var/www/jindie/system/libraries",
+		"/var/www/jindie/system/models"
 	],
 	"file_history":
 	[
+		"/var/www/jindie/system/libraries/Chat.php",
+		"/var/www/jindie/system/models/IUser.php",
+		"/var/www/jindie/system/core/Input.php",
+		"/var/www/jindie/system/Errors.txt",
+		"/var/www/jindie/app/views/game/scenes/dialog.php",
+		"/var/www/jindie/system/libraries/Email.php",
+		"/var/www/jindie/app/views/game/scenes/map.php",
+		"/var/www/jindie/system/game/SceneText.php",
+		"/var/www/jindie/app/views/game/scenes/text.php",
+		"/var/www/jindie/system/game/Tile.php",
+		"/var/www/jindie/system/libraries/MapGenerator.php",
 		"/var/www/jindie/app/configurations/General.php",
 		"/var/www/jindie/app/controllers/Start.php",
 		"/var/www/jindie/index.php",
@@ -602,7 +612,6 @@
 		"/var/www/jindie/app/configurations/Database.php",
 		"/var/www/jindie/app/configurations/Email.php",
 		"/var/www/jindie/app/configurations/Login.php",
-		"/var/www/jindie/system/game/Tile.php",
 		"/var/www/jindie/system/game/ShortAnswer.php",
 		"/var/www/jindie/system/game/Score.php",
 		"/var/www/jindie/system/game/SceneMap.php",
@@ -616,21 +625,17 @@
 		"/var/www/jindie/system/game/IArtefact.php",
 		"/var/www/jindie/system/game/Goal.php",
 		"/var/www/jindie/system/game/Artefact.php",
-		"/var/www/jindie/system/Errors.txt",
 		"/var/www/jindie/system/language/pt-br/log.php",
 		"/var/www/jindie/system/core/Errors.php",
 		"/var/www/jindie/app/controllers/Artifact.php",
 		"/var/www/jindie/system/game/Artifact.php",
-		"/var/www/jindie/system/libraries/MapGenerator.php",
 		"/var/www/jindie/app/controllers/Dialogo.php",
 		"/var/www/jindie/app/controllers/Question.php",
 		"/var/www/jindie/app/views/game/question.php",
-		"/var/www/jindie/app/views/game/scenes/dialog.php",
 		"/home/carlos/Downloads/examples/stylesheet-pure-css.css",
 		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/demo.html",
 		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/style.css",
 		"/home/carlos/Downloads/CssCheckboxKit_1438813648730646/readme.txt",
-		"/var/www/jindie/app/views/game/scenes/map.php",
 		"/var/www/jindie/system/language/pt-br/scenes.php",
 		"/var/www/jindie/app/game/ShortAnswer1.php",
 		"/var/www/jindie/app/models/Jogo.php",
@@ -649,7 +654,6 @@
 		"/var/www/jindie/system/libraries/Upload.php",
 		"/var/www/jindie/system/language/pt-br/code_reader.php",
 		"/var/www/jindie/system/helpers/url.php",
-		"/var/www/jindie/system/libraries/Email.php",
 		"/var/www/jindie/system/core/Log.php",
 		"/var/www/jindie/app/views/game/scenes/PointAndClickCode.php",
 		"/var/www/jindie/system/libraries/code/Navegation.php",
@@ -680,9 +684,7 @@
 		"/var/www/jindie/system/utils/JSONUtil.php",
 		"/home/carlos/.cache/.fr-5FRAOx/jindie/WebContent/game/scenes/map.jsp",
 		"/home/carlos/.cache/.fr-EQDxWF/jindie/WebContent/assets/css/stages.css",
-		"/var/www/jindie/system/models/IUser.php",
 		"/var/www/jindie/system/libraries/IMessage.php",
-		"/var/www/jindie/system/libraries/Chat.php",
 		"/var/www/jindie/app/logs/debug_2015-07-25.txt",
 		"/var/www/jindie/app/views/library/chat.php",
 		"/var/www/jindie/app/views/chat.php",
@@ -710,14 +712,11 @@
 		"/var/www/jindie/app/filters/Admin.php",
 		"/var/www/jindie/system/core/Model.php",
 		"/var/www/jindie/system/core/Filter.php",
-		"/var/www/jindie/system/core/Loader.php",
-		"/var/www/jindie/system/libraries/LoginGoogle.php",
-		"/var/www/jindie/system/libraries/LoginFacebook.php",
-		"/var/www/html/testes/namespace/Filha.php"
+		"/var/www/jindie/system/core/Loader.php"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -988,38 +987,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/configurations/Login.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 804,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								356,
-								356
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

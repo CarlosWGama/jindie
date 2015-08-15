@@ -161,10 +161,18 @@ class SceneDialog implements IScene {
 		return $this->colors;
 	}
 
+	/**
+	* Recupera a questão
+	* @return IQuestion
+	*/
 	public function getQuestion() {
 		return $this->question;
 	}
 
+	/**
+	* Altera a questão
+	* @param IQuestion $question
+	*/
 	public function setQuestion($question) {
 		$this->question = $question;
 	}	
