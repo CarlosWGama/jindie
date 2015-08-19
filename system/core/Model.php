@@ -15,5 +15,14 @@
 abstract class Model extends JI_DefaultStructure {
 	
 
+	public function __construct() {
+		parent::__construct();
+		try {
+			$this->loadDatabase('db');	
+		} catch (Exception $ex) {
+			
+		}
+		
+	}
 
 }

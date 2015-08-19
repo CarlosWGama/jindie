@@ -75,7 +75,7 @@ final class Input {
 		$this->cleanInput();
 
 		//URL
-		$this->path = explode('/', (!empty($path) ? $path : "index" ));
+		$this->path = explode('/', $path);
 		Log::message(Language::getMessage('log', 'debug_input_url', array('url' => $path)), 2);
 
 		$i = 0;

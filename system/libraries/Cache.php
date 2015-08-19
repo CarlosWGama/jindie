@@ -51,7 +51,7 @@ class Cache {
 			$content = json_decode(file_get_contents($this->dirCache . $file . '.txt'), true);	
 			$now = date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y')));
 			if ($content['expiry'] > $now) {
-				Log::message(Language::getMessage('log', 'debug_cache_get_success', array('data' => $content['data'])), 2);
+				Log::message(Language::getMessage('log', 'debug_cache_get_success', array('data' => json_encode($content['data']))), 2);
 				return $content['data'];
 			}
 

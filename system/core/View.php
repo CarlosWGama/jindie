@@ -28,14 +28,19 @@ final class View {
 	/**
 	* carrega uma única view dentro de um template (modelo)
 	* @param string $template
-	* @param string $content
+	* @param string $file
 	* @param array $args
 	*/
-	public function template($template, $content, $args = array()) {
+	public function template($template, $file, $args = array()) {
 		$game = $this->getGame();
 
 		if (!empty($args))
 			extract($args);
+
+		ob_start();
+		if (file_exists(VIEWS_PATH.$file.'.php'))
+			require(VIEWS_PATH.$file.'.php');
+		$content = ob_get_clean();
 
 		if (file_exists(VIEWS_PATH.$template.'.php'))
 			require(VIEWS_PATH.$template.'.php');

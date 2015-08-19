@@ -381,6 +381,23 @@ class JI_Database {
     }
 
     /**
+     * Recupera os valores rankeados pela condição e order by
+     * @uses $db->orderBy('pontuacao', 'desc')->getRank('usuarios', 5); //Os 5 primeiros
+     * @param string  $tableName The name of the database table to work with.
+     * @param string  in
+     * @return array Contains the returned rows from the select query.
+     */
+    public function getRank ($tableName, $numRows = null, $columns = '*') {  
+        $position = 0;
+        if (is_array($numRows))
+            $position = current($numRows);
+        $columns .= ', @i:=@i+1 AS rank_position'; 
+        $tableName .= ', (SELECT @i:=' . $position . ') foo';
+        return $this->get($tableName, $numRows, $columns);
+    }
+
+
+    /**
      * Count all results in a table
      * @param string  $tableName The name of the database table to work with.
      * @return int total of rows.

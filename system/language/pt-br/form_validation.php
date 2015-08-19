@@ -17,5 +17,6 @@ $language = array(
 	'fileRequired'		=> "O campo '%NAME_FIELD%' precisa de um arquivo",
 	'fileExt'			=> "O arquivo do campo '%NAME_FIELD%' não possui uma extensão válida",
 	'fileMaxSize'		=> "O arquivo do campo '%NAME_FIELD%' é maior que %SIZE%MB",
-	'fileUnique'		=> "O valor do campo '%NAME_FIELD%' já está sendo usado"
+	'fileUnique'		=> "O valor do campo '%NAME_FIELD%' já está sendo usado",
+	'fileDate'			=> "O valor do campo '%NAME_FIELD%' não é uma data válida"
 );

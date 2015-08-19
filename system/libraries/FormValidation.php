@@ -55,6 +55,9 @@ class FormValidation {
 	* @uses $this->formValidation->addRule('cpf', 'CPF', 'cpf');
 	* @uses $this->formValidation->addRule('cnpj', 'CNPJ', 'cnpj');
 	* @uses $this->formValidation->addRule('arquivo', 'FILE', 'fileRequired;fileExt[doc, png];fileMaxSize[0.5]');
+	* @uses $this->formValidation->addRule('data', 'DATE - YYYY-MM-DD', 'date');
+	* @uses $this->formValidation->addRule('mes', 'DATE - MM', 'date[m]');
+	* @uses $this->formValidation->addRule('data', 'DATE - DD/MM/YYYY', 'date[d/m/Y]');
 	* @param string $field
 	* @param string $nameField
 	* @param string $rule
@@ -195,7 +198,12 @@ class FormValidation {
 							$ok = false;
 							$this->errors[] = Language::getMessage('form_validation', 'fileUnique', array('name_field' => $field['nameField']));
 						}
-
+						break;
+					case "date":
+						if ($this->failDate($field['field'], $extra))  {
+							$ok = false;
+							$this->errors[] = Language::getMessage('form_validation', 'fileDate', array('name_field' => $field['nameField']));
+						}
 						break;
 				}
 			}
@@ -557,7 +565,7 @@ class FormValidation {
 	* checa se o campo $field é unico ou se já existe outro valor igual armazenado no banco
 	* @access protected
 	* @param string $field
-	* @param string extra
+	* @param string $extra
 	*/
 	protected function failUnique($field, $extra) {
 		$value = ($this->input->isPost() ? $this->input->post($field) : $this->input->get($field));
@@ -591,6 +599,28 @@ class FormValidation {
 
 		$db->where($column, $value);
 		return $db->has($table);
+	}
+
+	/**
+	* checa se o campo $field possui uma data válida. O Campo Extra serve para recuperar o formato da data para formata-lo para o padrão Y-m-d
+	* @access protected
+	* @param string $field
+	* @param string $format
+	*/
+	protected function failDate($field, $extra) {
+		$value = ($this->input->isPost() ? $this->input->post($field) : $this->input->get($field));
+
+		if (empty($value))
+			return false;
+
+		try {
+			if (empty($extra)) $format = 'Y-m-d';
+			else $format = $extra;
+			$d = DateTime::createFromFormat($format, $value);
+    		return !($d && $d->format($format) == $value);
+		} catch (Exception $ex) {
+			return true;
+		}
 	}
 }
 

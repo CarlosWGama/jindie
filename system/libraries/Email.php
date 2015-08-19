@@ -79,21 +79,24 @@ class Email {
 
 	/**
 	* Assunto
+	* @access protected
 	* @var string
 	*/
-	public $subject	= "";						
+	protected $subject	= "";						
 
 	/**
 	* Mensagem
+	* @access protected
 	* @var string
 	*/
-	public $msg	= "";						
+	protected $msg	= "";						
 
 	/**
 	* Anexos (arquivo, nome do arquivo)
+	* @access protected
 	* @var string
 	*/
-	public $attachments = array();					//Anexos
+	protected $attachments = array();					//Anexos
 
 	/**
 	* @access private
@@ -121,6 +124,20 @@ class Email {
 		if (isset($config['smtpDebug']))	$this->smtpDebug = $config['smtpDebug'];
 		if (isset($config['subject']))		$this->subject = $config['subject'];
 		if (isset($config['msg']))			$this->msg = $config['msg'];
+	}
+
+	/**
+	* @param string $subject
+	*/
+	public function setSubject($subject) {
+		$this->subject = $subject;
+	}
+
+	/**
+	* @param string $message
+	*/
+	public function setMessage($message) {
+		$this->msg = $message;
 	}
 
 	/**
