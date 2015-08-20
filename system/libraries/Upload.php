@@ -23,6 +23,21 @@ class Upload {
 	*/	
 	protected $error = '';
 
+
+	/**
+	* @access protected
+	* @var string
+	*/
+	protected $fileName;
+
+	/**
+	* Recupera o nome do arquivo após upload
+	* @return string
+	*/
+	public function getFileName() {
+		return $this->fileName;
+	}
+
 	public function __construct() {
 		$this->input = Input::getInstance();
 	}
@@ -89,7 +104,7 @@ class Upload {
 
 		Log::message(Language::getMessage('upload', 'do_upload', array('file' => $file['name'], 'destiny' => $destiny, 'overwrite' => ($overwrite ? 'SIM' : 'NÃO'))), 2);
 
-
+		$this->fileName = substr($destiny, strlen($dir));
 		return move_uploaded_file($file['tmp_name'], $destiny);
 	}
 
