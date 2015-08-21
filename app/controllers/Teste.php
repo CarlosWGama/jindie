@@ -294,6 +294,16 @@ class Teste extends Controller{
 		//redirect("http://google.com.br");
 		redirect("sceneMap/");
 	}
+
+	public function paginacao($pagina = 1) {
+		$this->loadHelper('url');
+		$this->loadLibrary('pagination');
+		$this->pagination->config('url', site_url('teste/paginacao'));
+		$this->pagination->config('totalItens', 100);
+		$this->pagination->config('currentPage', $pagina);
+		$this->pagination->config('reuseQueryString', true);
+		echo $this->pagination->create();
+	}
 }
 
 
