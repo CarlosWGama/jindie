@@ -61,6 +61,7 @@ class FormValidation {
 	* @param string $field
 	* @param string $nameField
 	* @param string $rule
+	* @return FormValidation
 	*/
 	public function addRule($field, $nameField, $rule) {
 		$this->fields[] = array(
@@ -68,6 +69,7 @@ class FormValidation {
 			'nameField'	=> $nameField,
 			'rule'		=> $rule
 		);
+		return $this;
 	}
 	/**
 	* $this->formValidation->check()

@@ -12,61 +12,104 @@
 
 namespace JIndie\Game;
 
-interface IComponent {
-	
+class Component implements IComponent {
 
+	/**
+	* @access protected
+	* @var int
+	*/
+	protected $id;
+	
+	/**
+	* @access procted
+	* @var string
+	*/
+	protected $name;
+
+	/**
+	* @access procted
+	* @var string
+	*/
+	protected $description;
+
+	/**
+	* @access procted
+	* @var array
+	*/
+	protected $extra = array();
+	
 	/**
 	* Retorna o ID do componente
 	* @return int
 	*/
-	public function getID();
+	public function getID() {
+		return $this->id;
+	}
 	
 	/**
 	* Seta o ID do componente
 	* @param int $id;
 	*/
-	public function setID($id);
-
+	public function setID($id) {
+	    $this->id = $id;
+	}
+	
 	/**
 	* Retorna o nome do componente
 	* @return string
 	*/
-	public function getName();
+	public function getName() {
+		return $this->name;
+	}
+
 	/**
 	* Seta o nome do componente
 	* @param string $name
 	*/
-	public function setName($name);
-
+	public function setName($name) {
+		$this->name = $name;
+	}
 
 	/**
 	* Retorna a descrição do componente
 	* @return string
 	*/
-	public function getDescription();
+	public function getDescription() {
+		return $this->description; 
+	}
+
 	/**
 	* Seta a descrição do componente
 	* @param string $description
 	*/
-	public function setDescription($description);
-
+	public function setDescription($description) {
+		return $this->description;
+	}
 
 	/**
 	* Recupera dados/informações Extras do Componente
 	* @param string $param
 	* @return mix
 	*/
-	public function getExtra($param);
+	public function getExtra($param) {
+		return $this->extra[$param];
+	}
+	
 	/**
 	* Seta dados/informações Extras do Componente
 	* @param string $param
 	* @param mix $value
 	*/
-	public function setExtra($param, $value);
+	public function setExtra($param, $value) {
+		$this->extra[$param] = $value;
+	}
+
 	/**
 	* Deleta dados/informações Extras do Componente
 	* @param string $param
 	*/
-	public function deleteExtra($param);
-
+	public function deleteExtra($param) {
+		if (isset($this->extra[$param]))
+			unset($this->extra[$param]);
+	}
 }

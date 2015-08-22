@@ -12,21 +12,7 @@
 
 namespace JIndie\Game;
 
-class Tile implements IComponent {
-
-	/**
-	* Nome do componente
-	* @access protected
-	* @var string
-	*/
-	protected $name;
-
-	/**
-	* Informação/Descrição/Texto relacionado ao componente
-	* @access protected
-	* @var string
-	*/
-	protected $description;
+class Tile extends Component {
 
 	/**
 	* Informações do Tile do componente
@@ -34,72 +20,6 @@ class Tile implements IComponent {
 	* @var array|Tile
 	*/
 	protected $tile = array('field' => "", 'object' => "", 'url' => "");
-
-	/**
-	* Informações extras relacionada ao Componente
-	* @access protected
-	* @var array
-	*/
-	protected $extra = array();
-
-	/**
-	* Retorna o nome do componente
-	* @return string
-	*/
-	public function getName() {
-		return $this->name;
-	}
-	/**
-	* Seta o nome do componente
-	* @param string $name
-	*/
-	public function setName($name) {
-		$this->name = $name;
-	}
-
-
-	/**
-	* Retorna a descrição do componente
-	* @return string
-	*/
-	public function getDescription() {
-		return $this->description;
-	}
-	/**
-	* Seta a descrição do componente
-	* @param string $description
-	*/
-	public function setDescription($description) {
-		$this->description = $description;
-	}
-
-
-	/**
-	* Recupera dados/informações Extras do Componente
-	* @param string $param
-	* @return mix
-	*/
-	public function getExtra($param) {
-		return (isset($this->extra[$param]) ? $this->extra[$param] : null);
-	}
-
-	/**
-	* Seta dados/informações Extras do Componente
-	* @param string $param
-	* @param mix $value
-	*/
-	public function setExtra($param, $value) {
-		$this->extra[$param] = $value;
-	}
-
-	/**
-	* Deleta dados/informações Extras do Componente
-	* @param string $param
-	*/
-	public function deleteExtra($param) {
-		if (isset($this->extra[$param]))
-			unset($this->extra[$param]);
-	}
 
 	/**
 	* Informa dados do Tile

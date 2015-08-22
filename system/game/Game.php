@@ -16,6 +16,7 @@ require_once(GAME_JI_PATH.'Goal.php');
 require_once(GAME_JI_PATH.'Score.php');
 require_once(GAME_JI_PATH.'Menu.php');
 require_once(GAME_JI_PATH.'Artefact.php');
+require_once(GAME_JI_PATH.'Component.php');
 require_once(SYSTEM_PATH.'libraries/Session.php');
 
 class Game {
