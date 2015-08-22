@@ -35,9 +35,32 @@ if (!function_exists('redirect')) {
 			$urlBase = Config::getInfo('general', 'urlBase');
 			$url = $urlBase . $url;
 		}
+
+		////////Sava o Game Antes de encerrar as ações
+		//Recupera
+		if (file_exists(GAME_PATH.'/Game.php')) {
+		 	require_once(GAME_PATH.'/Game.php');
+		 	$game = Game::getInstance();
+
+		 	if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
+		 		$game = null;
+		}
+
+		if ($game == null) {
+			require_once(GAME_JI_PATH.'/Game.php');
+			$game = JIndie\Game\Game::getInstance();
+		}
+
+		//Salva
+		$session = new Session;
+		$session->saveGame($game);
+		Log::message(Language::getMessage('log', 'debug_game_save'), 2);
+
+		/////// Redireciona para outra página
+		Log::message(Language::getMessage('log', 'debug_url_redirect', array('url' => $url)), 2);
 		session_write_close();
 		header('Location: ' . $url, true);
-		exit;
+		exit();
 	}
 }
 

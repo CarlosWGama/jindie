@@ -80,13 +80,14 @@ $language = array(
 	'debug_game_load'					=> "GAME: Objeto game carregado (Já existente na sessão)",
 	'debug_game_hud'					=> "GAME: Exibindo HUD. (Retornar em forma de HTML: %RETURN_HTML%)",
 	'debug_game_artefact'				=> "GAME: novo artefato setado com sucesso",
+	'debug_game_artefact_null'			=> "GAME: O artefato foi setado como nulo",
 	'debug_game_score'					=> "GAME: novo score setado com sucesso",
 	'debug_game_goal'					=> "GAME: novo Goal setado com sucesso",
 	'debug_game_scene_check'			=> "GAME: Iniciando validação de Scene",
 	'debug_game_scene'					=> "GAME: nova Scene setada com sucesso",
 	'debug_game_scene'					=> "GAME: novo Menu setado com sucesso",
 
-	'debug_game_component'				=> "Game\Artefact: O componente não implementa IComponent",
+	'debug_game_component'				=> "Game\Artefact: Adicinaodo componente ao Artefato",
 	
 	'debug_game_goal_step_position'		=> "GAME\GOAL: Nova etapa adicionada na posição %POSITION%",
 	'debug_game_goal_step'				=> "GAME\GOAL: Nova etapa adicionada no final do objetivo",
@@ -132,6 +133,7 @@ $language = array(
 	'debug_scene_end_check'				=> "%SCENE%: Validação da Scene concluída",
 	'debug_scene_show_scene'			=> "%SCENE%: Exibindo conteúdo da Scene",
 
-	'debug_scenemap_run_code'			=> "SceneMap: Iniciando a executar o código do usuário"
+	'debug_scenemap_run_code'			=> "SceneMap: Iniciando a executar o código do usuário",
 
+	'debug_url_redirect'				=> "HELPER\URL: A pagína está sendo redirecionada para: %URL%",
 );	

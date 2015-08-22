@@ -113,7 +113,11 @@ class Game {
 	* @param IArtefact $artefact
 	*/
 	public function setArtefact($artefact) {
-		if ($artefact instanceof IArtefact) {
+		if ($artefact == null) {
+			\Log::message(\Language::getMessage('log', 'debug_game_artefact_null'), 2);
+			$this->artefact = null;
+		}
+		elseif ($artefact instanceof IArtefact) {
 			\Log::message(\Language::getMessage('log', 'debug_game_artefact'), 2);
 			$this->artefact = $artefact;
 		}
