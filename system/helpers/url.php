@@ -42,7 +42,7 @@ if (!function_exists('redirect')) {
 		 	require_once(GAME_PATH.'/Game.php');
 		 	$game = Game::getInstance();
 
-		 	if  (!is_subclass_of($this->game, "JIndie\Game\Game"))
+		 	if  (!is_subclass_of($game, "JIndie\Game\Game"))
 		 		$game = null;
 		}
 
