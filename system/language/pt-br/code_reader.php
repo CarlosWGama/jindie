@@ -13,7 +13,7 @@ $language = array(
 	"start_run_script"					=> "CODE READER: O Script será executado",
 	"run_line"							=> "CODE READER: Código '%CODE%' na linha '%LINE%' será executado",
 	"check_condition"					=> "CODE READER: A condição '%CONDITION%' na linha %LINE% returnou um valor %RETURN%",
-	"run_command"						=> "CODE READER: Executando o método '%METHOD%' com os paramêtros: %PARAM%"
-	
-	
+	"run_command"						=> "CODE READER: Executando o método '%METHOD%' com os paramêtros: %PARAM%",
+
+	"start_check_script"				=> "CODE READER: Inicia a verificação do Script",
 );

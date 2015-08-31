@@ -115,7 +115,6 @@ class CodeReader {
 		$endIfStructure 	= '/^' . $this->code->getEndIfStructure() . '/'  . ($this->code->isCaseSensitive()? "" :"i");
 		$whileStructure 	= '/^' . str_replace('[CONDITION]', '(.*)', $this->code->getWhileStructure()) . '/'  . ($this->code->isCaseSensitive()? "" :"i");
 		$endWhileStructure 	= '/^' . $this->code->getEndWhileStructure() . '/'  . ($this->code->isCaseSensitive()? "" :"i");
-
 		$lines = array();
 
 		//Atribuid o que a linha representa e seta a linha em sua Key
@@ -125,7 +124,7 @@ class CodeReader {
 			$this->auxLexer['position']++;
 
 			//IF
-			if (preg_match($ifStructure, $line, $match)) {
+			if ($ifStructure != '/^/' && preg_match($ifStructure, $line, $match)) {
 				$nextCommand = trim(substr($line, strlen($match[0])));
 				
 				if (!empty($nextCommand))
@@ -142,7 +141,7 @@ class CodeReader {
 			}
 
 			//ENDIF
-			if (preg_match($endIfStructure, $line, $match)) {
+			if ($endIfStructure != '/^/' && preg_match($endIfStructure, $line, $match)) {
 				$nextCommand = trim(substr($line, strlen($match[0])));
 				if (!empty($nextCommand))
 					array_splice($this->auxLexer['lines'], $this->auxLexer['position'], 0, $nextCommand);
@@ -157,7 +156,7 @@ class CodeReader {
 			}
 
 			//ELSE
-			if (preg_match($elseStructure, $line, $match)) {
+			if ($elseStructure != '/^/' && preg_match($elseStructure, $line, $match)) {
 				$nextCommand = trim(substr($line, strlen($match[0])));
 
 				if (!empty($nextCommand))
@@ -172,7 +171,7 @@ class CodeReader {
 			}	
 
 			//WHILE
-			if (preg_match($whileStructure, $line, $match)) {
+			if ($whileStructure != '/^/' && preg_match($whileStructure, $line, $match)) {
 				$nextCommand = trim(substr($line, strlen($match[0])));
 
 				if (!empty($nextCommand))
@@ -188,7 +187,7 @@ class CodeReader {
 			}
 
 			//ENDWHILE
-			if (preg_match($endWhileStructure, $line, $match)) {
+			if ($endWhileStructure != '/^/' && preg_match($endWhileStructure, $line, $match)) {
 				$nextCommand = trim(substr($line, strlen($match[0])));
 
 				if (!empty($nextCommand))
@@ -215,6 +214,107 @@ class CodeReader {
 	}
 
 	/******************************* EXECUÇÃO *******************************/
+	/**
+	* Método que apenas verifica se o script está correto, mas não o executa
+	* @param string $script
+	* @return bool
+	*/
+	public function validScript($script) {
+		if (is_null($this->code)) {
+			$msg = Language::getMessage('code_reader', 'error_no_code');
+			Log::message($msg, 2);
+			throw new Exception($msg, 34);
+		}
+
+		$this->script = $script;
+
+		//Gera as linhas de comando
+		Log::message(Language::getMessage('code_reader', 'parse_script'), 2);
+		$this->currentLine = 0;
+		$this->lines = $this->explodeLines();
+		Log::message(Language::getMessage('code_reader', 'end_parse_script', array('total_lines' => $this->totalLine)), 2);
+		
+		if ($this->totalLine > 0)  {
+			$this->timeExecution = microtime(true);
+			try {
+				Log::message(Language::getMessage('code_reader', 'start_check_script'), 2);
+				return $this->checkLines($this->lines);
+			} catch (CodeReaderException $ex) {
+				$this->error['error'] = array($ex->getMessage());
+				return false;
+			}
+		}
+		return true;
+	}
+	/**
+	* Checa todas as linhas são válidas
+	*/
+	private function checkLines($lines) {
+		//Tratamento de Condição
+		$search = '/\s+(' . $this->code->getAND() . '|' . $this->code->getOR() . ')\s+/'  . ($this->code->isCaseSensitive()? "" :"i");
+
+		foreach ($lines as $currentLine => $line) {
+
+			$this->checkLimitTimeExecution();
+			
+			//IF
+			try { 
+				if ($line['type'] == "IF") {
+					//Exec IF
+					//Checa condição
+					$commands = (preg_split($search, $line['condition'], -1, PREG_SPLIT_OFFSET_CAPTURE)); //Lista de comandos na condição
+					foreach ($commands as $subcondition)
+						$command = $this->getCommand(trim($subcondition[0]));
+			
+					//Checa conteudo interno do IF
+					if (!$this->checkLines($line['statements']))
+						return false;  //ERROR						
+				} 
+
+				//else
+				if ($line['type'] == "ELSE") {
+					if (!$this->checkLines($line['statements']))
+						return false;  //ERROR							
+				}
+
+				//WHILE
+				if ($line['type'] == "WHILE") {
+					//Checa condição
+					$commands = (preg_split($search, $line['condition'], -1, PREG_SPLIT_OFFSET_CAPTURE)); //Lista de comandos na condição
+					foreach ($commands as $subcondition)
+						$command = $this->getCommand(trim($subcondition[0]));
+
+					//Checa conteudo interno do WHILE
+					if (!$this->checkLines($line['statements']))
+						return false;  //ERROR						
+					continue;
+				}
+
+				//COMMAND
+				if ($line['type'] == "COMMAND") 
+					$command = $this->getCommand($line['line']);
+				
+
+			} catch (CodeReaderException $ex) {
+				if ($ex->getCode() == 2) {
+					$this->error = array(
+						'error'		=> $ex->getMessage()
+					);	
+				} else {
+					$this->error = array(
+						'line'		=> $currentLine,
+						'code'		=> $line['line'],
+						'error'		=> $ex->getMessage()
+					);	
+				}
+				
+				return false;					
+			}
+		}
+		return true;
+	}
+
+
 	/**
 	* Executa o código do usuário
 	* @param string $script

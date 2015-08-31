@@ -83,7 +83,7 @@ class Component implements IComponent {
 	* @param string $description
 	*/
 	public function setDescription($description) {
-		return $this->description;
+		$this->description = $description;
 	}
 
 	/**
