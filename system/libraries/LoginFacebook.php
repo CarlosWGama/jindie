@@ -154,6 +154,7 @@ class LoginFacebook implements ISocialLogin {
 		
 			$object = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject();
 
+			//avatar = <img src="//graph.facebook.com/$id/picture?type=large">
 			$data = array(
 				'id' 			=> $object->getProperty('id'),
 				'name' 			=> $object->getProperty('name'),
