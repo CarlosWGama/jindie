@@ -54,6 +54,13 @@ class LoginFacebook implements ISocialLogin {
 	protected $redirectURL;
 
 	/**
+	* Deve pegar os amigos do facebook que usam o aplicativo?
+	* @access protected
+	* @var bool
+	*/
+	protected $getFriends;
+
+	/**
 	* Mensagem de erro
 	* @var string
 	*/
@@ -64,7 +71,8 @@ class LoginFacebook implements ISocialLogin {
 
 		$this->setCredentials($credential);
 		$this->setRedirectURL($credential['redirectURLFacebook']);
-		
+		$this->getFriends = (isset($credential['getFriendsUsingApp']) ? (bool) $credential['getFriendsUsingApp'] : false);
+
 		//Se sessão não tiver sido iniciada, a inicializa
 		if (session_status() == PHP_SESSION_NONE) {
  	 		require_once(__dir__.'/Session.php');   
@@ -106,7 +114,12 @@ class LoginFacebook implements ISocialLogin {
 
 		$helper = new FacebookRedirectLoginHelper($this->redirectURL, $this->appID, $this->appSecret);
 		try {
-			$url = $helper->getLoginUrl();
+
+			if ($this->getFriends)
+				$url = $helper->getLoginUrl(array('user_friends'));
+			else
+				$url = $helper->getLoginUrl();
+
 			Log::message(Language::getMessage('log', 'debug_facebook_get_url', array('url' => $url)), 2);
 
 			return $url;	
@@ -120,10 +133,11 @@ class LoginFacebook implements ISocialLogin {
 	* @return array
 	*/
 	public function getUserData() {
+	
 		if (!$this->credentialIsSet()) return;
-
+	
 		$helper = new FacebookRedirectLoginHelper($this->redirectURL);
-
+	
 		try {
   			$session = $helper->getSessionFromRedirect();
 		} catch(FacebookRequestException $ex) {
@@ -136,10 +150,10 @@ class LoginFacebook implements ISocialLogin {
 			return null;
 		}
 
-
 		if (isset($session)) {
+		
 			$object = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject();
-			
+
 			$data = array(
 				'id' 			=> $object->getProperty('id'),
 				'name' 			=> $object->getProperty('name'),
@@ -152,6 +166,16 @@ class LoginFacebook implements ISocialLogin {
 				'updated_time'	=> $object->getProperty('updated_time'),
 				'verified' 		=>$object->getProperty('verified'),
 			);
+			
+			if ($this->getFriends) {
+				$object = (new FacebookRequest($session, 'GET', '/me/friends'))->execute()->getGraphObject()->asArray();	
+				foreach ($object['data'] as $friend) {
+					$data['friends'][] = array(
+						'id'		=> $friend->id,
+						'name'		=> $friend->name
+					);
+				}
+			}
 			
 			Log::message(Language::getMessage('log', 'debug_facebook_get_data', array('data' => json_encode($data))), 2);
 			return $data;

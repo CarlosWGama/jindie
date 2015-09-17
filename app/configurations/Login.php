@@ -5,6 +5,7 @@ $config = array(
 	'appID'					=> '1607139926202193',
 	'appSecret'				=> '4c819f5df7db173807a9268f0f99f267',
 	'redirectURLFacebook'	=> 'http://local.jindie.com.br/teste/facebook',
+	'getFriendsUsingApp'	=> false,
 
 
 	//Twitter
