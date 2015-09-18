@@ -93,8 +93,7 @@ class CodeReader {
 
 		//Remove linhs em branco no final
 		for ($i = (count($this->auxLexer['lines']) - 1); $i >= 0; $i--) {
-
-			if (empty($this->auxLexer['lines'][$i]) || $this->auxLexer['lines'][$i] == "\n")
+			if (empty(trim($this->auxLexer['lines'][$i])) || $this->auxLexer['lines'][$i] == "\n")
 				unset($this->auxLexer['lines'][$i]);
 			else
 				break;
@@ -254,6 +253,7 @@ class CodeReader {
 		$search = '/\s+(' . $this->code->getAND() . '|' . $this->code->getOR() . ')\s+/'  . ($this->code->isCaseSensitive()? "" :"i");
 
 		foreach ($lines as $currentLine => $line) {
+			$this->currentLine = $currentLine;
 
 			$this->checkLimitTimeExecution();
 			
@@ -268,13 +268,17 @@ class CodeReader {
 			
 					//Checa conteudo interno do IF
 					if (!$this->checkLines($line['statements']))
-						return false;  //ERROR						
+						return false;  //ERROR	
+
+					$this->currentLine = $currentLine;					
 				} 
 
 				//else
 				if ($line['type'] == "ELSE") {
 					if (!$this->checkLines($line['statements']))
-						return false;  //ERROR							
+						return false;  //ERROR		
+
+					$this->currentLine = $currentLine;					
 				}
 
 				//WHILE
@@ -286,7 +290,9 @@ class CodeReader {
 
 					//Checa conteudo interno do WHILE
 					if (!$this->checkLines($line['statements']))
-						return false;  //ERROR						
+						return false;  //ERROR		
+
+					$this->currentLine = $currentLine;				
 					continue;
 				}
 

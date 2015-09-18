@@ -115,6 +115,14 @@ class MapGenerator {
 	}
 
 	/**
+	* Retorna o tamanho do Mapa Definido
+	* @return array|Vector(X,Y)
+	*/
+	public function getMapSize() {
+		return $this->mapSize;
+	}
+
+	/**
 	* Zera todas as informações relacionada ao mapa atual
 	*/
 	public function resetMap() {
