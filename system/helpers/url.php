@@ -38,6 +38,7 @@ if (!function_exists('redirect')) {
 
 		////////Sava o Game Antes de encerrar as ações
 		//Recupera
+		$game = null;
 		if (file_exists(GAME_PATH.'/Game.php')) {
 		 	require_once(GAME_PATH.'/Game.php');
 		 	$game = Game::getInstance();
