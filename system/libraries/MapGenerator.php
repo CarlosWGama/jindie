@@ -338,7 +338,7 @@ class MapGenerator {
 
 	public function getMap($full = false) {
 		if (!$full) 
-			return $this->tile;
+			return $this->tiles;
 
 		//Com o Default
 		$tiles = array();
