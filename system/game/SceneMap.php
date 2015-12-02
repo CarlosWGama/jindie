@@ -74,10 +74,6 @@ class SceneMap implements IScene {
 
 		$this->code = new \CodeReader();
 		$this->code->setRules('navegation');
-
-		//Session
-		require_once(LIBRARIES_JI_PATH.'Session.php');
-		$this->session = new \Session();
 	}
 
 	/****** CONFIGURATION *****/

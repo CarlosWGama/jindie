@@ -35,7 +35,6 @@ class Navegation implements ICode {
 	protected $data;
 
 	public function __construct() {
-		$this->session = new Session();
 	}
 
 	/**
