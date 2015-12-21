@@ -22,6 +22,6 @@ $config = array(
 	//Steam
 	'apiKey'				=> '76E9DC99F49A08A5BABA7CB23223098C',
 	'domain'				=> 'http://local.jindie.com.br/',
-	'redirectURLSteam'		=> 'local.jindie.com.br/teste/steam',
+	'redirectURLSteam'		=> 'local.jindie.com.br/teste/steam'
 
 );
